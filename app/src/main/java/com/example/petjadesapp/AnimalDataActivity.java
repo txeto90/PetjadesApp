@@ -9,8 +9,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class AnimalDataActivity extends MainMenu {
+
+    TextView txtVulgar;
+    TextView txtScientific;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +26,23 @@ public class AnimalDataActivity extends MainMenu {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        txtVulgar = findViewById(R.id.txtViewVulgarName);
+        txtScientific = findViewById(R.id.txtViewScientificName);
+
+        getDataFromAnimal();
 
     }
+
+    //AGAFA LES DADES ENVIADES PER EL INTENT I LES MOSTRA EN ELS SEUS RESPECTIUS CAMPS
+    private void getDataFromAnimal(){
+        Bundle extras = getIntent().getExtras();
+        String vulgarName = extras.getString("vulgarName");
+        String scientificName = extras.getString("scientificName");
+
+        txtVulgar.setText(vulgarName);
+        txtScientific.setText(scientificName);
+    }
+
+
 
 }

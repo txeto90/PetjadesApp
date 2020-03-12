@@ -49,13 +49,7 @@ public class AnimalsListActivity extends MainMenu {
         animalsDAO = new AnimalsDAO(this);
 
         //construct data source
-        ArrayList<Animal> theAnimals = animalsDAO.getAnimals();
-/*        ArrayList<Animal> myAnimals = new ArrayList<Animal> ();
-        for (int i = 0; i < vulgarName.length; i++){ //pregunta: perque si pose books.size() en compte de 4 no funciona?
-            Animal aux = new Animal(scientificName[i],vulgarName[i], fotos[i]);
-            //add to arraylist
-            myAnimals.add(aux);
-        }*/
+        final ArrayList<Animal> theAnimals = animalsDAO.getAnimals();
         //create the adapter to convert the array to views
         AnimalsAdapter adapter = new AnimalsAdapter (this, theAnimals);
         //attach the adapter to a listView
@@ -65,23 +59,13 @@ public class AnimalsListActivity extends MainMenu {
         myAnimalsView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //ENVIEM LES DADES DE L'ANIMAL AMB INTENT PER A REBRELES EN LA SEGUENT ACTIVITY
                 Intent intent = new Intent(AnimalsListActivity.this, AnimalDataActivity.class);
+                intent.putExtra("vulgarName", theAnimals.get(position).getVulgarName());
+                intent.putExtra("scientificName", theAnimals.get(position).getScientificName());
                 startActivity(intent);
-                //buildDialog(scientificName[position], "Autor: " + vulgarName[position], position);
             }
         });
     }
 
-    //Out from onCreated
-/*    public void buildDialog(String title, String message, int position){
-        final ImageView image = new ImageView((this));
-        image.setImageResource(fotos[position]);
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(title);
-        builder.setMessage(message);
-        builder.setPositiveButton("OK", null);
-        builder.setView(image);
-        builder.create();
-        builder.show();
-    }*/
 }
