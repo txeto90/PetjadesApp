@@ -51,9 +51,13 @@
         android:layout_height="50dp"
         android:layout_marginStart="75dp"
         android:layout_marginTop="345dp"
-        android:text="Description"
+        android:backgroundTint="#FAF9F9"
+        android:scaleType="centerCrop"
+        android:src="@drawable/info48"
+        android:onClick="showInfo"
+        android:tint="#121111"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/ibHabitat"
@@ -61,9 +65,12 @@
         android:layout_height="50dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="345dp"
-        android:text="ToggleButton"
+        android:backgroundTint="#ffffff"
+        android:scaleType="centerCrop"
+        android:src="@drawable/icon3"
+        android:onClick="showHabitat"
         app:layout_constraintStart_toEndOf="@+id/ibDescription"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/ibDistribution"
@@ -71,18 +78,25 @@
         android:layout_height="50dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="345dp"
+        android:backgroundTint="#FAF9F9"
+        android:scaleType="centerCrop"
+        android:src="@drawable/icon2"
         android:text="ToggleButton"
         app:layout_constraintStart_toEndOf="@+id/ibHabitat"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageButton
         android:id="@+id/ibRastros"
         android:layout_width="60dp"
         android:layout_height="50dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="345dp"
+        android:backgroundTint="#FAF9F9"
+        android:scaleType="centerCrop"
+        android:src="@drawable/icon1"
         android:text="ToggleButton"
         app:layout_constraintStart_toEndOf="@+id/ibDistribution"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 <!--
     <ToggleButton
         android:id="@+id/tbDescription"

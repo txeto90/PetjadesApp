@@ -26,7 +26,6 @@ public class AnimalsDAO {
         if(c.moveToFirst()){
             do{
                 Animal a = new Animal();
-                //a.set(c.getString(0));
                 a.setScientificName(c.getString(1));
                 a.setVulgarName(c.getString(2));
                 a.setDescription(c.getString(3));

@@ -9,16 +9,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
 public class AnimalDataActivity extends MainMenu {
 
+    TextView txtIndexTitle;
     TextView txtVulgar;
     TextView txtScientific;
     TextView txtDescription;
-
+    ImageButton ibInfo;
+    ImageButton ibHabitat;
+    ImageButton ibRastre;
+    ImageButton ibDistribution;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +32,14 @@ public class AnimalDataActivity extends MainMenu {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        txtIndexTitle = findViewById(R.id.txtViewIndex);
         txtVulgar = findViewById(R.id.txtViewVulgarName);
         txtScientific = findViewById(R.id.txtViewScientificName);
         txtDescription = findViewById(R.id.txtViewInformation);
+        ibInfo = findViewById(R.id.ibDescription);
+        ibHabitat = findViewById(R.id.ibHabitat);
+        ibDistribution = findViewById(R.id.ibDistribution);
+        ibRastre = findViewById(R.id.ibRastros);
 
         getDataFromAnimal();
 
@@ -44,9 +54,22 @@ public class AnimalDataActivity extends MainMenu {
 
         txtVulgar.setText(vulgarName);
         txtScientific.setText(scientificName);
+        txtIndexTitle.setText("Descripción");
         txtDescription.setText(description);
     }
 
+    public void showInfo(View view){
+        Bundle extras = getIntent().getExtras();
+        String description = extras.getString("description");
+        txtIndexTitle.setText("Descripción");
+        txtDescription.setText(description);
+    }
 
+    public void showHabitat(View view){
+        Bundle extras = getIntent().getExtras();
+        String habitat = extras.getString("habitat");
+        txtIndexTitle.setText("Hábitat");
+        txtDescription.setText(habitat);
+    }
 
 }
