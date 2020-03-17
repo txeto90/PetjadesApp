@@ -45,6 +45,45 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/zorro" />
 
+    <ImageButton
+        android:id="@+id/ibDescription"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="345dp"
+        android:text="Description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageButton
+        android:id="@+id/ibHabitat"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="345dp"
+        android:text="ToggleButton"
+        app:layout_constraintStart_toEndOf="@+id/ibDescription"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageButton
+        android:id="@+id/ibDistribution"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="345dp"
+        android:text="ToggleButton"
+        app:layout_constraintStart_toEndOf="@+id/ibHabitat"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <ImageButton
+        android:id="@+id/ibRastros"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="345dp"
+        android:text="ToggleButton"
+        app:layout_constraintStart_toEndOf="@+id/ibDistribution"
+        app:layout_constraintTop_toTopOf="parent"/>
+<!--
     <ToggleButton
         android:id="@+id/tbDescription"
         android:layout_width="60dp"
@@ -62,7 +101,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="345dp"
         android:text="ToggleButton"
-        app:layout_constraintStart_toEndOf="@+id/tbDescription"
+        app:layout_constraintStart_toEndOf="@+id/ibDescription"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ToggleButton
@@ -84,7 +123,7 @@
         android:text="ToggleButton"
         app:layout_constraintStart_toEndOf="@+id/tbDistribution"
         app:layout_constraintTop_toTopOf="parent" />
-
+-->
     <TextView
         android:id="@+id/txtViewIndex"
         android:layout_width="350dp"
@@ -95,7 +134,7 @@
         android:text="Title fo index toggle button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tbDescription" />
+        app:layout_constraintTop_toBottomOf="@+id/ibDescription" />
 
     <TextView
         android:id="@+id/txtViewInformation"

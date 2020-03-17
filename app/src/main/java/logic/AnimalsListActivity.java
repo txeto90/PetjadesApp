@@ -63,6 +63,8 @@ public class AnimalsListActivity extends MainMenu {
                 Intent intent = new Intent(AnimalsListActivity.this, AnimalDataActivity.class);
                 intent.putExtra("vulgarName", theAnimals.get(position).getVulgarName());
                 intent.putExtra("scientificName", theAnimals.get(position).getScientificName());
+                intent.putExtra("description", theAnimals.get(position).getDescription());
+                intent.putExtra("habitat", theAnimals.get(position).getHabitat());
                 startActivity(intent);
             }
         });

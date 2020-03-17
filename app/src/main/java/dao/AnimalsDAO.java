@@ -29,6 +29,8 @@ public class AnimalsDAO {
                 //a.set(c.getString(0));
                 a.setScientificName(c.getString(1));
                 a.setVulgarName(c.getString(2));
+                a.setDescription(c.getString(3));
+                a.setHabitat(c.getString(4));
 
                 Log.d("pDAO", "IFgetAnimals: "+a.getVulgarName());
                 animalList.add(a);

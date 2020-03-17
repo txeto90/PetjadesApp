@@ -17,6 +17,7 @@ public class AnimalDataActivity extends MainMenu {
 
     TextView txtVulgar;
     TextView txtScientific;
+    TextView txtDescription;
 
 
     @Override
@@ -28,6 +29,7 @@ public class AnimalDataActivity extends MainMenu {
 
         txtVulgar = findViewById(R.id.txtViewVulgarName);
         txtScientific = findViewById(R.id.txtViewScientificName);
+        txtDescription = findViewById(R.id.txtViewInformation);
 
         getDataFromAnimal();
 
@@ -38,9 +40,11 @@ public class AnimalDataActivity extends MainMenu {
         Bundle extras = getIntent().getExtras();
         String vulgarName = extras.getString("vulgarName");
         String scientificName = extras.getString("scientificName");
+        String description = extras.getString("description");
 
         txtVulgar.setText(vulgarName);
         txtScientific.setText(scientificName);
+        txtDescription.setText(description);
     }
 
 
