@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">PetjadesApp</string>
     <string name="action_settings">Settings</string>
@@ -15,22 +16,21 @@
     <!-- MENU -->
     <string name="txtMenuHome">Inicio</string>
     <!-- <string name="txtMenuList">Guía de mamíferos</string> -->
-    <string name="txtMenuCamera">Cámara</string>
+    <string name="txtMenuCamera">Càmara</string>
     <!-- <string name="txtMenuDicotomica">Clave dicotomica</string> -->
 
     <!-- MAIN ACTIVITY -->
     <string name="txtListMenu">Guía de mamíferos</string>
-    <string name="txtDicotomicaMenu">Clave dicotomica</string>
+    <string name="txtDicotomicaMenu">Clave dicotómica</string>
 
     <!-- ANIMAL LIST -->
     <string name="title_list">Guía de mamíferos</string>
     <string name="title_activity_animal_data">AnimalDataActivity</string>
-    <string name="title_activity_camera2">Càmara</string>
+    <string name="title_activity_camera2">Cámara</string>
 
     <!-- ANIMAL DATA ACTIVITY falta implementar-ho-->
     <string name="txtIndexDescription">Descripción</string>
     <string name="txtIndexHabitat">Hábitat</string>
     <string name="txtIndexDistribution">Distribución</string>
     <string name="txtIndexTrace">Rastros</string>
-
 </resources>

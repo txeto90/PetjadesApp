@@ -1,5 +1,6 @@
 package com.example.petjadesapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -12,6 +13,8 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import logic.AnimalsListActivity;
+
 public class MainActivity extends MainMenu {
 
     @Override
@@ -20,6 +23,16 @@ public class MainActivity extends MainMenu {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+    }
+
+    public void goToAnimalsListActivity(View view){
+        Intent intent = new Intent(this, AnimalsListActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToDicotomicActivity(View view){
+        //Intent intent = new Intent(this, DicotomicaActivity.class);
+        //startActivity(intent);
     }
 
 

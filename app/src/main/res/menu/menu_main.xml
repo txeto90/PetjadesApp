@@ -5,17 +5,17 @@
     <item
         android:id="@+id/home"
         android:orderInCategory="100"
-        android:title="Inici"
+        android:title="@string/txtMenuHome"
         app:showAsAction="never" />
 
     <item
         android:id="@+id/animalList"
         android:orderInCategory="100"
-        android:title="Llista animals"
+        android:title="@string/txtListMenu"
         app:showAsAction="never" />
     <item
         android:id="@+id/camera"
         android:orderInCategory="100"
-        android:title="Camera"
+        android:title="@string/txtMenuCamera"
         app:showAsAction="never" />
 </menu>
