@@ -7,9 +7,15 @@
         android:orderInCategory="100"
         android:title="Inici"
         app:showAsAction="never" />
+
     <item
         android:id="@+id/animalList"
         android:orderInCategory="100"
         android:title="Llista animals"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/camera"
+        android:orderInCategory="100"
+        android:title="Camera"
         app:showAsAction="never" />
 </menu>

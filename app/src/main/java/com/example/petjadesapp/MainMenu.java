@@ -45,6 +45,11 @@ public class MainMenu extends AppCompatActivity {
             startActivity(intent);
             return true;
         }
+        if (id == R.id.camera) {
+            Intent intent = new Intent(this, CameraActivity.class);
+            startActivity(intent);
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 }

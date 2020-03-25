@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.petjadesapp">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-feature android:name="android.hardware.location.gps" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/iclauncher"
@@ -10,9 +16,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".CameraActivity"
+            android:label="@string/title_activity_camera2"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name=".AnimalDataActivity"
             android:label="@string/title_activity_animal_data"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="logic.AnimalsListActivity"
             android:label="@string/title_activity_animals_list"

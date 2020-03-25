@@ -32,10 +32,10 @@ public class AnimalsListActivity extends MainMenu {
                 "Tejon",
         };*/
     private int[] fotos = {
-            R.drawable.zorro,
-            R.drawable.zorro,
-            R.drawable.zorro,
-            R.drawable.zorro};
+            R.drawable.fotozorro,
+            R.drawable.fotozorro,
+            R.drawable.fotozorro,
+            R.drawable.fotozorro};
     private ListView myAnimalsView;
     private ArrayList<Animal> theAnimals;
 

@@ -33,17 +33,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imgViewAnimal"
-        android:layout_width="350dp"
-        android:layout_height="277dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="65dp"
-        android:layout_marginEnd="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/zorro" />
+        <ImageView
+            android:id="@+id/imgViewAnimal"
+            android:layout_width="350dp"
+            android:layout_height="277dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="65dp"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/fotozorro" />
 
     <ImageButton
         android:id="@+id/ibDescription"
@@ -51,10 +51,10 @@
         android:layout_height="50dp"
         android:layout_marginStart="75dp"
         android:layout_marginTop="345dp"
-        android:backgroundTint="#FAF9F9"
+        android:backgroundTint="#CEC8C8 "
+        android:onClick="showInfo"
         android:scaleType="centerCrop"
         android:src="@drawable/info48"
-        android:onClick="showInfo"
         android:tint="#121111"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -65,10 +65,10 @@
         android:layout_height="50dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="345dp"
-        android:backgroundTint="#ffffff"
+        android:backgroundTint="#FAF9F9"
+        android:onClick="showHabitat"
         android:scaleType="centerCrop"
         android:src="@drawable/icon3"
-        android:onClick="showHabitat"
         app:layout_constraintStart_toEndOf="@+id/ibDescription"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -79,64 +79,66 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="345dp"
         android:backgroundTint="#FAF9F9"
+        android:onClick="showDistribution"
         android:scaleType="centerCrop"
         android:src="@drawable/icon2"
-        android:text="ToggleButton"
         app:layout_constraintStart_toEndOf="@+id/ibHabitat"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/ibRastros"
+        android:id="@+id/ibTrace"
         android:layout_width="60dp"
         android:layout_height="50dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="345dp"
         android:backgroundTint="#FAF9F9"
+        android:onClick="showTrace"
         android:scaleType="centerCrop"
         android:src="@drawable/icon1"
-        android:text="ToggleButton"
         app:layout_constraintStart_toEndOf="@+id/ibDistribution"
         app:layout_constraintTop_toTopOf="parent" />
-<!--
-    <ToggleButton
-        android:id="@+id/tbDescription"
-        android:layout_width="60dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="75dp"
-        android:layout_marginTop="345dp"
-        android:text="Description"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <ToggleButton
-        android:id="@+id/tbHabitat"
-        android:layout_width="60dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="345dp"
-        android:text="ToggleButton"
-        app:layout_constraintStart_toEndOf="@+id/ibDescription"
-        app:layout_constraintTop_toTopOf="parent" />
+    <!--
+<ToggleButton
+    android:id="@+id/tbDescription"
+    android:layout_width="60dp"
+    android:layout_height="50dp"
+    android:layout_marginStart="75dp"
+    android:layout_marginTop="345dp"
+    android:background="@drawable/info48"
+    android:onClick="showInfo"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
 
-    <ToggleButton
-        android:id="@+id/tbDistribution"
-        android:layout_width="60dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="345dp"
-        android:text="ToggleButton"
-        app:layout_constraintStart_toEndOf="@+id/tbHabitat"
-        app:layout_constraintTop_toTopOf="parent" />
+<ToggleButton
+    android:id="@+id/tbHabitat"
+    android:layout_width="60dp"
+    android:layout_height="50dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="345dp"
+    android:onClick="showHabitat"
+    app:layout_constraintStart_toEndOf="@+id/tbDescription"
+    app:layout_constraintTop_toTopOf="parent" />
 
-    <ToggleButton
-        android:id="@+id/tbRastro"
-        android:layout_width="60dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="345dp"
-        android:text="ToggleButton"
-        app:layout_constraintStart_toEndOf="@+id/tbDistribution"
-        app:layout_constraintTop_toTopOf="parent" />
+<ToggleButton
+    android:id="@+id/tbDistribution"
+    android:layout_width="60dp"
+    android:layout_height="50dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="345dp"
+    android:text="ToggleButton"
+    app:layout_constraintStart_toEndOf="@+id/tbHabitat"
+    app:layout_constraintTop_toTopOf="parent" />
+
+<ToggleButton
+    android:id="@+id/tbRastro"
+    android:layout_width="60dp"
+    android:layout_height="50dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="345dp"
+    android:text="ToggleButton"
+    app:layout_constraintStart_toEndOf="@+id/tbDistribution"
+    app:layout_constraintTop_toTopOf="parent" />
 -->
     <TextView
         android:id="@+id/txtViewIndex"
