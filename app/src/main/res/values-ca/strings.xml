@@ -12,6 +12,7 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_dichotomous_key">DichotomousKeyActivity</string>
 
     <!-- MENU -->
     <string name="txtMenuHome">Inici</string>
@@ -21,7 +22,7 @@
 
     <!-- MAIN ACTIVITY -->
     <string name="txtListMenu">Guía de mamífers</string>
-    <string name="txtDicotomicaMenu">Clau dicotómica</string>
+    <string name="txtDichotomousMenu">Clau dicotómica</string>
 
     <!-- ANIMAL LIST -->
     <string name="title_list">Guía de mamífers</string>

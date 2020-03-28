@@ -31,8 +31,8 @@ public class MainActivity extends MainMenu {
     }
 
     public void goToDicotomicActivity(View view){
-        //Intent intent = new Intent(this, DicotomicaActivity.class);
-        //startActivity(intent);
+        Intent intent = new Intent(this, DichotomousKeyActivity.class);
+        startActivity(intent);
     }
 
 
