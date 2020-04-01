@@ -12,7 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
         android:layout_marginTop="296dp"
-        android:text="Dedos"
+        android:text="@string/fingers"
+        android:onClick="onClickLeft"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -20,9 +21,10 @@
         android:id="@+id/btnRigth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="248dp"
-        android:layout_marginTop="300dp"
-        android:text="Pezuña"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="296dp"
+        android:text="@string/hoof"
+        android:onClick="onClickRight"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

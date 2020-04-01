@@ -31,11 +31,11 @@ public class AnimalsListActivity extends MainMenu {
                 "Corzo",
                 "Tejon",
         };*/
-    private int[] fotos = {
+/*    private int[] fotos = {
             R.drawable.fotozorro,
             R.drawable.fotozorro,
             R.drawable.fotozorro,
-            R.drawable.fotozorro};
+            R.drawable.fotozorro};*/
     private ListView myAnimalsView;
     private ArrayList<Animal> theAnimals;
 
@@ -65,6 +65,7 @@ public class AnimalsListActivity extends MainMenu {
                 intent.putExtra("scientificName", theAnimals.get(position).getScientificName());
                 intent.putExtra("description", theAnimals.get(position).getDescription());
                 intent.putExtra("habitat", theAnimals.get(position).getHabitat());
+
                 startActivity(intent);
             }
         });

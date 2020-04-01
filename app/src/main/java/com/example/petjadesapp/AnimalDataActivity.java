@@ -2,20 +2,32 @@ package com.example.petjadesapp;
 
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.storage.FileDownloadTask;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
 import org.w3c.dom.Text;
+
+import java.io.File;
+import java.io.IOException;
 
 public class AnimalDataActivity extends MainMenu {
 
@@ -27,6 +39,7 @@ public class AnimalDataActivity extends MainMenu {
     ImageButton ibHabitat;
     ImageButton ibTrace;
     ImageButton ibDistribution;
+    //ImageView imgAnimal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +48,7 @@ public class AnimalDataActivity extends MainMenu {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //imgAnimal = findViewById(R.id.imgViewAnimal);
         txtIndexTitle = findViewById(R.id.txtViewIndex);
         txtVulgar = findViewById(R.id.txtViewVulgarName);
         txtScientific = findViewById(R.id.txtViewScientificName);
@@ -44,6 +58,7 @@ public class AnimalDataActivity extends MainMenu {
         ibDistribution = findViewById(R.id.ibDistribution);
         ibTrace = findViewById(R.id.ibTrace);
 
+//        getImagesFromFirebase();
         getDataFromAnimal();
 
     }
@@ -102,4 +117,55 @@ public class AnimalDataActivity extends MainMenu {
         third.setBackgroundTintList(ColorStateList.valueOf(Color.TRANSPARENT));
     }
 
+
+
+// PASARLI EN EL EXTRA EN NOM DE LA FOTO QUE ES VOL AGAFAR
+    private StorageReference mStorageRef;
+    private File localFile = null;
+    public void getImagesFromFirebase(String imgName){
+
+        //FirebaseFirestore db;
+
+
+/*        db = FirebaseFirestore.getInstance();
+        FirebaseFirestoreSettings settings = new FirebaseFirestoreSettings.Builder()
+                .setPersistenceEnabled(true)
+                .build();
+        db.setFirestoreSettings(settings);*/
+
+        mStorageRef = FirebaseStorage.getInstance().getReference();
+
+
+        StorageReference riversRef = mStorageRef.child(imgName);
+        //download
+
+        try {
+            localFile = File.createTempFile("images", "jpg");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        riversRef.getFile(localFile)
+                .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                    @Override
+                    public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                        System.out.println("on sucses");
+                        Log.d("caca", "onsucces");
+                        ImageView animalImage = findViewById(R.id.imgViewAnimal);
+                        animalImage.setImageURI(Uri.fromFile(localFile));
+
+                        // Successfully downloaded data to local file
+                        // ...
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                System.out.println("onFailure");
+                Log.d("caca", "onFailure" + exception.toString());
+
+                // Handle failed download
+                // ...
+            }
+        });
+
+    }
 }
