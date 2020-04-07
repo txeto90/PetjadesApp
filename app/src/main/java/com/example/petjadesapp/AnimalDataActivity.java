@@ -1,5 +1,6 @@
 package com.example.petjadesapp;
 
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.net.Uri;
@@ -116,6 +117,13 @@ public class AnimalDataActivity extends MainMenu {
         second.setBackgroundTintList(ColorStateList.valueOf(Color.TRANSPARENT));
         third.setBackgroundTintList(ColorStateList.valueOf(Color.TRANSPARENT));
     }
+
+    //DIRECCIONA A LA CAMERAACTIVITY AMB LA PETJADA DE L'ANIMAL CORRESPONENT
+    public void goToCameraActivity(View view){
+        Intent intent = new Intent(this, CameraActivity.class);
+        startActivity(intent);
+    }
+
 
 
 

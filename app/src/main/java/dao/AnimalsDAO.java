@@ -31,6 +31,7 @@ public class AnimalsDAO {
                 a.setDescription(c.getString(3));
                 a.setHabitat(c.getString(4));
 
+
                 Log.d("pDAO", "IFgetAnimals: "+a.getVulgarName());
                 animalList.add(a);
             }while(c.moveToNext());

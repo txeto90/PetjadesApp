@@ -118,6 +118,18 @@
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/ibCamera"
+                android:layout_width="66dp"
+                android:layout_height="51dp"
+                android:layout_marginStart="316dp"
+                android:layout_marginTop="290dp"
+                android:scaleType="centerCrop"
+                android:onClick="goToCameraActivity"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/cameraicon" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
