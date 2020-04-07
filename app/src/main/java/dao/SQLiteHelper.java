@@ -8,7 +8,7 @@ import androidx.annotation.Nullable;
 
 public class SQLiteHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "animals";
-    public static final int DATABASE_VERSION = 2;
+    public static final int DATABASE_VERSION = 5;
 
     //SQL sentence to create a table
     String sqlTableAnimals = "CREATE TABLE animals(codi INTEGER PRIMARY KEY, nomCientific TEXT NOT NULL," +
@@ -18,9 +18,9 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     String sqlLobo = "INSERT INTO animals VALUES (2, 'Canis lupus', 'Lobo', 'alea jacta estalea jacta estalea jacta estalea jacta estalea jacta est'," +
             "'Ars longa, vita brevis Ars longa, vita brevis Ars longa, vita brevis Ars longa, vita brevis')";
     String sqlCorzo = "INSERT INTO animals VALUES (3, 'Capreolus capreolus', 'Corzo', 'alea jacta estalea jacta estalea jacta estalea jacta estalea jacta est'," +
-            "'Ars longa, vita brevis Ars longa, vita brevis Ars longa, vita brevis Ars longa, vita brevisArs longa, vita brevis Ars longa, vita brevis Ars longa, vita brevis Ars longa, vita brevis')";
-    String sqlTejon = "INSERT INTO animals VALUES (4, 'Meles meles', 'Tejón', 'alea jacta estalea jacta estalea jacta estalea jacta estalea jacta est'," +
-            "'Ars longa, vita brevis Ars longa, vita brevis Ars longa, vita brevis Ars longa, vita brevisArs longa, vita brevis Ars longa, vita brevis Ars longa, vita brevis Ars longa, vita brevis')";
+            "'Ars \n \n longa, vita brevis Ars longa, vita brevis Ars longa, vita brevis Ars longa, vita brevisArs longa, vita brevis Ars longa, vita brevis Ars longa, vita brevis Ars longa, vita brevis')";
+    String sqlTejon = "INSERT INTO animals VALUES (4, 'Meles meles', 'Tejón', 'Constitución ancha y robusta con cabeza blanca cruzada por bandas negras laterales que incorporan la zona ocular. Observado a distancia parece gris, color fruto de un pelo blanco en su base y ápice, y de banda negra en el centro. Patas y vientre cubiertos por pelo negro bastante rlo en el abdomen.\n \n Se mueve al trote con la cabeza baja y los cuartos traseros balanceándose de un lado a otro, alternando con paradas para escuchar.'," +
+            "'Tejoneras de muchas bocas y complicada red de galerías y cámaras. Se diferencia de las zorreras por verse fuera montones de tierra y vegetales secos, resultado de la renovación de las camas. Viven en todo tipo de montes y dehesas, aunque no les impide la residencia en áreas cultivadas, campiñas, riveras o cantiles. Más numerosos en mosaicos de bosque con cultivos y pastizales.')";
     String sqlJabali = "INSERT INTO animals VALUES (5, 'Sus scrofa', 'Jabalí', 'alea jacta estalea jacta estalea jacta estalea jacta estalea jacta est'," +
             "'Ars longa, vita brevis Ars longa, vita brevis Ars longa, vita brevis Ars longa, vita brevisArs longa, vita brevis Ars longa, vita brevis Ars longa, vita brevis Ars longa, vita brevis')";
 

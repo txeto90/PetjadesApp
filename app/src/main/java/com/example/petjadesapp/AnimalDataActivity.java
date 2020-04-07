@@ -72,7 +72,7 @@ public class AnimalDataActivity extends MainMenu {
 
         txtVulgar.setText(vulgarName);
         txtScientific.setText(scientificName);
-        txtIndexTitle.setText("Descripción");
+        txtIndexTitle.setText(getString(R.string.txtIndexDescription));
         txtDescription.setText(description);
     }
 
@@ -81,7 +81,7 @@ public class AnimalDataActivity extends MainMenu {
         Bundle extras = getIntent().getExtras();
         String description = extras.getString("description");
         checkImageButtons(ibInfo, ibHabitat, ibTrace, ibDistribution);
-        txtIndexTitle.setText("Descripción");
+        txtIndexTitle.setText(getString(R.string.txtIndexDescription));
         txtDescription.setText(description);
     }
 
@@ -89,7 +89,7 @@ public class AnimalDataActivity extends MainMenu {
         Bundle extras = getIntent().getExtras();
         String habitat = extras.getString("habitat");
         checkImageButtons(ibHabitat, ibInfo, ibTrace, ibDistribution);
-        txtIndexTitle.setText("Hábitat");
+        txtIndexTitle.setText(getString(R.string.txtIndexHabitat));
         txtDescription.setText(habitat);
     }
 
@@ -97,7 +97,7 @@ public class AnimalDataActivity extends MainMenu {
         Bundle extras = getIntent().getExtras();
         String habitat = extras.getString("");
         checkImageButtons(ibDistribution, ibInfo, ibHabitat, ibTrace);
-        txtIndexTitle.setText("Distribució");
+        txtIndexTitle.setText(getString(R.string.txtIndexDistribution));
         txtDescription.setText(habitat);
     }
 
@@ -105,7 +105,7 @@ public class AnimalDataActivity extends MainMenu {
         Bundle extras = getIntent().getExtras();
         String habitat = extras.getString("");
         checkImageButtons(ibTrace, ibInfo, ibHabitat, ibDistribution);
-        txtIndexTitle.setText("Rastres");
+        txtIndexTitle.setText(getString(R.string.txtIndexTrace));
         txtDescription.setText(habitat);
     }
 

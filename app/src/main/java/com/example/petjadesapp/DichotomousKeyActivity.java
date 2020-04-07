@@ -1,25 +1,14 @@
 package com.example.petjadesapp;
 
-import android.content.res.Resources;
 import android.os.Bundle;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import java.lang.reflect.Field;
-import java.util.Locale;
 
 public class DichotomousKeyActivity extends MainMenu {
 
     Button btnLeft, btnRight;
-    //String language;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
