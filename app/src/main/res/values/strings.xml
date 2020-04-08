@@ -33,6 +33,41 @@
     <string name="txtIndexHabitat">Hábitat</string>
     <string name="txtIndexDistribution">Distribución</string>
     <string name="txtIndexTrace">Rastros</string>
+    <string name="title_activity_adapter_prova">AdapterProva</string>
 
+    <!-- DICHOTOMOUS KEY ACTIVITY-->
+    <!-- RIGTH BUTTON-->
+    <string name="hoof">Pezuña/Casco</string>
+    <string name="pair_fingers">Dedos par</string>
+    <string name="no_secundary_hoof">Sin pezuña secundaria</string>
+    <string name="with_nails">Con uñas</string>
+    <string name="double_pad">Almohadilla bilobulada</string>
+    <string name="no_main_pad">Sin almohadilla principal</string>
+    <string name="heavily_modified">Muy modificada</string>
+    <string name="divided_pad">Almohadilla principal dividida</string>
+    <string name="one_to_five_size">entre 1 y 5 cm</string>
+    <string name="more_than_threecm">Más de 3 cm</string>
+    <string name="long_nails">Uñas largas</string>
+    <string name="less_than_threecm">Menos de 3 cm</string>
+    <string name="more_than_onefivecm">Más de 1,5 cm</string>
+    <string name="mole">Huella con hilera</string>
+    <string name="side_fingers">Dedos laterales</string>
+
+    <!-- LEFT BUTTON-->
+    <string name="fingers">Dedos</string>
+    <string name="no_nails">Sin uñas</string>
+    <string name="tripe_pad">Almohadilla trilobulada</string>
+    <string name="odd_fingers">Dedos impares</string>
+    <string name="with_secundary_hoof">Con pezuña secundaria</string>
+    <string name="with_main_pad">Con almohadilla principal</string>
+    <string name="unique_main_pad">Almohadilla principal unica</string>
+    <string name="five_to_eigth_cm">Entre 5 y 8 cm</string>
+    <string name="small_nails">Uñas pequeñas</string>
+    <string name="one_to_three_cm">Entre 1 y 3 cm</string>
+    <string name="four_to_five_cm">Entre 4 y 5 cm</string>
+    <string name="less_than_onefive_cm">Menos de 1,5cm</string>
+    <string name="five_fingers">5 dedos</string>
+    <string name="front_fingers">Dedos hacia delante</string>
+    <string name="oval_pad">Almohadilla ovalada</string>
 
 </resources>

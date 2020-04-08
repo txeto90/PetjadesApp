@@ -30,11 +30,18 @@ public class AnimalsDAO {
                 a.setVulgarName(c.getString(2));
                 a.setDescription(c.getString(3));
                 a.setHabitat(c.getString(4));
+                a.setDistribution(c.getString(5));
+                a.setTrace(c.getString(6));
+                a.setImgExcrement(c.getString(7));
+                a.setImgFootprint(c.getString(8));
+                a.setImgTraces(c.getString(9));
+                a.setImgAnimal(c.getString(10));
 
-                Log.d("pDAO", "IFgetAnimals: "+a.getVulgarName());
+                //Log.d("pDAO", "IFgetAnimals: "+a.getVulgarName());
                 animalList.add(a);
             }while(c.moveToNext());
         }
+        Log.d("pDAO", "IFgetAnimals: "+ animalList.size());
         return animalList;
     }
 
