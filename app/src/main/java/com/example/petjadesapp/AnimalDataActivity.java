@@ -8,14 +8,11 @@ import android.os.Bundle;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.util.Log;
@@ -23,9 +20,6 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.ToggleButton;
-
-import org.w3c.dom.Text;
 
 import java.io.File;
 import java.io.IOException;
@@ -35,7 +29,7 @@ public class AnimalDataActivity extends MainMenu {
     TextView txtIndexTitle;
     TextView txtVulgar;
     TextView txtScientific;
-    TextView txtDescription;
+    TextView txtInformation;
     ImageButton ibInfo;
     ImageButton ibHabitat;
     ImageButton ibTrace;
@@ -53,15 +47,14 @@ public class AnimalDataActivity extends MainMenu {
         txtIndexTitle = findViewById(R.id.txtViewIndex);
         txtVulgar = findViewById(R.id.txtViewVulgarName);
         txtScientific = findViewById(R.id.txtViewScientificName);
-        txtDescription = findViewById(R.id.txtViewInformation);
+        txtInformation = findViewById(R.id.txtViewInformation);
         ibInfo = findViewById(R.id.ibDescription);
         ibHabitat = findViewById(R.id.ibHabitat);
         ibDistribution = findViewById(R.id.ibDistribution);
         ibTrace = findViewById(R.id.ibTrace);
-
 //        getImagesFromFirebase();
         getDataFromAnimal();
-
+        showImgAnimal();
     }
 
     //AGAFA LES DADES ENVIADES PER EL INTENT I LES MOSTRA EN ELS SEUS RESPECTIUS CAMPS
@@ -74,7 +67,7 @@ public class AnimalDataActivity extends MainMenu {
         txtVulgar.setText(vulgarName);
         txtScientific.setText(scientificName);
         txtIndexTitle.setText(getString(R.string.txtIndexDescription));
-        txtDescription.setText(description);
+        txtInformation.setText(description);
     }
 
     //MOSTRA LES DADES EN LES CORRESPONENTS PESTANYES
@@ -83,7 +76,7 @@ public class AnimalDataActivity extends MainMenu {
         String description = extras.getString("description");
         checkImageButtons(ibInfo, ibHabitat, ibTrace, ibDistribution);
         txtIndexTitle.setText(getString(R.string.txtIndexDescription));
-        txtDescription.setText(description);
+        txtInformation.setText(description);
     }
 
     public void showHabitat(View view){
@@ -91,23 +84,38 @@ public class AnimalDataActivity extends MainMenu {
         String habitat = extras.getString("habitat");
         checkImageButtons(ibHabitat, ibInfo, ibTrace, ibDistribution);
         txtIndexTitle.setText(getString(R.string.txtIndexHabitat));
-        txtDescription.setText(habitat);
+        txtInformation.setText(habitat);
     }
 
     public void showDistribution(View view){
         Bundle extras = getIntent().getExtras();
-        String habitat = extras.getString("");
+        String habitat = extras.getString("distribution");
         checkImageButtons(ibDistribution, ibInfo, ibHabitat, ibTrace);
         txtIndexTitle.setText(getString(R.string.txtIndexDistribution));
-        txtDescription.setText(habitat);
+        txtInformation.setText(habitat);
     }
 
     public void showTrace(View view){
         Bundle extras = getIntent().getExtras();
-        String habitat = extras.getString("");
+        String habitat = extras.getString("trace");
         checkImageButtons(ibTrace, ibInfo, ibHabitat, ibDistribution);
         txtIndexTitle.setText(getString(R.string.txtIndexTrace));
-        txtDescription.setText(habitat);
+        txtInformation.setText(habitat);
+    }
+
+    //POSAR IMATGE DEL ANIMAL
+    private void showImgAnimal(){
+        Bundle extras = getIntent().getExtras();
+        String img = extras.getString("imgAnimal");
+        Log.d("img", "String: " + img);
+        getImagesFromFirebase(img);
+
+    }
+
+    //DIRECCIONA A LA CAMERAACTIVITY AMB LA PETJADA DE L'ANIMAL CORRESPONENT
+    public void goToCameraActivity(View view){
+        Intent intent = new Intent(this, CameraActivity.class);
+        startActivity(intent);
     }
 
     //MARCA Y DESMARCA LES IMAGEBUTTONS DEPENENT DE LA SEUA SEL·LECCIÓ
@@ -118,16 +126,7 @@ public class AnimalDataActivity extends MainMenu {
         third.setBackgroundTintList(ColorStateList.valueOf(Color.TRANSPARENT));
     }
 
-    //DIRECCIONA A LA CAMERAACTIVITY AMB LA PETJADA DE L'ANIMAL CORRESPONENT
-    public void goToCameraActivity(View view){
-        Intent intent = new Intent(this, CameraActivity.class);
-        startActivity(intent);
-    }
-
-
-
-
-// PASARLI EN EL EXTRA EN NOM DE LA FOTO QUE ES VOL AGAFAR
+    // PASARLI EN EL EXTRA EN NOM DE LA FOTO QUE ES VOL AGAFAR
     private StorageReference mStorageRef;
     private File localFile = null;
     public void getImagesFromFirebase(String imgName){
