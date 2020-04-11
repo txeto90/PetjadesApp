@@ -1,9 +1,14 @@
 package com.example.petjadesapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+
+import dao.AnimalsDAO;
+import logic.AnimalsListActivity;
+import model.Animal;
 
 
 public class DichotomousKeyActivity extends MainMenu {
@@ -30,9 +35,14 @@ public class DichotomousKeyActivity extends MainMenu {
             btnRight.setText(R.string.pair_fingers);
             btnLeft.setText(R.string.odd_fingers);
         }else if(txt.equalsIgnoreCase(getString(R.string.pair_fingers))){
+//            int code = 32;
+//            Animal a = AnimalsDAO.getAnimalInformation(code);
+//            startAnimalData(a);
             System.out.println("Artiodactilos");
         }
         if(txt.equalsIgnoreCase(getString(R.string.no_secundary_hoof))){
+            int code = 30;
+            startAnimalData(code);
             System.out.println("Cervidos/Bovidos");
         }
         //DEDOS HASTA ALM. PRINCIPAL UNICA
@@ -43,9 +53,13 @@ public class DichotomousKeyActivity extends MainMenu {
             btnRight.setText(R.string.heavily_modified);
             btnLeft.setText(R.string.oval_pad);
         }else if(txt.equalsIgnoreCase(getString(R.string.heavily_modified))) {
+            int code = 2;
+            startAnimalData(code);
             System.out.println("Talpidos");
         }
         if(txt.equalsIgnoreCase(getString(R.string.double_pad))){
+            int code = 24;
+            startAnimalData(code);
             System.out.println("Gineta");
         }
         //ALMOHADILLA UNICA HASTA 1-3CM
@@ -56,6 +70,8 @@ public class DichotomousKeyActivity extends MainMenu {
             System.out.println("cosas");
         }
         if(txt.equalsIgnoreCase(getString(R.string.long_nails))){
+            int code = 22;
+            startAnimalData(code);
             System.out.println("Tejón");
         }
         if(txt.equalsIgnoreCase(getString(R.string.less_than_threecm))){
@@ -68,6 +84,8 @@ public class DichotomousKeyActivity extends MainMenu {
             System.out.println("Muridos/Microtidos");
         }
         if(txt.equalsIgnoreCase(getString(R.string.mole))){
+            int code = 2;
+            startAnimalData(code);
             System.out.println("Talpidos");
         }
     }
@@ -79,6 +97,8 @@ public class DichotomousKeyActivity extends MainMenu {
             btnRight.setText(R.string.no_secundary_hoof);
             btnLeft.setText(R.string.with_secundary_hoof);
         }else if(txt.equalsIgnoreCase(getString(R.string.with_secundary_hoof))){
+            int code = 27;
+            startAnimalData(code);
             System.out.println("Suidos");
         }
         //DEDOS HASTA ALM. PRINCIPAL UNICA
@@ -89,9 +109,13 @@ public class DichotomousKeyActivity extends MainMenu {
             btnRight.setText(R.string.double_pad);
             btnLeft.setText(R.string.tripe_pad);
         }else if(txt.equalsIgnoreCase(getString(R.string.tripe_pad))){
+            int code = 26;
+            startAnimalData(code);
             System.out.println("Gato");
         }
         if(txt.equalsIgnoreCase(getString(R.string.oval_pad))){
+            int code = 13;
+            startAnimalData(code);
             System.out.println("Conejo/Liebre");
         }
         //ALMOHADILLA UNICA HASTA 1-3CM
@@ -102,12 +126,16 @@ public class DichotomousKeyActivity extends MainMenu {
             btnRight.setText(R.string.long_nails);
             btnLeft.setText(R.string.small_nails);
         }else if(txt.equalsIgnoreCase(getString(R.string.small_nails))){
+            int code = 21;
+            startAnimalData(code);
             System.out.println("Nutria");
         }
         if(txt.equalsIgnoreCase(getString(R.string.one_to_three_cm))){
             btnRight.setText(R.string.less_than_threecm);
             btnLeft.setText(R.string.four_to_five_cm);
         }else if(txt.equalsIgnoreCase(getString(R.string.four_to_five_cm))){
+            int code = 11;
+            startAnimalData(code);
             System.out.println("Ardilla");
         }
         if(txt.equalsIgnoreCase(getString(R.string.less_than_onefive_cm))){
@@ -117,11 +145,29 @@ public class DichotomousKeyActivity extends MainMenu {
             System.out.println("Sorícios");
         }
         if(txt.equalsIgnoreCase(getString(R.string.front_fingers))){
+            int code = 8;
+            startAnimalData(code);
             System.out.println("Rata");
         }
 
     }
 
+    public void startAnimalData(int code){
+        Animal a = AnimalsDAO.getAnimalInformation(code);
+        //ENVIEM LES DADES DE L'ANIMAL AMB INTENT PER A REBRELES EN LA SEGUENT ACTIVITY
+        Intent intent = new Intent(DichotomousKeyActivity.this, AnimalDataActivity.class);
+        intent.putExtra("vulgarName", a.getVulgarName());
+        intent.putExtra("scientificName", a.getScientificName());
+        intent.putExtra("description", a.getDescription());
+        intent.putExtra("habitat", a.getHabitat());
+        intent.putExtra("distribution", a.getDistribution());
+        intent.putExtra("trace", a.getTrace());
+        intent.putExtra("imgExcrement", a.getImgExcrement());
+        intent.putExtra("imgFootPrint", a.getImgFootprint());
+        intent.putExtra("imgTraces", a.getImgTraces());
+        intent.putExtra("imgAnimal", a.getImgAnimal());
 
+        startActivity(intent);
+    }
 
 }

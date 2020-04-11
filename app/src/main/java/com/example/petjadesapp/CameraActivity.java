@@ -34,7 +34,6 @@ import android.util.SparseIntArray;
 import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -77,7 +76,28 @@ public class CameraActivity extends MainMenu{//AppCompatActivity {
     private Handler mBackgroundHandler;
     private HandlerThread mBackgroundThread;
     CarouselView carouselView;
-    int[] sampleImages = {R.drawable.zorro, R.drawable.nutria, R.drawable.perro, R.drawable.jineta};
+    //private int[] sampleImages;// = {R.drawable.zorroPetjada, R.drawable.nutria_petjada, R.drawable.perro_petjada, R.drawable.jineta_petjada};
+    private ArrayList<Integer> sampleImages;
+
+    private int getDrawable(String imgName){
+        //Context context = getApplicationContext();
+
+        int resourceId = getResources().getIdentifier(imgName,"drawable", this.getPackageName());
+
+        Log.d("kk", "getDrawable: " + imgName);
+        return resourceId;
+    }
+
+    private void getSampleImages(){
+        Bundle extras = getIntent().getExtras();
+        String imgName = extras.getString("imgFootPrint");
+
+        sampleImages = new ArrayList<>();
+        sampleImages.add(getDrawable(imgName));
+        //imageView.setImageResource(id);
+        Log.d("kk", String.valueOf(sampleImages.get(0)));
+        Log.d("kk", String.valueOf(R.drawable.zorro_petjada));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,8 +120,10 @@ public class CameraActivity extends MainMenu{//AppCompatActivity {
             }
         });
 
+        getSampleImages();
         carouselView = (CarouselView) findViewById(R.id.carouselView);
-        carouselView.setPageCount(sampleImages.length);
+        carouselView.setPageCount(sampleImages.size());
+        //carouselView.setPageCount(sampleImages.length);
 
         carouselView.setImageListener(imageListener);
 
@@ -111,7 +133,8 @@ public class CameraActivity extends MainMenu{//AppCompatActivity {
     ImageListener imageListener = new ImageListener() {
         @Override
         public void setImageForPosition(int position, ImageView imageView) {
-            imageView.setImageResource(sampleImages[position]);
+            imageView.setImageResource(sampleImages.get(position));
+            //imageView.setImageResource(sampleImages[position]);
         }
     };
 

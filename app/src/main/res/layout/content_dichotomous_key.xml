@@ -36,7 +36,7 @@
         android:layout_marginTop="150dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/perro" />
+        app:srcCompat="@drawable/perro_petjada" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -46,5 +46,5 @@
         android:layout_marginTop="150dp"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/jineta" />
+        app:srcCompat="@drawable/jineta_petjada" />
 </androidx.constraintlayout.widget.ConstraintLayout>

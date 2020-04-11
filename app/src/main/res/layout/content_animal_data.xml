@@ -74,7 +74,7 @@
             <TextView
                 android:id="@+id/txtViewInformation"
                 android:layout_width="348dp"
-                android:layout_height="248dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="15dp"
                 android:text="Information about togglebutton"
@@ -119,14 +119,24 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <ImageView
+                android:id="@+id/imgViewAditional"
+                android:layout_width="348dp"
+                android:layout_height="205dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtViewInformation"
+                app:srcCompat="@drawable/cargando" />
+
             <ImageButton
                 android:id="@+id/ibCamera"
                 android:layout_width="66dp"
                 android:layout_height="51dp"
                 android:layout_marginStart="316dp"
                 android:layout_marginTop="290dp"
-                android:scaleType="centerCrop"
                 android:onClick="goToCameraActivity"
+                android:scaleType="centerCrop"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/cameraicon" />
