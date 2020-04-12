@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Comparator;
+
 public class Animal {
     private String scientificName;
     private String vulgarName;
@@ -13,14 +15,6 @@ public class Animal {
     private String imgAnimal;
 
     public Animal(){}
-
-/*    public Animal(String vulgarName, String scientificName, String description, String habitat, String image) {
-        this.vulgarName = vulgarName;
-        this.scientificName = scientificName;
-        this.description = description;
-        this.habitat = habitat;
-        this.imgAnimal = image;
-    }*/
 
     public Animal(String scientificName, String vulgarName, String description, String habitat, String distribution,
                   String trace, String imgExcrement, String imgFootprint, String imgTraces, String imgAnimal) {
@@ -36,9 +30,25 @@ public class Animal {
         this.imgAnimal = imgAnimal;
     }
 
-    public String getScientificName() {
-        return scientificName;
-    }
+    public static Comparator<Animal> VulgarName = new Comparator<Animal>() {
+        @Override
+        public int compare(Animal a1, Animal a2) {
+            String vulgarName1 = a1.getVulgarName();
+            String vulgarName2 = a2.getVulgarName();
+            return vulgarName1.compareTo(vulgarName2);
+        }
+    };
+
+    public static Comparator<Animal> ScientificName = new Comparator<Animal>() {
+        @Override
+        public int compare(Animal a1, Animal a2) {
+            String scientificName1 = a1.getScientificName();
+            String scientificName2 = a2.getScientificName();
+            return scientificName1.compareTo(scientificName2);
+        }
+    };
+
+    public String getScientificName() { return scientificName; }
 
     public void setScientificName(String scientificName) {
         this.scientificName = scientificName;

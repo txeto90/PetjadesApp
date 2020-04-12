@@ -80,11 +80,7 @@ public class CameraActivity extends MainMenu{//AppCompatActivity {
     private ArrayList<Integer> sampleImages;
 
     private int getDrawable(String imgName){
-        //Context context = getApplicationContext();
-
         int resourceId = getResources().getIdentifier(imgName,"drawable", this.getPackageName());
-
-        Log.d("kk", "getDrawable: " + imgName);
         return resourceId;
     }
 

@@ -44,8 +44,8 @@ public class AnimalDataActivity extends MainMenu {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_animal_data);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        //Toolbar toolbar = findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
 
         //imgAnimal = findViewById(R.id.imgViewAnimal);
         txtIndexTitle = findViewById(R.id.txtViewIndex);

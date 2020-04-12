@@ -14,6 +14,7 @@ import com.example.petjadesapp.MainMenu;
 import com.example.petjadesapp.R;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import dao.AnimalsDAO;
 import model.Animal;
@@ -50,6 +51,10 @@ public class AnimalsListActivity extends MainMenu {
 
         //construct data source
         final ArrayList<Animal> theAnimals = animalsDAO.getAnimals();
+        Collections.sort(theAnimals, Animal.VulgarName);
+        //Collections.sort(theAnimals, Animal.ScientificName);
+
+
         //create the adapter to convert the array to views
         AnimalsAdapter adapter = new AnimalsAdapter (this, theAnimals);
         //attach the adapter to a listView
