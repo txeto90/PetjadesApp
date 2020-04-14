@@ -2,22 +2,34 @@ package com.example.petjadesapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import java.util.ArrayList;
+
 import logic.AnimalsListActivity;
 
 public class MainMenu extends AppCompatActivity {
 
+    private ArrayList<String> nameImages;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+    }
+    public void setSampleImages(){
+        nameImages = new ArrayList<>();
+        nameImages.add("zorro_petjada");
+        nameImages.add("nutria_petjada");
+        nameImages.add("jineta_petjada");
+        nameImages.add("perro_petjada");
+        Log.d("kk", String.valueOf(nameImages.size()));
     }
 
     @Override
@@ -52,6 +64,8 @@ public class MainMenu extends AppCompatActivity {
         }
         if (id == R.id.camera) {
             Intent intent = new Intent(this, CameraActivity.class);
+            setSampleImages();
+            intent.putExtra("imgFootPrint", nameImages);
             startActivity(intent);
             return true;
         }

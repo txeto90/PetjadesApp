@@ -27,6 +27,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 
 public class AnimalDataActivity extends MainMenu {
 
@@ -126,11 +127,18 @@ public class AnimalDataActivity extends MainMenu {
 
     //DIRECCIONA A LA CAMERAACTIVITY AMB LA PETJADA DE L'ANIMAL CORRESPONENT
     public void goToCameraActivity(View view){
-        Bundle extras = getIntent().getExtras();
+/*        Bundle extras = getIntent().getExtras();
         String img = extras.getString("imgFootPrint");
-
         Intent intent = new Intent(this, CameraActivity.class);
         intent.putExtra("imgFootPrint", img);
+        startActivity(intent);*/
+
+        Bundle extras = getIntent().getExtras();
+        String img = extras.getString("imgFootPrint");
+        Intent intent = new Intent(this, CameraActivity.class);
+        ArrayList<String> imgs = new ArrayList<>();
+        imgs.add(img);
+        intent.putExtra("imgFootPrint", imgs);
         startActivity(intent);
     }
 

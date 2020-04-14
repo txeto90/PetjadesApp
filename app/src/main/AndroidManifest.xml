@@ -15,14 +15,15 @@
         android:roundIcon="@drawable/iclauncher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".SearchActivity"></activity>
         <activity
             android:name=".AboutActivity"
             android:label="@string/title_activity_about"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".AdapterProva"
             android:label="@string/title_activity_adapter_prova"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".DichotomousKeyActivity"
             android:label="@string/title_activity_dichotomous_key"

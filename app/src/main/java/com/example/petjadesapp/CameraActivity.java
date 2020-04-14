@@ -76,8 +76,9 @@ public class CameraActivity extends MainMenu{//AppCompatActivity {
     private Handler mBackgroundHandler;
     private HandlerThread mBackgroundThread;
     CarouselView carouselView;
-    //private int[] sampleImages;// = {R.drawable.zorroPetjada, R.drawable.nutria_petjada, R.drawable.perro_petjada, R.drawable.jineta_petjada};
+    //private ArrayList<Integer> sampleImages;// = {R.drawable.zorroPetjada, R.drawable.nutria_petjada, R.drawable.perro_petjada, R.drawable.jineta_petjada};
     private ArrayList<Integer> sampleImages;
+    private ArrayList<String> nameImages;
 
     private int getDrawable(String imgName){
         int resourceId = getResources().getIdentifier(imgName,"drawable", this.getPackageName());
@@ -85,14 +86,19 @@ public class CameraActivity extends MainMenu{//AppCompatActivity {
     }
 
     private void getSampleImages(){
-        Bundle extras = getIntent().getExtras();
+/*        Bundle extras = getIntent().getExtras();
         String imgName = extras.getString("imgFootPrint");
-
         sampleImages = new ArrayList<>();
         sampleImages.add(getDrawable(imgName));
-        //imageView.setImageResource(id);
-        Log.d("kk", String.valueOf(sampleImages.get(0)));
-        Log.d("kk", String.valueOf(R.drawable.zorro_petjada));
+*/
+        sampleImages = new ArrayList<>();
+        Bundle extras = getIntent().getExtras();
+        Log.d("kk", String.valueOf(extras.size()));
+        nameImages = extras.getStringArrayList("imgFootPrint");
+        for (int i=0; i < nameImages.size(); i++){
+            sampleImages.add(getDrawable(nameImages.get(i)));
+        }
+
     }
 
     @Override
