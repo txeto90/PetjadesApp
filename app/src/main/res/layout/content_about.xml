@@ -6,35 +6,28 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/titleDirection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/direction_title"
+        android:textColor="#090000"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical" >
-
-            <TextView
-                android:id="@+id/txtDirection"
-                android:layout_width="365dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="15dp"
-                android:text="José Antonio Monzonís Iznardo"
-                android:textColor="#090000" />
-
-            <TextView
-                android:id="@+id/titleDirection"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="35dp"
-                android:text="@string/direction_title"
-                android:textColor="#090000"
-                android:textStyle="bold" />
-        </LinearLayout>
-    </ScrollView>
+    <TextView
+        android:id="@+id/txtDirection"
+        android:layout_width="365dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:text="José Antonio Monzonís Iznardo."
+        android:textColor="#090000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleDirection" />
 
     <TextView
         android:id="@+id/titlePhotos"
@@ -59,6 +52,17 @@
         app:layout_constraintTop_toBottomOf="@+id/titlePhotos" />
 
     <TextView
+        android:id="@+id/txtCopyRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/copyrigth_text"
+        android:textColor="#090000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPhotos" />
+
+    <TextView
         android:id="@+id/titleMaps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -68,7 +72,7 @@
         android:textColor="#090000"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPhotos" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCopyRight" />
 
     <TextView
         android:id="@+id/txtMaps"
@@ -76,7 +80,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="15dp"
-        android:text="www.miteco.gob.es"
+        android:text="@string/maps_text"
         android:textColor="#090000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleMaps" />

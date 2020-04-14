@@ -73,9 +73,14 @@
 
     <!-- ABOUT -->
     <string name="title_activity_about">About</string>
-    <string name="direction_title">Desarrollo, edición de contenidos y edición gráfica</string>
-    <string name="photos_title">Fotografías</string>
-    <string name="maps_title">Mapas</string>
-
+    <string name="direction_title">Desarrollo, edición de contenidos y edición gráfica.</string>
+    <string name="photos_title">Fotografías.</string>
+    <string name="maps_title">Mapas de distribución.</string>
+    <string name="maps_text">
+        <a href="https://www.miteco.gob.es/es/biodiversidad/temas/inventarios-nacionales/">Ministerio para la Trancisión Ecológica y el Reto Demográfico.</a>
+    </string>
+    <string name="copyrigth_text">
+        <a href="https://creativecommons.org/licenses/by-nc/4.0/">Algunos derechos reservados.</a>
+    </string>
 
 </resources>
