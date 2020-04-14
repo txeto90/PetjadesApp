@@ -59,4 +59,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="64dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="196dp"
+        android:layout_marginTop="468dp"
+        android:backgroundTint="#FAF9F9"
+        android:onClick="goToAboutActivity"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/info" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

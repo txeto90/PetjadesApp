@@ -70,4 +70,10 @@
     <string name="five_fingers">5 dedos</string>
     <string name="front_fingers">Dedos hacia delante</string>
     <string name="oval_pad">Almohadilla ovalada</string>
+
+    <!-- ABOUT -->
+    <string name="title_activity_about">About</string>
+    <string name="direction_title">Desarrollo, edición de contenidos y edición gráfica</string>
+    <string name="photos_title">Fotografías</string>
+    <string name="maps_title">Mapas</string>
 </resources>

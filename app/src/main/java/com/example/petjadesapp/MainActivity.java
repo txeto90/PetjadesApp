@@ -35,5 +35,8 @@ public class MainActivity extends MainMenu {
         startActivity(intent);
     }
 
-
+    public void goToAboutActivity(View view){
+        Intent intent = new Intent(this, AboutActivity.class);
+        startActivity(intent);
+    }
 }
