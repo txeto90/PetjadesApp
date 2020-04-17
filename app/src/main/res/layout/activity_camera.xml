@@ -11,21 +11,8 @@
         android:id="@+id/texture"
         android:layout_width="match_parent"
         android:layout_height="608dp"
-        android:layout_above="@+id/btn_takepicture"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="43dp" />
+        android:layout_alignParentTop="true" />
 
-    <com.synnapps.carouselview.CarouselView
-        android:id="@+id/carouselView"
-        android:layout_width="match_parent"
-        android:layout_height="654dp"
-        app:autoPlay="false"
-        app:fillColor="#FFFFFFFF"
-        app:pageColor="#00000000"
-        app:radius="6dp"
-        app:slideInterval="3000"
-        app:strokeColor="#FF777777"
-        app:strokeWidth="1dp" />
     <!--<Button
         android:id="@+id/btn_takepicture"
         android:layout_width="wrap_content"
@@ -35,6 +22,18 @@
         android:layout_marginBottom="16dp"
         android:layout_marginTop="16dp"
         android:text="take_picture" /> -->
+
+    <com.synnapps.carouselview.CarouselView
+        android:id="@+id/carouselView"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        app:autoPlay="false"
+        app:fillColor="#FFFFFFFF"
+        app:pageColor="#00000000"
+        app:radius="5dp"
+        app:slideInterval="3000"
+        app:strokeColor="#FF777777"
+        app:strokeWidth="1dp" />
 
     <ImageButton
         android:id="@+id/btn_takepicture"
