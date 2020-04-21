@@ -25,10 +25,17 @@ public class MainMenu extends AppCompatActivity {
     }
     public void setSampleImages(){
         nameImages = new ArrayList<>();
-        nameImages.add("zorro_petjada");
-        nameImages.add("nutria_petjada");
-        nameImages.add("jineta_petjada");
-        nameImages.add("perro_petjada");
+        nameImages.add("ardilla_petjada");
+        nameImages.add("comadreja_petjada");
+        nameImages.add("conejo_petjada");
+        nameImages.add("erizoeuropeo_petjada");
+        nameImages.add("erizomoruno_petjada");
+        nameImages.add("gardunya_petjada");
+        nameImages.add("gatomontes_petjada");
+        nameImages.add("gineta_petjada");
+        nameImages.add("liebre_petjada");
+        nameImages.add("lince_petjada");
+
         Log.d("kk", String.valueOf(nameImages.size()));
     }
 

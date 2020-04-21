@@ -28,8 +28,9 @@ public class CameraCarrusel extends MainMenu {
         @Override
         public void setImageForPosition(int position, ImageView imageView) {
             imageView.setImageResource(sampleImages[position]);
-            //escalar imatges
-            //imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+            //adjustar imatges
+            imageView.setAdjustViewBounds(true);
+            //imageView.setScaleType(ImageView.ScaleType.FIT_XY);
         }
     };
 }
