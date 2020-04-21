@@ -36,7 +36,7 @@
         android:layout_marginTop="150dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/gatomontes_petjada" />
+        app:srcCompat="@drawable/lince_petjada" />
 
     <ImageView
         android:id="@+id/imageView2"

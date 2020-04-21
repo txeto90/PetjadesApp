@@ -15,33 +15,30 @@
         android:roundIcon="@drawable/iclauncher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SearchActivity"></activity>
+
         <activity
-            android:name=".AboutActivity"
+            android:name="com.example.petjadesapp.activity.AboutActivity"
             android:label="@string/title_activity_about"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
-            android:name=".AdapterProva"
-            android:label="@string/title_activity_adapter_prova"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".DichotomousKeyActivity"
+            android:name="com.example.petjadesapp.activity.DichotomousKeyActivity"
             android:label="@string/title_activity_dichotomous_key"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".CameraActivity"
+            android:name="com.example.petjadesapp.activity.CameraActivity"
             android:label="@string/title_activity_camera2"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".AnimalDataActivity"
+            android:name="com.example.petjadesapp.activity.AnimalDataActivity"
             android:label="@string/title_activity_animal_data"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="logic.AnimalsListActivity"
+            android:name="com.example.petjadesapp.activity.AnimalsListActivity"
             android:label="@string/title_activity_animals_list"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.petjadesapp.activity.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

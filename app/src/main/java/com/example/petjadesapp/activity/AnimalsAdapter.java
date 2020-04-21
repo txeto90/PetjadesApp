@@ -1,20 +1,19 @@
-package logic;
+package com.example.petjadesapp.activity;
 
 import android.content.Context;
-import android.net.Uri;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
+
 import android.widget.TextView;
-import com.example.petjadesapp.AnimalDataActivity;
+
 import com.example.petjadesapp.R;
+import com.example.petjadesapp.model.Animal;
+
 import java.util.List;
 
-import model.Animal;
+
 
 public class AnimalsAdapter extends ArrayAdapter {
     public AnimalsAdapter(Context context, List objects){

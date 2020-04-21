@@ -1,4 +1,4 @@
-package com.example.petjadesapp;
+package com.example.petjadesapp.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,9 +6,9 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
-import dao.AnimalsDAO;
-import logic.AnimalsListActivity;
-import model.Animal;
+import com.example.petjadesapp.R;
+import com.example.petjadesapp.dao.AnimalsDAO;
+import com.example.petjadesapp.model.Animal;
 
 
 public class DichotomousKeyActivity extends MainMenu {

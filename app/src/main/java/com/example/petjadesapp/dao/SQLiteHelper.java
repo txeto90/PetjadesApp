@@ -1,10 +1,8 @@
-package dao;
+package com.example.petjadesapp.dao;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
-import androidx.annotation.Nullable;
 
 public class SQLiteHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "animals";

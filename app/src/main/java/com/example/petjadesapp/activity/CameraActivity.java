@@ -1,4 +1,4 @@
-package com.example.petjadesapp;
+package com.example.petjadesapp.activity;
 
 import android.Manifest;
 import android.content.Context;
@@ -18,6 +18,7 @@ import android.media.Image;
 import android.media.ImageReader;
 import android.os.Bundle;
 
+import com.example.petjadesapp.R;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
 
@@ -76,7 +77,6 @@ public class CameraActivity extends MainMenu{//AppCompatActivity {
     private Handler mBackgroundHandler;
     private HandlerThread mBackgroundThread;
     CarouselView carouselView;
-    //private ArrayList<Integer> sampleImages;// = {R.drawable.zorroPetjada, R.drawable.nutria_petjada, R.drawable.perro_petjada, R.drawable.jineta_petjada};
     private ArrayList<Integer> sampleImages;
     private ArrayList<String> nameImages;
 
@@ -86,11 +86,6 @@ public class CameraActivity extends MainMenu{//AppCompatActivity {
     }
 
     private void getSampleImages(){
-/*        Bundle extras = getIntent().getExtras();
-        String imgName = extras.getString("imgFootPrint");
-        sampleImages = new ArrayList<>();
-        sampleImages.add(getDrawable(imgName));
-*/
         sampleImages = new ArrayList<>();
         Bundle extras = getIntent().getExtras();
         Log.d("kk", String.valueOf(extras.size()));
@@ -127,18 +122,18 @@ public class CameraActivity extends MainMenu{//AppCompatActivity {
         carouselView.setPageCount(sampleImages.size());
         //carouselView.setPageCount(sampleImages.length);
 
-        carouselView.setImageListener(imageListener);
+        carouselView.setImageListener(new ImageListener() {
+            @Override
+            public void setImageForPosition(int position, ImageView imageView) {
+                imageView.setImageResource(sampleImages.get(position));
+                //imageView.setImageResource(sampleImages[position]);
+                imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+            }
+        });
 
 
     }
 
-    ImageListener imageListener = new ImageListener() {
-        @Override
-        public void setImageForPosition(int position, ImageView imageView) {
-            imageView.setImageResource(sampleImages.get(position));
-            //imageView.setImageResource(sampleImages[position]);
-        }
-    };
 
     TextureView.SurfaceTextureListener textureListener = new TextureView.SurfaceTextureListener() {
         @Override

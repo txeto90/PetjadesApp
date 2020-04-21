@@ -1,4 +1,4 @@
-package com.example.petjadesapp;
+package com.example.petjadesapp.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,9 +9,12 @@ import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+
+import com.example.petjadesapp.R;
+
 import java.util.ArrayList;
 
-import logic.AnimalsListActivity;
+
 
 public class MainMenu extends AppCompatActivity {
 
@@ -25,7 +28,8 @@ public class MainMenu extends AppCompatActivity {
     }
     public void setSampleImages(){
         nameImages = new ArrayList<>();
-        nameImages.add("ardilla_petjada");
+        nameImages.add("lince_petjada");
+        nameImages.add("caballo_petjada");
         nameImages.add("comadreja_petjada");
         nameImages.add("conejo_petjada");
         nameImages.add("erizoeuropeo_petjada");
@@ -34,7 +38,7 @@ public class MainMenu extends AppCompatActivity {
         nameImages.add("gatomontes_petjada");
         nameImages.add("gineta_petjada");
         nameImages.add("liebre_petjada");
-        nameImages.add("lince_petjada");
+        nameImages.add("ardilla_petjada");
 
         Log.d("kk", String.valueOf(nameImages.size()));
     }

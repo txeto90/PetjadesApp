@@ -1,4 +1,4 @@
-package model;
+package com.example.petjadesapp.model;
 
 import java.util.Comparator;
 

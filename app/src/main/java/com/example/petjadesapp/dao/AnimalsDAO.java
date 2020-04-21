@@ -1,17 +1,15 @@
-package dao;
+package com.example.petjadesapp.dao;
 
 import android.content.Context;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-import com.example.petjadesapp.AnimalDataActivity;
+import com.example.petjadesapp.model.Animal;
 
 import java.util.ArrayList;
 
-import logic.AnimalsListActivity;
-import model.Animal;
+
 
 public class AnimalsDAO {
     private SQLiteHelper connexion;

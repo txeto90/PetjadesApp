@@ -1,4 +1,4 @@
-package logic;
+package com.example.petjadesapp.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,15 +9,16 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.example.petjadesapp.AnimalDataActivity;
-import com.example.petjadesapp.MainMenu;
+
 import com.example.petjadesapp.R;
+import com.example.petjadesapp.dao.AnimalsDAO;
+import com.example.petjadesapp.model.Animal;
+
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-import dao.AnimalsDAO;
-import model.Animal;
+
 
 public class AnimalsListActivity extends MainMenu {
     private AnimalsDAO animalsDAO;

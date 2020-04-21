@@ -1,13 +1,14 @@
-package com.example.petjadesapp;
+package com.example.petjadesapp.activity;
 
-import android.content.Context;
+
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
+
 import android.net.Uri;
 import android.os.Bundle;
 
+import com.example.petjadesapp.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FileDownloadTask;
@@ -15,7 +16,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.widget.Toolbar;
+
 
 import android.util.Log;
 import android.view.View;
@@ -23,10 +24,10 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.io.ByteArrayOutputStream;
+
 import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.Field;
+
 import java.util.ArrayList;
 
 public class AnimalDataActivity extends MainMenu {
