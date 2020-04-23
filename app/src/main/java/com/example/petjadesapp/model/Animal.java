@@ -3,6 +3,7 @@ package com.example.petjadesapp.model;
 import java.util.Comparator;
 
 public class Animal {
+
     private String scientificName;
     private String vulgarName;
     private String description;
@@ -16,21 +17,7 @@ public class Animal {
 
     public Animal(){}
 
-    public Animal(String scientificName, String vulgarName, String description, String habitat, String distribution,
-                  String trace, String imgExcrement, String imgFootprint, String imgTraces, String imgAnimal) {
-        this.scientificName = scientificName;
-        this.vulgarName = vulgarName;
-        this.description = description;
-        this.habitat = habitat;
-        this.distribution = distribution;
-        this.trace = trace;
-        this.imgExcrement = imgExcrement;
-        this.imgFootprint = imgFootprint;
-        this.imgTraces = imgTraces;
-        this.imgAnimal = imgAnimal;
-    }
-
-    public static Comparator<Animal> VulgarName = new Comparator<Animal>() {
+    public static final Comparator<Animal> VulgarName = new Comparator<Animal>() {
         @Override
         public int compare(Animal a1, Animal a2) {
             String vulgarName1 = a1.getVulgarName();

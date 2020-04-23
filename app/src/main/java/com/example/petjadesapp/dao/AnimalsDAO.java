@@ -4,22 +4,20 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
-
 import com.example.petjadesapp.model.Animal;
-
 import java.util.ArrayList;
 
-
-
 public class AnimalsDAO {
+
     private SQLiteHelper connexion;
     private static SQLiteDatabase db;
-    ArrayList <Animal> animalList;
-    //CONSTRUCTOR
+    private ArrayList<Animal> animalList;
+
     public AnimalsDAO(Context context){
         connexion = new SQLiteHelper(context);
         db =  connexion.getWritableDatabase();
     }
+
     //OBTENCIÓ DE DADES DE LA BASE DADES
     public ArrayList<Animal> getAnimals() {
         String sql = "SELECT * FROM animals";
@@ -38,12 +36,9 @@ public class AnimalsDAO {
                 a.setImgFootprint(c.getString(8));
                 a.setImgTraces(c.getString(9));
                 a.setImgAnimal(c.getString(10));
-
-                //Log.d("pDAO", "IFgetAnimals: "+a.getVulgarName());
                 animalList.add(a);
             }while(c.moveToNext());
         }
-        Log.d("pDAO", "IFgetAnimals: "+ animalList.size());
         return animalList;
     }
 
@@ -68,5 +63,4 @@ public class AnimalsDAO {
         }
         return a;
     }
-
 }

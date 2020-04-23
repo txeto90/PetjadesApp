@@ -53,6 +53,7 @@
     <string name="more_than_onefivecm">Más de 1,5 cm</string>
     <string name="mole">Huella con hilera</string>
     <string name="side_fingers">Dedos laterales</string>
+    <string name="digitigrade">Huella digitígrada</string>
 
     <!-- LEFT BUTTON-->
     <string name="fingers">Dedos</string>
@@ -70,6 +71,7 @@
     <string name="five_fingers">5 dedos</string>
     <string name="front_fingers">Dedos hacia delante</string>
     <string name="oval_pad">Almohadilla ovalada</string>
+    <string name="plantigrade">Huella plantigrada</string>
 
     <!-- ABOUT -->
     <string name="title_activity_about">About</string>
@@ -82,4 +84,5 @@
     <string name="copyrigth_text">
         <a href="https://creativecommons.org/licenses/by-nc/4.0/">Algunos derechos reservados.</a>
     </string>
+
 </resources>

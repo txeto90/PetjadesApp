@@ -1,55 +1,44 @@
 package com.example.petjadesapp.activity;
 
-
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
-
 import android.net.Uri;
 import android.os.Bundle;
-
 import com.example.petjadesapp.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-
 import androidx.annotation.NonNull;
-
-
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-
 import java.io.File;
 import java.io.IOException;
-
 import java.util.ArrayList;
 
 public class AnimalDataActivity extends MainMenu {
 
-    TextView txtIndexTitle;
-    TextView txtVulgar;
-    TextView txtScientific;
-    TextView txtInformation;
-    ImageButton ibInfo;
-    ImageButton ibHabitat;
-    ImageButton ibTrace;
-    ImageButton ibDistribution;
-    ImageView imgAditional;
+    private TextView txtIndexTitle;
+    private TextView txtVulgar;
+    private TextView txtScientific;
+    private TextView txtInformation;
+    private ImageButton ibInfo;
+    private ImageButton ibHabitat;
+    private ImageButton ibTrace;
+    private ImageButton ibDistribution;
+    private ImageView imgAditional;
+    private File localFile = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_animal_data);
-        //Toolbar toolbar = findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
 
-        //imgAnimal = findViewById(R.id.imgViewAnimal);
         txtIndexTitle = findViewById(R.id.txtViewIndex);
         txtVulgar = findViewById(R.id.txtViewVulgarName);
         txtScientific = findViewById(R.id.txtViewScientificName);
@@ -60,7 +49,6 @@ public class AnimalDataActivity extends MainMenu {
         ibTrace = findViewById(R.id.ibTrace);
         imgAditional = findViewById(R.id.imgViewAditional);
         imgAditional.setVisibility(View.INVISIBLE);
-//        getImagesFromFirebase();
         getDataFromAnimal();
         showImgAnimal();
     }
@@ -79,6 +67,7 @@ public class AnimalDataActivity extends MainMenu {
     }
 
     //MOSTRA LES DADES EN LES CORRESPONENTS PESTANYES
+    @SuppressWarnings("unused")
     public void showInfo(View view){
         Bundle extras = getIntent().getExtras();
         String description = extras.getString("description");
@@ -88,6 +77,7 @@ public class AnimalDataActivity extends MainMenu {
         imgAditional.setVisibility(View.INVISIBLE);
     }
 
+    @SuppressWarnings("unused")
     public void showHabitat(View view){
         Bundle extras = getIntent().getExtras();
         String habitat = extras.getString("habitat");
@@ -97,17 +87,18 @@ public class AnimalDataActivity extends MainMenu {
         imgAditional.setVisibility(View.INVISIBLE);
     }
 
+    @SuppressWarnings("unused")
     public void showDistribution(View view){
         Bundle extras = getIntent().getExtras();
         String dist = extras.getString("distribution");
         checkImageButtons(ibDistribution, ibInfo, ibHabitat, ibTrace);
         txtIndexTitle.setText(getString(R.string.txtIndexDistribution));
         txtInformation.setText("");
-        Log.d("imgD", dist);
         getImagesFromFirebase(dist, R.id.imgViewAditional);
         imgAditional.setVisibility(View.VISIBLE);
     }
 
+    @SuppressWarnings("unused")
     public void showTrace(View view){
         Bundle extras = getIntent().getExtras();
         String habitat = extras.getString("trace");
@@ -121,19 +112,12 @@ public class AnimalDataActivity extends MainMenu {
     private void showImgAnimal(){
         Bundle extras = getIntent().getExtras();
         String img = extras.getString("imgAnimal");
-        Log.d("img", "String: " + img);
         getImagesFromFirebase(img, R.id.imgViewAnimal);
-
     }
 
     //DIRECCIONA A LA CAMERAACTIVITY AMB LA PETJADA DE L'ANIMAL CORRESPONENT
+    @SuppressWarnings("unused")
     public void goToCameraActivity(View view){
-/*        Bundle extras = getIntent().getExtras();
-        String img = extras.getString("imgFootPrint");
-        Intent intent = new Intent(this, CameraActivity.class);
-        intent.putExtra("imgFootPrint", img);
-        startActivity(intent);*/
-
         Bundle extras = getIntent().getExtras();
         String img = extras.getString("imgFootPrint");
         Intent intent = new Intent(this, CameraActivity.class);
@@ -151,32 +135,17 @@ public class AnimalDataActivity extends MainMenu {
         third.setBackgroundTintList(ColorStateList.valueOf(Color.TRANSPARENT));
     }
 
-    // PASARLI EN EL EXTRA EN NOM DE LA FOTO QUE ES VOL AGAFAR
-    private StorageReference mStorageRef;
-    private File localFile = null;
-    public void getImagesFromFirebase(String imgName, int objectId){
-
-        //FirebaseFirestore db;
-
-
-/*        db = FirebaseFirestore.getInstance();
-        FirebaseFirestoreSettings settings = new FirebaseFirestoreSettings.Builder()
-                .setPersistenceEnabled(true)
-                .build();
-        db.setFirestoreSettings(settings);*/
-
-        mStorageRef = FirebaseStorage.getInstance().getReference();
+    private void getImagesFromFirebase(String imgName, int objectId){
+        // PASARLI EN EL EXTRA EN NOM DE LA FOTO QUE ES VOL AGAFAR
+        StorageReference mStorageRef = FirebaseStorage.getInstance().getReference();
         StorageReference riversRef;
-
+        //escolleix depenent del no m de imatge
         if(imgName.contains("Distri")){
-            Log.d("imgD", "dins if");
             riversRef = mStorageRef.child("distribucio/" + imgName);
         }else{
             riversRef = mStorageRef.child("fotoAnimals/" + imgName);
         }
-
         //download
-
         try {
             localFile = File.createTempFile("images", "png");
         } catch (IOException e) {
@@ -186,24 +155,12 @@ public class AnimalDataActivity extends MainMenu {
                 .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
-                        System.out.println("on sucses");
-                        Log.d("caca", "onsucces");
-
                         ImageView animalImage = findViewById(objectId);
                         animalImage.setImageURI(Uri.fromFile(localFile));
-
-                        // Successfully downloaded data to local file
-                        // ...
                     }
                 }).addOnFailureListener(new OnFailureListener() {
             @Override
-            public void onFailure(@NonNull Exception exception) {
-                System.out.println("onFailure");
-                Log.d("caca", "onFailure" + exception.toString());
-
-                // Handle failed download
-                // ...
-            }
+            public void onFailure(@NonNull Exception exception) { }
         });
 
     }

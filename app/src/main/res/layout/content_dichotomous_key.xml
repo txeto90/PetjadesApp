@@ -10,41 +10,43 @@
         android:id="@+id/btnLeft"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="42dp"
         android:layout_marginTop="30dp"
         android:onClick="onClickLeft"
         android:text="@string/fingers"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/ivLeft" />
 
     <Button
         android:id="@+id/btnRigth"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="27dp"
         android:layout_marginTop="30dp"
         android:onClick="onClickRight"
         android:text="@string/hoof"
         app:layout_constraintStart_toEndOf="@+id/btnLeft"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/ivRigth" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="160dp"
-        android:layout_height="147dp"
+        android:id="@+id/ivRigth"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="148dp"
+        android:layout_marginEnd="42dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivLeft"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/corzo_petjada" />
+
+    <ImageView
+        android:id="@+id/ivLeft"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_marginStart="42dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="148dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/lince_petjada" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="160dp"
-        android:layout_height="147dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="150dp"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/gineta_petjada" />
 </androidx.constraintlayout.widget.ConstraintLayout>

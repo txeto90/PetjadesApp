@@ -26,21 +26,39 @@ public class MainMenu extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
     }
-    public void setSampleImages(){
+    private void setSampleImages(){
         nameImages = new ArrayList<>();
-        nameImages.add("lince_petjada");
-        nameImages.add("caballo_petjada");
-        nameImages.add("comadreja_petjada");
-        nameImages.add("conejo_petjada");
-        nameImages.add("erizoeuropeo_petjada");
-        nameImages.add("erizomoruno_petjada");
-        nameImages.add("gardunya_petjada");
-        nameImages.add("gatomontes_petjada");
-        nameImages.add("gineta_petjada");
-        nameImages.add("liebre_petjada");
+        nameImages.add("musaranya_petjada");
+        nameImages.add("topillo_petjada");
+        nameImages.add("erizo_petjada");
+        nameImages.add("rataagua_petjada");
+        nameImages.add("rataalmizclera_petjada");
+        nameImages.add("raton_petjada");
+        nameImages.add("rata_petjada");
+        nameImages.add("liron_petjada");
         nameImages.add("ardilla_petjada");
-
-        Log.d("kk", String.valueOf(nameImages.size()));
+        nameImages.add("liebre_petjada");
+        nameImages.add("conejo_petjada");
+        nameImages.add("oso_petjada");
+        nameImages.add("lobo_petjada");
+        nameImages.add("zorro_petjada");
+        nameImages.add("perro_petjada");
+        nameImages.add("comadreja_petjada");
+        nameImages.add("turon_petjada");
+        nameImages.add("marta_petjada");
+        nameImages.add("gardunya_petjada");
+        nameImages.add("nutria_petjada");
+        nameImages.add("tejon_petjada");
+        nameImages.add("meloncillo_petjada");
+        nameImages.add("gineta_petjada");
+        nameImages.add("lince_petjada");
+        nameImages.add("gatomontes_petjada");
+        nameImages.add("jabali_petjada");
+        nameImages.add("muflon_petjada");
+        nameImages.add("cabra_petjada");
+        nameImages.add("ciervo_petjada");
+        nameImages.add("corzo_petjada");
+        nameImages.add("caballo_petjada");
     }
 
     @Override
