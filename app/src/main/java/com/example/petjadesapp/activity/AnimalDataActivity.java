@@ -12,6 +12,8 @@ import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.Toolbar;
+
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
@@ -38,6 +40,7 @@ public class AnimalDataActivity extends MainMenu {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_animal_data);
+        setSupportActionBar(findViewById(R.id.toolbar));
 
         txtIndexTitle = findViewById(R.id.txtViewIndex);
         txtVulgar = findViewById(R.id.txtViewVulgarName);
@@ -135,7 +138,12 @@ public class AnimalDataActivity extends MainMenu {
         third.setBackgroundTintList(ColorStateList.valueOf(Color.TRANSPARENT));
     }
 
-    private void getImagesFromFirebase(String imgName, int objectId){
+    public void comeBack(View view){
+        startActivity(new Intent(this, AnimalsListActivity.class));
+    }
+
+    public void getImagesFromFirebase(String imgName, int objectId){
+        Log.d("kk", "img: " + imgName+", Rid: " + String.valueOf(objectId));
         // PASARLI EN EL EXTRA EN NOM DE LA FOTO QUE ES VOL AGAFAR
         StorageReference mStorageRef = FirebaseStorage.getInstance().getReference();
         StorageReference riversRef;
@@ -162,6 +170,5 @@ public class AnimalDataActivity extends MainMenu {
             @Override
             public void onFailure(@NonNull Exception exception) { }
         });
-
     }
 }

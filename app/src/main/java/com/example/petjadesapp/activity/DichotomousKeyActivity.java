@@ -1,12 +1,12 @@
 package com.example.petjadesapp.activity;
 
+
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-
+import androidx.appcompat.widget.Toolbar;
 import com.example.petjadesapp.R;
 import com.example.petjadesapp.dao.AnimalsDAO;
 import com.example.petjadesapp.model.Animal;
@@ -24,11 +24,16 @@ public class DichotomousKeyActivity extends MainMenu {
         setContentView(R.layout.activity_dichotomous_key);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         AnimalsDAO animalsDAO = new AnimalsDAO(this);
         btnLeft = findViewById(R.id.btnLeft);
         btnRight = findViewById(R.id.btnRigth);
         ivLeft = findViewById(R.id.ivLeft);
         ivRight = findViewById(R.id.ivRigth);
+    }
+
+    public void comeBack(View view){
+        startActivity(new Intent(this, MainActivity.class));
     }
 
     @SuppressWarnings("unused")
@@ -110,10 +115,8 @@ public class DichotomousKeyActivity extends MainMenu {
             startAnimalData(code);
         }
         if(txt.equalsIgnoreCase(getString(R.string.odd_fingers))){
-//            int code = 32;
-//            Animal a = AnimalsDAO.getAnimalInformation(code);
-//            startAnimalData(a);
-            System.out.println("CABALLO");
+            int code = 32;
+            startAnimalData(code);
         }
         //DEDOS HASTA ALM. PRINCIPAL UNICA
         if(txt.equalsIgnoreCase(getString(R.string.fingers))){

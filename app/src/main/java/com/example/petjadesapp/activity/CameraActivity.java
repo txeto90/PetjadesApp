@@ -34,6 +34,7 @@ import android.view.TextureView;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -45,9 +46,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class CameraActivity extends MainMenu{//AppCompatActivity {
+public class CameraActivity extends MainMenu{
 
-    private static final String TAG = "AndroidCameraApi";
     private TextureView textureView;
     private static final SparseIntArray ORIENTATIONS = new SparseIntArray();
 
@@ -108,7 +108,10 @@ public class CameraActivity extends MainMenu{//AppCompatActivity {
         }
     };
 
+    private ArrayList<String> imgNames;
     private int getDrawable(String imgName){
+        imgNames = new ArrayList<>();
+        imgNames.add(imgName);
         return getResources().getIdentifier(imgName,"drawable", this.getPackageName());
     }
 
@@ -147,6 +150,10 @@ public class CameraActivity extends MainMenu{//AppCompatActivity {
         carouselView.setImageListener(new ImageListener() {
             @Override
             public void setImageForPosition(int position, ImageView imageView) {
+                TextView txtCameraView = findViewById(R.id.txtCameraView);
+                Log.d("kk", imgNames.get(position));
+                txtCameraView.setText(imgNames.get(position));
+
                 imageView.setImageResource(sampleImages.get(position));
                 imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
             }

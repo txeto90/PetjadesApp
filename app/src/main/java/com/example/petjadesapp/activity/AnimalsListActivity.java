@@ -53,4 +53,8 @@ public class AnimalsListActivity extends MainMenu {
         });
     }
 
+    public void comeBack(View view){
+        startActivity(new Intent(this, MainActivity.class));
+    }
+
 }

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AnimalDataActivity">
+    tools:context="com.example.petjadesapp.activity.AnimalDataActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -17,6 +18,15 @@
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        <ImageButton
+            android:id="@+id/ibBack"
+            android:layout_width="36dp"
+            android:layout_height="?attr/actionBarSize"
+            android:backgroundTint="@color/colorPrimary"
+            android:onClick="comeBack"
+            android:scaleType="centerCrop"
+            android:src="@drawable/back48dp" />
 
     </com.google.android.material.appbar.AppBarLayout>
 

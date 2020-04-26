@@ -17,14 +17,14 @@
         app:srcCompat="@drawable/fondo" />
 
     <ImageView
-        android:id="@+id/imgAnimal"
+        android:id="@+id/imgAnimallist"
         android:layout_width="77dp"
         android:layout_height="80dp"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@mipmap/ic_launcher_round" />
+    />
 -->
     <TextView
         android:id="@+id/txtVulgarName"

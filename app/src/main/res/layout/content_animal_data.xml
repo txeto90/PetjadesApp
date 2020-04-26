@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -17,9 +18,12 @@
                 android:id="@+id/txtViewIndex"
                 android:layout_width="350dp"
                 android:layout_height="20dp"
-                android:layout_marginStart="31dp"
+                android:layout_marginStart="21dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginEnd="21dp"
                 android:text="Title fo index toggle button"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ibDescription" />
 
@@ -29,10 +33,12 @@
                 android:layout_height="50dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="3dp"
+                android:layout_marginEnd="61dp"
                 android:backgroundTint="#FAF9F9"
                 android:onClick="showTrace"
                 android:scaleType="centerCrop"
                 android:src="@drawable/icon1"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/ibDistribution"
                 app:layout_constraintTop_toBottomOf="@+id/imgViewAnimal" />
 
@@ -40,10 +46,12 @@
                 android:id="@+id/txtViewScientificName"
                 android:layout_width="350dp"
                 android:layout_height="20dp"
-                android:layout_marginStart="31dp"
+                android:layout_marginStart="21dp"
                 android:layout_marginTop="42dp"
+                android:layout_marginEnd="21dp"
                 android:text="Scientific name"
                 android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -51,8 +59,10 @@
                 android:id="@+id/imgViewAnimal"
                 android:layout_width="350dp"
                 android:layout_height="277dp"
-                android:layout_marginStart="31dp"
+                android:layout_marginStart="21dp"
                 android:layout_marginTop="65dp"
+                android:layout_marginEnd="21dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -60,13 +70,15 @@
                 android:id="@+id/ibDescription"
                 android:layout_width="60dp"
                 android:layout_height="50dp"
-                android:layout_marginStart="75dp"
+                android:layout_marginStart="61dp"
                 android:layout_marginTop="3dp"
+                android:layout_marginEnd="10dp"
                 android:backgroundTint="#CEC8C8 "
                 android:onClick="showInfo"
                 android:scaleType="centerCrop"
                 android:src="@drawable/info48"
                 android:tint="#121111"
+                app:layout_constraintEnd_toStartOf="@+id/ibHabitat"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imgViewAnimal" />
 
@@ -74,9 +86,11 @@
                 android:id="@+id/txtViewInformation"
                 android:layout_width="348dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
+                android:layout_marginStart="21dp"
                 android:layout_marginTop="15dp"
+                android:layout_marginEnd="21dp"
                 android:text="Information about togglebutton"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtViewIndex" />
 
@@ -86,10 +100,12 @@
                 android:layout_height="50dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="3dp"
+                android:layout_marginEnd="10dp"
                 android:backgroundTint="#FAF9F9"
                 android:onClick="showDistribution"
                 android:scaleType="centerCrop"
                 android:src="@drawable/icon2"
+                app:layout_constraintEnd_toStartOf="@+id/ibTrace"
                 app:layout_constraintStart_toEndOf="@+id/ibHabitat"
                 app:layout_constraintTop_toBottomOf="@+id/imgViewAnimal" />
 
@@ -99,10 +115,12 @@
                 android:layout_height="50dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="3dp"
+                android:layout_marginEnd="10dp"
                 android:backgroundTint="#FAF9F9"
                 android:onClick="showHabitat"
                 android:scaleType="centerCrop"
                 android:src="@drawable/icon3"
+                app:layout_constraintEnd_toStartOf="@+id/ibDistribution"
                 app:layout_constraintStart_toEndOf="@+id/ibDescription"
                 app:layout_constraintTop_toBottomOf="@+id/imgViewAnimal" />
 
@@ -110,11 +128,13 @@
                 android:id="@+id/txtViewVulgarName"
                 android:layout_width="350dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="31dp"
+                android:layout_marginStart="21dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginEnd="21dp"
                 android:text="Vulgar name"
                 android:textAlignment="center"
                 android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -122,8 +142,10 @@
                 android:id="@+id/imgViewAditional"
                 android:layout_width="348dp"
                 android:layout_height="205dp"
-                android:layout_marginStart="32dp"
+                android:layout_marginStart="21dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginEnd="21dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtViewInformation"
                 app:srcCompat="@drawable/cargando" />
@@ -132,10 +154,12 @@
                 android:id="@+id/ibCamera"
                 android:layout_width="66dp"
                 android:layout_height="51dp"
-                android:layout_marginStart="316dp"
-                android:layout_marginTop="290dp"
+                android:layout_marginStart="304dp"
+                android:layout_marginTop="292dp"
+                android:layout_marginEnd="21dp"
                 android:onClick="goToCameraActivity"
                 android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/cameraicon" />

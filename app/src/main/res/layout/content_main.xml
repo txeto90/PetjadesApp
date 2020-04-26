@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".MainActivity"
+    tools:context="com.example.petjadesapp.activity.MainActivity"
     tools:showIn="@layout/activity_main">
 
     <ImageButton
@@ -63,11 +63,13 @@
         android:id="@+id/imageButton"
         android:layout_width="64dp"
         android:layout_height="59dp"
-        android:layout_marginStart="172dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="308dp"
+        android:layout_marginTop="203dp"
+        android:layout_marginEnd="21dp"
         android:backgroundTint="#FAF9F9"
         android:onClick="goToAboutActivity"
         android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ibDicotomicaMenu"
         app:srcCompat="@drawable/info" />

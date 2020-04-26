@@ -7,19 +7,9 @@
     tools:context="activity.AnimalsListActivity"
     tools:showIn="@layout/activity_animals_list">
 
-    <TextView
-        android:id="@+id/textTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/title_list"
-        android:textAlignment="center"
-        android:textSize="30sp"
-        android:textStyle="bold" />
-
     <ListView
         android:id="@+id/listViewAnimals"
         android:layout_width="match_parent"
         android:layout_height="596dp"
-        android:layout_alignTop="@id/textTitle"
         android:layout_marginTop="57dp" />
 </RelativeLayout>
