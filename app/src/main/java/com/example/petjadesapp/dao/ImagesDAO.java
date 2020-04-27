@@ -12,15 +12,24 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class ImagesDAO {
 
-    private static File localFile = null;
+    private static HashMap<String, Uri> hashmap = new HashMap<>();
 
     public static void getImageFromFirebase(String imgName, ImageView imageView){
+        if(hashmap.containsKey(imgName)){
+            if(hashmap.get(imgName) != null) {
+                Picasso.get().load(hashmap.get(imgName)).into(imageView);
+                return;
+            }
+        }
 
         // PASARLI EN EL EXTRA EN NOM DE LA FOTO QUE ES VOL AGAFAR
         StorageReference mStorageRef = FirebaseStorage.getInstance().getReference();
@@ -31,21 +40,21 @@ public class ImagesDAO {
         }else{
             riversRef = mStorageRef.child("fotoAnimals/" + imgName);
         }
+        hashmap.put(imgName, null);
         //download
-        try {
-            localFile = File.createTempFile("images", "png");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        riversRef.getFile(localFile)
-                .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
-                    @Override
-                    public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
-                        imageView.setImageURI(Uri.fromFile(localFile));
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
+        riversRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
-            public void onFailure(@NonNull Exception exception) { }
+            public void onSuccess(Uri uri) {
+                hashmap.put(imgName, uri);
+                // Got the download URL for 'users/me/profile.png'
+                // Pass it to Picasso to download, show in ImageView and caching
+                Picasso.get().load(uri.toString()).into(imageView);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                // Handle any errors
+            }
         });
 
     }

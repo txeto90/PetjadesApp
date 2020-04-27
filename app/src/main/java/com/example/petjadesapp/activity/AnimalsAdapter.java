@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.petjadesapp.R;
+import com.example.petjadesapp.dao.ImagesDAO;
 import com.example.petjadesapp.model.Animal;
 import java.util.List;
 
@@ -30,11 +31,11 @@ class AnimalsAdapter extends ArrayAdapter {
         //lookup view for data population
         TextView scientificName = convertView.findViewById(R.id.txtScientificName);
         TextView vulgarName = convertView.findViewById(R.id.txtVulgarName);
-
+        ImageView imgAnimal = convertView.findViewById(R.id.imgAnimallist);
         //popuate the data uti te templatre view using the data object
         scientificName.setText(animal.getScientificName());
         vulgarName.setText(animal.getVulgarName());
-
+        ImagesDAO.getImageFromFirebase(animal.getImgAnimal(), imgAnimal);
 
         //return the complete view to render on screen
         return convertView;
