@@ -16,14 +16,11 @@ import com.google.firebase.storage.StorageReference;
 import java.io.File;
 import java.io.IOException;
 
-public class ImagesDAO extends AppCompatActivity {
+public class ImagesDAO {
 
-    private File localFile = null;
+    private static File localFile = null;
 
-    public ImagesDAO(){};
-
-    public void getImageFromFirebase(String imgName, int objectId){
-        Log.d("kk", "img: " + imgName);
+    public static void getImageFromFirebase(String imgName, ImageView imageView){
 
         // PASARLI EN EL EXTRA EN NOM DE LA FOTO QUE ES VOL AGAFAR
         StorageReference mStorageRef = FirebaseStorage.getInstance().getReference();
@@ -40,17 +37,17 @@ public class ImagesDAO extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         riversRef.getFile(localFile)
                 .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
-                        ImageView animalImage = findViewById(objectId);
-                        animalImage.setImageURI(Uri.fromFile(localFile));
+                        imageView.setImageURI(Uri.fromFile(localFile));
                     }
                 }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception exception) { }
         });
+
     }
+
 }

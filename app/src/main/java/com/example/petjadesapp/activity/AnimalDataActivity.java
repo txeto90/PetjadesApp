@@ -108,9 +108,12 @@ public class AnimalDataActivity extends MainMenu {
         checkImageButtons(ibDistribution, ibInfo, ibHabitat, ibTrace);
         txtIndexTitle.setText(getString(R.string.txtIndexDistribution));
         txtInformation.setText("");
-        getImagesFromFirebase(dist, R.id.imgViewAditional);
+        ImageView iv = findViewById(R.id.imgViewAditional);
+        ImagesDAO.getImageFromFirebase(dist, iv);
+        //getImagesFromFirebase(dist, R.id.imgViewAditional);
         imgAditional.setVisibility(View.VISIBLE);
     }
+
 
     @SuppressWarnings("unused")
     public void showTrace(View view){
@@ -126,11 +129,8 @@ public class AnimalDataActivity extends MainMenu {
     private void showImgAnimal(){
         Bundle extras = getIntent().getExtras();
         String img = extras.getString("imgAnimal");
-        //getImagesFromFirebase(img, R.id.imgViewAnimal);
-        //Bitmap bitmap = BitmapFactory.decodeFile(ImagesDAO.getImageFromFirebase(img).getAbsolutePath());
-        //ImageView iv = findViewById(R.id.imgViewAnimal);
-        //iv.setImageBitmap(bitmap);
-
+        ImageView iv = findViewById(R.id.imgViewAnimal);
+        ImagesDAO.getImageFromFirebase(img, iv);
     }
 
     //DIRECCIONA A LA CAMERAACTIVITY AMB LA PETJADA DE L'ANIMAL CORRESPONENT
@@ -153,11 +153,7 @@ public class AnimalDataActivity extends MainMenu {
         third.setBackgroundTintList(ColorStateList.valueOf(Color.TRANSPARENT));
     }
 
-    public void comeBack(View view){
-        startActivity(new Intent(this, AnimalsListActivity.class));
-    }
-
-    public void getImagesFromFirebase(String imgName, int objectId){
+/*    public void getImagesFromFirebase(String imgName, int objectId){
         Log.d("kk", "img: " + imgName+", Rid: " + String.valueOf(objectId));
         // PASARLI EN EL EXTRA EN NOM DE LA FOTO QUE ES VOL AGAFAR
         StorageReference mStorageRef = FirebaseStorage.getInstance().getReference();
@@ -185,5 +181,5 @@ public class AnimalDataActivity extends MainMenu {
             @Override
             public void onFailure(@NonNull Exception exception) { }
         });
-    }
+    }*/
 }
