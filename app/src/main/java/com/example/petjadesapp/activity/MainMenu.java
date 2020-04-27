@@ -25,7 +25,13 @@ public class MainMenu extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
+
     }
+
+
+
     private void setSampleImages(){
         nameImages = new ArrayList<>();
         nameImages.add("musaranya_petjada");
@@ -64,6 +70,7 @@ public class MainMenu extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
+
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
@@ -74,9 +81,13 @@ public class MainMenu extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+        // handle arrow click here
+        if (id == android.R.id.home) {
+            finish(); // close this activity and return to preview activity (if there is any)
+        }
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.home) {
+        if (id == R.id.inici) {
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
             return true;

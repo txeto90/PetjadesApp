@@ -20,6 +20,12 @@ public class AnimalsListActivity extends MainMenu {
         setContentView(R.layout.activity_animals_list);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        // add back arrow to toolbar
+        if (getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
+
         AnimalsDAO animalsDAO = new AnimalsDAO(this);
 
         //construct data source

@@ -20,7 +20,9 @@ public class MainActivity extends MainMenu {
 
     @SuppressWarnings("unused")
     public void goToDicotomicActivity(View view){
-        startActivity(new Intent(this, DichotomousKeyActivity.class));
+        Intent intent = new Intent(this, DichotomousKeyActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 
     @SuppressWarnings("unused")

@@ -20,9 +20,11 @@ public class ImagesDAO extends AppCompatActivity {
 
     private File localFile = null;
 
+    public ImagesDAO(){};
 
-    public ImagesDAO(String imgName, int objectId){
-        Log.d("kk", "img: " + imgName+", Rid: " + String.valueOf(objectId));
+    public void getImageFromFirebase(String imgName, int objectId){
+        Log.d("kk", "img: " + imgName);
+
         // PASARLI EN EL EXTRA EN NOM DE LA FOTO QUE ES VOL AGAFAR
         StorageReference mStorageRef = FirebaseStorage.getInstance().getReference();
         StorageReference riversRef;
@@ -38,6 +40,7 @@ public class ImagesDAO extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         riversRef.getFile(localFile)
                 .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
                     @Override

@@ -3,11 +3,17 @@ package com.example.petjadesapp.dao;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
 
 class SQLiteHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "animals";
-    private static final int DATABASE_VERSION = 15;
+    private static final int DATABASE_VERSION = 25;
 
     private final String sqlTableAnimals = "CREATE TABLE animals (codi INTEGER PRIMARY KEY, nomCientific TEXT, nomVulgar TEXT, descripcio TEXT, habitat TEXT, distribucio TEXT, rastre TEXT, fotoExcrement TEXT, fotoPetjada TEXT, fotoPetjades TEXT, fotoAnimal TEXT)";
     private final String sqlMusaranya = "INSERT INTO animals (codi, nomCientific, nomVulgar, descripcio, habitat, distribucio, rastre, fotoExcrement, fotoPetjada, fotoPetjades, fotoAnimal) VALUES (1, 'Crocidura russula', 'Musaraña común', 'Color grisáceo, poco contrastado entre la parte dorsal y el gris claro de la zona ventral. El color se oscurece en invierno y los juveniles presentan tonalidad gris en todo el cuerpo.', 'Asociado a muros de piedra, majanos u linderos que bordean pastizales, cultivos, corrales y afueras de pueblos. Se encuentra también en monte mediterráneo, robledales y choperas, hasta en prados montanos. En Sierra Nevada asciende hasta los 2000 metros, pero en la Cordillera Cantábrica no supera los 900 metros. Se distribuye en toda la península, excepto las cumbres más frías e Ibiza.', 'musaranyaDistri.png', '', 'musaranyaCaca.png', 'musaranya_petjada', 'NULL', 'musaranya.png');";
@@ -68,6 +74,15 @@ class SQLiteHelper extends SQLiteOpenHelper {
         db.execSQL(sqlMuflon);          db.execSQL(sqlCabra);
         db.execSQL(sqlCiervo);          db.execSQL(sqlCorzo);
         db.execSQL(sqlCaballo);          db.execSQL(sqlPerro);
+/*
+
+        if(Locale.getDefault().getDisplayLanguage().equalsIgnoreCase("es")){
+            insertDB(db, "db_es.sql");
+        }else{
+            insertDB(db, "db_en.sql");
+        }
+        */
+
     }
 
     @Override
@@ -91,5 +106,34 @@ class SQLiteHelper extends SQLiteOpenHelper {
         db.execSQL(sqlCabra);           db.execSQL(sqlCiervo);
         db.execSQL(sqlCorzo);           db.execSQL(sqlCaballo);
         db.execSQL(sqlPerro);
+
+/*
+        Log.d("kk2", Locale.getDefault().getLanguage());
+        if(Locale.getDefault().getLanguage().equalsIgnoreCase("es")){
+            insertDB(db, "db_es.sql");
+        }else{
+            insertDB(db, "db_en.sql");
+        }
+*/
+
     }
+/*
+    private void insertDB(SQLiteDatabase db, String lang){
+        InputStream in;
+        BufferedReader reader;
+        String line = "";
+
+        try {
+            in = context.getAssets().open(lang);
+            Log.d("kk2", in.toString() );
+            reader = new BufferedReader(new InputStreamReader(in));
+            while (((line = reader.readLine()) != null)){
+                db.execSQL(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+ */
 }

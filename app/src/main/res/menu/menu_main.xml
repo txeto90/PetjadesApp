@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.petjadesapp.MainActivity">
     <item
-        android:id="@+id/home"
+        android:id="@+id/inici"
         android:orderInCategory="100"
         android:title="@string/txtMenuHome"
         app:showAsAction="never" />

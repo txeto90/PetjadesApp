@@ -1,11 +1,15 @@
 package com.example.petjadesapp.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.res.ColorStateList;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import com.example.petjadesapp.R;
+import com.example.petjadesapp.dao.ImagesDAO;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FileDownloadTask;
@@ -36,11 +40,18 @@ public class AnimalDataActivity extends MainMenu {
     private ImageView imgAditional;
     private File localFile = null;
 
+    @SuppressLint("RestrictedApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_animal_data);
         setSupportActionBar(findViewById(R.id.toolbar));
+
+        // add back arrow to toolbar
+        if (getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
 
         txtIndexTitle = findViewById(R.id.txtViewIndex);
         txtVulgar = findViewById(R.id.txtViewVulgarName);
@@ -115,7 +126,11 @@ public class AnimalDataActivity extends MainMenu {
     private void showImgAnimal(){
         Bundle extras = getIntent().getExtras();
         String img = extras.getString("imgAnimal");
-        getImagesFromFirebase(img, R.id.imgViewAnimal);
+        //getImagesFromFirebase(img, R.id.imgViewAnimal);
+        //Bitmap bitmap = BitmapFactory.decodeFile(ImagesDAO.getImageFromFirebase(img).getAbsolutePath());
+        //ImageView iv = findViewById(R.id.imgViewAnimal);
+        //iv.setImageBitmap(bitmap);
+
     }
 
     //DIRECCIONA A LA CAMERAACTIVITY AMB LA PETJADA DE L'ANIMAL CORRESPONENT

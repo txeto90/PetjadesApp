@@ -19,15 +19,6 @@
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-        <ImageButton
-            android:id="@+id/ibBack"
-            android:layout_width="36dp"
-            android:layout_height="?attr/actionBarSize"
-            android:backgroundTint="@color/colorPrimary"
-            android:onClick="comeBack"
-            android:scaleType="centerCrop"
-            android:src="@drawable/back48dp" />
-
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_animal_data" />

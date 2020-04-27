@@ -3,6 +3,7 @@ package com.example.petjadesapp.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -25,6 +26,12 @@ public class DichotomousKeyActivity extends MainMenu {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        // add back arrow to toolbar
+        if (getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
+
         AnimalsDAO animalsDAO = new AnimalsDAO(this);
         btnLeft = findViewById(R.id.btnLeft);
         btnRight = findViewById(R.id.btnRigth);
@@ -32,9 +39,8 @@ public class DichotomousKeyActivity extends MainMenu {
         ivRight = findViewById(R.id.ivRigth);
     }
 
-    public void comeBack(View view){
-        startActivity(new Intent(this, MainActivity.class));
-    }
+
+
 
     @SuppressWarnings("unused")
     public void onClickRight(View view){
