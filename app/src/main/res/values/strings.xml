@@ -82,5 +82,6 @@
     <string name="copyrigth_text">
         <a href="https://creativecommons.org/licenses/by-nc/4.0/">Algunos derechos reservados.</a>
     </string>
+    <string name="title_activity_load">loadActivity</string>
 
 </resources>

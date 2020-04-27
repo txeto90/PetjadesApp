@@ -15,37 +15,41 @@
         android:roundIcon="@drawable/iclauncher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
-            android:name="com.example.petjadesapp.activity.AboutActivity"
-            android:label="@string/title_activity_about"
-            android:theme="@style/AppTheme.NoActionBar" />
-
-        <activity
-            android:name="com.example.petjadesapp.activity.DichotomousKeyActivity"
-            android:label="@string/title_activity_dichotomous_key"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="com.example.petjadesapp.activity.CameraActivity"
-            android:label="@string/title_activity_camera2"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="com.example.petjadesapp.activity.AnimalDataActivity"
-            android:label="@string/title_activity_animal_data"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="com.example.petjadesapp.activity.AnimalsListActivity"
-            android:label="@string/title_activity_animals_list"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="com.example.petjadesapp.activity.MainActivity"
-            android:label="@string/app_name"
+            android:name=".activity.LoadActivity"
+            android:label="@string/title_activity_load"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.AboutActivity"
+            android:label="@string/title_activity_about"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.DichotomousKeyActivity"
+            android:label="@string/title_activity_dichotomous_key"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.CameraActivity"
+            android:label="@string/title_activity_camera2"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.AnimalDataActivity"
+            android:label="@string/title_activity_animal_data"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.AnimalsListActivity"
+            android:label="@string/title_activity_animals_list"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+
         </activity>
     </application>
 
