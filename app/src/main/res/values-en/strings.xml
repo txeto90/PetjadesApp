@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">PetjadesApp</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_animals_list">AnimalsListActivity</string>
+    <string name="title_activity_animals_list"></string>
 
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -28,13 +28,14 @@
     <string name="title_list">Mamal guide</string>
     <string name="title_activity_animal_data">AnimalDataActivity</string>
     <string name="title_activity_camera2">Camera</string>
+    <string name="search">Search...</string>
 
     <!-- ANIMAL DATA ACTIVITY falta implementar-ho-->
     <string name="txtIndexDescription">Description</string>
     <string name="txtIndexHabitat">Habitat</string>
     <string name="txtIndexDistribution">Distribution</string>
     <string name="txtIndexTrace">Traces</string>
-    <string name="title_activity_adapter_prova">AdapterProva</string>
+
 
     <!-- DICHOTOMOUS KEY ACTIVITY-->
     <!-- RIGTH BUTTON-->

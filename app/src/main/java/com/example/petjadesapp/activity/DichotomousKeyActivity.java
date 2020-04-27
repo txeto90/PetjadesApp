@@ -12,6 +12,8 @@ import com.example.petjadesapp.R;
 import com.example.petjadesapp.dao.AnimalsDAO;
 import com.example.petjadesapp.model.Animal;
 
+import java.nio.charset.StandardCharsets;
+
 public class DichotomousKeyActivity extends MainMenu {
 
     private Button btnLeft;
@@ -38,9 +40,6 @@ public class DichotomousKeyActivity extends MainMenu {
         ivLeft = findViewById(R.id.ivLeft);
         ivRight = findViewById(R.id.ivRigth);
     }
-
-
-
 
     @SuppressWarnings("unused")
     public void onClickRight(View view){
