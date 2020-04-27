@@ -58,6 +58,7 @@ public class CameraActivity extends MainMenu{
         ORIENTATIONS.append(Surface.ROTATION_270, 180);
     }
 
+    private ArrayList<String> imgNames;
     private CameraDevice cameraDevice;
     private CameraCaptureSession cameraCaptureSessions;
     private CaptureRequest.Builder captureRequestBuilder;
@@ -108,10 +109,9 @@ public class CameraActivity extends MainMenu{
         }
     };
 
-    private ArrayList<String> imgNames;
     private int getDrawable(String imgName){
         imgNames = new ArrayList<>();
-        imgNames.add(imgName);
+        imgNames.add(imgName.split("_")[0]);
         return getResources().getIdentifier(imgName,"drawable", this.getPackageName());
     }
 
@@ -151,7 +151,6 @@ public class CameraActivity extends MainMenu{
             @Override
             public void setImageForPosition(int position, ImageView imageView) {
                 TextView txtCameraView = findViewById(R.id.txtCameraView);
-                Log.d("kk", imgNames.get(position));
                 txtCameraView.setText(imgNames.get(position));
 
                 imageView.setImageResource(sampleImages.get(position));
