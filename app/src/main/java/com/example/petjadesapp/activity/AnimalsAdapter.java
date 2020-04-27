@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.petjadesapp.R;
@@ -13,7 +14,7 @@ import com.example.petjadesapp.dao.ImagesDAO;
 import com.example.petjadesapp.model.Animal;
 import java.util.List;
 
-class AnimalsAdapter extends ArrayAdapter {
+class AnimalsAdapter extends ArrayAdapter implements Filterable {
 
     @SuppressWarnings("unchecked")
     public AnimalsAdapter(Context context, List objects){
@@ -40,5 +41,7 @@ class AnimalsAdapter extends ArrayAdapter {
         //return the complete view to render on screen
         return convertView;
     }
+
+
 
 }

@@ -3,8 +3,12 @@ package com.example.petjadesapp.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.widget.Toolbar;
+
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
 import com.example.petjadesapp.R;
 import com.example.petjadesapp.dao.AnimalsDAO;
@@ -55,6 +59,23 @@ public class AnimalsListActivity extends MainMenu {
                 intent.putExtra("imgAnimal", theAnimals.get(position).getImgAnimal());
 
                 startActivity(intent);
+            }
+        });
+        EditText txtSearch = findViewById(R.id.txtSearch);
+        txtSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                adapter.getFilter().filter(s);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
             }
         });
     }

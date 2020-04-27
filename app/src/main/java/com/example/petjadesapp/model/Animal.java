@@ -112,4 +112,9 @@ public class Animal {
     public void setImgAnimal(String imgAnimal) {
         this.imgAnimal = imgAnimal;
     }
+
+    @Override
+    public String toString() {
+        return this.vulgarName +" "+ this.scientificName;
+    }
 }
