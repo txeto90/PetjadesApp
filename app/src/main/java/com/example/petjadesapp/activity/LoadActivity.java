@@ -3,11 +3,8 @@ package com.example.petjadesapp.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-
 import com.example.petjadesapp.R;
 
-import java.io.IOException;
-import java.io.InputStream;
 
 public class LoadActivity extends Activity {
 
@@ -20,7 +17,7 @@ public class LoadActivity extends Activity {
             public void run() {
                 try {
                     super.run();
-                    sleep(3500);  //Delay of 3 seconds
+                    sleep(3000);  //Delay of 3 seconds
                 } catch (Exception e) {
 
                 } finally {
