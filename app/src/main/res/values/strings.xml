@@ -17,6 +17,7 @@
     <string name="txtMenuHome">Inicio</string>
     <!-- <string name="txtMenuList">Guía de mamíferos</string> -->
     <string name="txtMenuCamera">Cámara</string>
+    <string name="txtMenuAbout">Créditos</string>
     <!-- <string name="txtMenuDicotomica">Clave dicotomica</string> -->
 
     <!-- MAIN ACTIVITY -->

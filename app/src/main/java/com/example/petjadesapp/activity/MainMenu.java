@@ -25,9 +25,6 @@ public class MainMenu extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-
-
     }
 
 
@@ -106,6 +103,11 @@ public class MainMenu extends AppCompatActivity {
             Intent intent = new Intent(this, CameraActivity.class);
             setSampleImages();
             intent.putExtra("imgFootPrint", nameImages);
+            startActivity(intent);
+            return true;
+        }
+        if (id == R.id.about) {
+            Intent intent = new Intent(this, AboutActivity.class);
             startActivity(intent);
             return true;
         }

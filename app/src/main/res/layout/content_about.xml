@@ -1,86 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <TextView
         android:id="@+id/titleDirection"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="21dp"
         android:layout_marginTop="30dp"
+        android:layout_marginEnd="21dp"
         android:text="@string/direction_title"
         android:textColor="#090000"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txtDirection"
         android:layout_width="365dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="21dp"
         android:layout_marginTop="15dp"
+        android:layout_marginEnd="21dp"
         android:text="José Antonio Monzonís Iznardo."
-        android:textColor="#090000"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleDirection" />
+        android:textColor="#090000" />
 
     <TextView
         android:id="@+id/titlePhotos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="21dp"
         android:layout_marginTop="15dp"
         android:text="@string/photos_title"
         android:textColor="#090000"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDirection" />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txtPhotos"
         android:layout_width="365dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="21dp"
         android:layout_marginTop="15dp"
-        android:textColor="#090000"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titlePhotos" />
+        android:layout_marginEnd="21dp"
+        android:paddingEnd="25dp"
+        android:textColor="#090000" />
 
     <TextView
         android:id="@+id/txtCopyRight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="21dp"
         android:layout_marginTop="15dp"
         android:text="@string/copyrigth_text"
-        android:textColor="#090000"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPhotos" />
+        android:textColor="#090000" />
 
     <TextView
         android:id="@+id/titleMaps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="21dp"
         android:layout_marginTop="15dp"
         android:text="@string/maps_title"
         android:textColor="#090000"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCopyRight" />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txtMaps"
-        android:layout_width="365dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_width="363dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="21dp"
         android:layout_marginTop="15dp"
+        android:layout_marginEnd="21dp"
         android:text="@string/maps_text"
-        android:textColor="#090000"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleMaps" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:textColor="#090000" />
+</LinearLayout>

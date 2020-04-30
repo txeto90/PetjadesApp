@@ -13,9 +13,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="42dp"
         android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
         android:background="#FFFFFF"
         android:onClick="onClickLeft"
         android:text="@string/fingers"
+        app:layout_constraintEnd_toStartOf="@+id/btnRigth"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivLeft" />
 
@@ -23,7 +25,7 @@
         android:id="@+id/btnRigth"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="27dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="42dp"
         android:background="#FFFFFF"
@@ -37,7 +39,7 @@
         android:id="@+id/ivRigth"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginStart="27dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="148dp"
         android:layout_marginEnd="42dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,6 +53,8 @@
         android:layout_height="150dp"
         android:layout_marginStart="42dp"
         android:layout_marginTop="148dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/ivRigth"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/lince_petjada" />

@@ -22,4 +22,9 @@
         android:orderInCategory="100"
         android:title="@string/txtMenuCamera"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/about"
+        android:orderInCategory="100"
+        android:title="@string/txtMenuAbout"
+        app:showAsAction="never" />
 </menu>
