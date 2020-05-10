@@ -4,11 +4,14 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+
+import com.example.petjadesapp.R;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-
+import java.util.Locale;
 
 class SQLiteHelper extends SQLiteOpenHelper {
 
@@ -50,14 +53,17 @@ class SQLiteHelper extends SQLiteOpenHelper {
     private final String sqlCaballo = "INSERT INTO animals (codi, nomCientific, nomVulgar, descripcio, habitat, distribucio, rastre, fotoExcrement, fotoPetjada, fotoPetjades, fotoAnimal) VALUES (32, 'Equus ferus caballus', 'Caballo salvaje', 'Presenta formas redondeadas, perfil subconvexo, cuello arqueado y cola baja. La capa suele ser torda o castaña y la alzada similar a la del caballo domestico. Sus cascos y pezuñas son más anchos, lo que facilita el tránsito por los humedales, y sus crines menos espesas y llamativas que las del caballo domestico. Su rusticidad se debe a la selección natural, no a la humana. \n \n Cabe destacar que estos caballos no son animales solitarios, sino que, como ocurre con la gran mayoría de herbívoros, viven formando manadas o rebaños de un número no muy extenso de ejemplares. Estos rebaños y manadas son denominados como harenes y están compuestos por entere cuatro y veinte individuos.', 'No es fácil presenciar a los caballos salvajes, puesto que no son un animal muy común que digamos. Las zonas que han tomado por hábitat suelen ser, por norma general, áreas con abundantes prados y praderas, pobladas por una vegetación perenne y bastante húmeda. Estas áreas se corresponden con grandes y amplias llanuras abiertas y despejadas con el fin de observar en todo momento a posibles peligros como los depredadores.', 'caballoDistri.png', 'Cascos, pueden aparecer con y sin herradura. Si está herrado, en la huella se ve solamente la impresión de la herradura. Si está sin herrar, deja huellas de gran tamaño y forma casi circular, con una profunda incisión por la parte posterior.', 'caballoCaca.png', 'caballo_petjada', 'NULL', 'caballo.png');";
     private final String sqlPerro = "INSERT INTO animals (codi, nomCientific, nomVulgar, descripcio, habitat, distribucio, rastre, fotoExcrement, fotoPetjada, fotoPetjades, fotoAnimal) VALUES (33, 'Canis lupus familiaris', 'Perro común', 'Constituye una subespecie del lobo. En 2001, se estimaba que había cuatrocientos millones de perros en el mundo. Su tamaño o talla, su forma y pelaje es muy diverso según la raza. Posee un oído y olfato muy desarrollados, siendo este último su principal órgano sensorial. \n \n En comparación con lobos de tamaño, los perros tienden a tener el cráneo un 20 % más pequeño y el cerebro un 10 % más pequeño. Su dieta de sobras de los humanos hizo que sus cerebros grandes y los músculos mandibulares utilizados en la caza dejaran de ser necesarios.', 'Especie cosmopolita. Se encuentra en todo tipo de ambientes, tanto en medios forestales, espacios abiertos, e incluso ciudades.', 'perroDistri.png', 'Manos de cinco dedos en las extremidades anteriores y 4 dedos en las posteriores. Las uñas delanteras están muy afiladas y próximas entre sí, las cuales se marcan muy bien. Huella muy compacta, estando las almohadillas digitales muy juntas. \n \n Las huellas del perro son muy parecidas a las del zorro, pero son de mayor tamaño, aunque depende de la raza. Presentan las almohadillas digitales más grandes y juntas que las del zorro.', 'perroCaca.png', 'perro_petjada', 'NULL', 'perro.png');";
 
+    private Context sqlcontext;
 
     public SQLiteHelper(Context context){
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        this.sqlcontext = context;
     }
 
     @Override
     public void onCreate(SQLiteDatabase db){
-        db.execSQL(sqlTableAnimals);    db.execSQL(sqlMusaranya);
+        db.execSQL(sqlTableAnimals);
+        /*db.execSQL(sqlMusaranya);
         db.execSQL(sqlTopillo);         db.execSQL(sqlErizoEuropeo);
         db.execSQL(sqlErizoMoruno);     db.execSQL(sqlRataAgua);
         db.execSQL(sqlRataAlmizclera);  db.execSQL(sqlRaton);
@@ -74,22 +80,16 @@ class SQLiteHelper extends SQLiteOpenHelper {
         db.execSQL(sqlMuflon);          db.execSQL(sqlCabra);
         db.execSQL(sqlCiervo);          db.execSQL(sqlCorzo);
         db.execSQL(sqlCaballo);          db.execSQL(sqlPerro);
-/*
 
-        if(Locale.getDefault().getDisplayLanguage().equalsIgnoreCase("es")){
-            insertDB(db, "db_es.sql");
-        }else{
-            insertDB(db, "db_en.sql");
-        }
-        */
-
+*/
+        insertDB(db, Locale.getDefault().getLanguage());
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
         db.execSQL("DROP TABLE IF EXISTS animals");
-        db.execSQL(sqlTableAnimals);
-        db.execSQL(sqlMusaranya);       db.execSQL(sqlTopillo);
+       db.execSQL(sqlTableAnimals);
+      /*   db.execSQL(sqlMusaranya);       db.execSQL(sqlTopillo);
         db.execSQL(sqlErizoEuropeo);    db.execSQL(sqlErizoMoruno);
         db.execSQL(sqlRataAgua);        db.execSQL(sqlRataAlmizclera);
         db.execSQL(sqlRaton);           db.execSQL(sqlRataParda);
@@ -106,27 +106,23 @@ class SQLiteHelper extends SQLiteOpenHelper {
         db.execSQL(sqlCabra);           db.execSQL(sqlCiervo);
         db.execSQL(sqlCorzo);           db.execSQL(sqlCaballo);
         db.execSQL(sqlPerro);
-
-/*
-        Log.d("kk2", Locale.getDefault().getLanguage());
-        if(Locale.getDefault().getLanguage().equalsIgnoreCase("es")){
-            insertDB(db, "db_es.sql");
-        }else{
-            insertDB(db, "db_en.sql");
-        }
 */
-
+        insertDB(db, Locale.getDefault().getLanguage());
     }
-/*
+
     private void insertDB(SQLiteDatabase db, String lang){
-        InputStream in;
         BufferedReader reader;
         String line = "";
+        int id = 0;
+        switch(lang){
+            case "es":{ id = R.raw.bd_es;    }break;
+            //case "cat":{id = R.raw.bd_cat;   }break;
+            default:{   id = R.raw.bd_en;   }break;
+        }
+        InputStream in = sqlcontext.getResources().openRawResource(id);
+        reader = new BufferedReader(new InputStreamReader(in));
 
         try {
-            in = context.getAssets().open(lang);
-            Log.d("kk2", in.toString() );
-            reader = new BufferedReader(new InputStreamReader(in));
             while (((line = reader.readLine()) != null)){
                 db.execSQL(line);
             }
@@ -135,5 +131,5 @@ class SQLiteHelper extends SQLiteOpenHelper {
         }
     }
 
- */
+
 }

@@ -34,7 +34,7 @@ public class ImagesDAO {
         // PASARLI EN EL EXTRA EN NOM DE LA FOTO QUE ES VOL AGAFAR
         StorageReference mStorageRef = FirebaseStorage.getInstance().getReference();
         StorageReference riversRef;
-        //escolleix depenent del no m de imatge
+        //escolleix depenent del nom de la imatge
         if(imgName.contains("Distri")){
             riversRef = mStorageRef.child("distribucio/" + imgName);
         }else{
@@ -53,10 +53,9 @@ public class ImagesDAO {
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception exception) {
-                // Handle any errors
+                // Any errors
             }
         });
-
     }
 
 }

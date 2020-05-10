@@ -3,11 +3,12 @@ package com.example.petjadesapp.dao;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
+
+import com.example.petjadesapp.activity.MainMenu;
 import com.example.petjadesapp.model.Animal;
 import java.util.ArrayList;
 
-public class AnimalsDAO {
+public class AnimalsDAO extends MainMenu {
 
     private SQLiteHelper connexion;
     private static SQLiteDatabase db;
@@ -42,9 +43,8 @@ public class AnimalsDAO {
         return animalList;
     }
 
-    public static Animal getAnimalInformation(int codi) {
-        String sql = "SELECT * FROM animals WHERE codi = " + codi + ";";
-        System.out.println(sql);
+    public static Animal getAnimalInformation(int id) {
+        String sql = "SELECT * FROM animals WHERE id = " + id + ";";
         Cursor c = db.rawQuery(sql, null);
         Animal a = new Animal();
         if(c.moveToFirst()) {
