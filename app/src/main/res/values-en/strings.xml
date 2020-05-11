@@ -19,6 +19,7 @@
     <!-- <string name="txtMenuList">Guía de mamíferos</string> -->
     <string name="txtMenuCamera">Camera</string>
     <string name="txtMenuAbout">About</string>
+    <string name="txtMenuMaps">Mapas</string>
     <!-- <string name="txtMenuDicotomica">Clave dicotomica</string> -->
 
     <!-- MAIN ACTIVITY -->
@@ -88,5 +89,6 @@
     </string>
 
     <string name="title_activity_load">loadActivity</string>
+
 
 </resources>

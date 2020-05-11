@@ -17,7 +17,7 @@ public class LoadActivity extends Activity {
             public void run() {
                 try {
                     super.run();
-                    sleep(3000);  //Delay of 3 seconds
+                    sleep(500);  //Delay of 3 seconds
                 } catch (Exception e) {
 
                 } finally {

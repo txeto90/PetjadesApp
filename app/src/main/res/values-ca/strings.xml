@@ -12,24 +12,24 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="title_activity_dichotomous_key">DichotomousKeyActivity</string>
+    <string name="title_activity_dichotomous_key">Clave dicotómica</string>
 
     <!-- MENU -->
     <string name="txtMenuHome">Inicio</string>
     <!-- <string name="txtMenuList">Guía de mamíferos</string> -->
-    <string name="txtMenuCamera">Càmara</string>
+    <string name="txtMenuCamera">Cámara</string>
     <string name="txtMenuAbout">Créditos</string>
     <string name="txtMenuMaps">Mapas</string>
     <!-- <string name="txtMenuDicotomica">Clave dicotomica</string> -->
 
     <!-- MAIN ACTIVITY -->
     <string name="txtListMenu">Guía de mamíferos</string>
-    <string name="txtDichotomousMenu">Clave dicotómica</string>
+    <string name="txtDichotomousMenu">Clave dicotomica</string>
 
     <!-- ANIMAL LIST -->
     <string name="title_list">Guía de mamíferos</string>
-    <string name="title_activity_animal_data">AnimalDataActivity</string>
-    <string name="title_activity_camera2">Cámara</string>
+    <string name="title_activity_animal_data"></string>
+    <string name="title_activity_camera2">Càmara</string>
     <string name="search">Buscar...</string>
 
     <!-- ANIMAL DATA ACTIVITY falta implementar-ho-->
@@ -77,9 +77,9 @@
 
     <!-- ABOUT -->
     <string name="title_activity_about">About</string>
-    <string name="direction_title">Desarrollo, edición de contenidos y edición gráfica</string>
-    <string name="photos_title">Fotografías</string>
-    <string name="maps_title">Mapas de distribución</string>
+    <string name="direction_title">Desarrollo, edición de contenidos y edición gráfica.</string>
+    <string name="photos_title">Fotografías.</string>
+    <string name="maps_title">Mapas de distribución.</string>
     <string name="maps_text">
         <a href="https://www.miteco.gob.es/es/biodiversidad/temas/inventarios-nacionales/">Ministerio para la Trancisión Ecológica y el Reto Demográfico.</a>
     </string>
@@ -87,6 +87,6 @@
         <a href="https://creativecommons.org/licenses/by-nc/4.0/">Algunos derechos reservados.</a>
     </string>
     <string name="title_activity_load">loadActivity</string>
-
+    <string name="title_activity_maps">Map</string>
 
 </resources>
