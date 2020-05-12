@@ -2,6 +2,8 @@ package com.example.petjadesapp.activity;
 
 import android.os.Bundle;
 
+import com.example.petjadesapp.dao.CoordinatesDAO;
+import com.example.petjadesapp.model.Coordinate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -14,13 +16,17 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.util.Log;
 import android.view.View;
 
 import com.example.petjadesapp.R;
 
+import java.util.ArrayList;
+
 public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback{
 
     private MapView mapView;
+    private ArrayList<Coordinate> coordinatesList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +38,10 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback{
         mapView = findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
+
+        CoordinatesDAO c = new CoordinatesDAO();
+        coordinatesList = c.getCoordinatesList();
+        Log.d("kk2", coordinatesList.size()+"");
     }
 
     @Override

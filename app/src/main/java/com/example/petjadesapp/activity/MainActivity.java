@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import com.example.petjadesapp.R;
+import com.example.petjadesapp.dao.CoordinatesDAO;
 
 public class MainActivity extends MainMenu {
 
@@ -11,7 +12,6 @@ public class MainActivity extends MainMenu {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
     }
 
     @SuppressWarnings("unused")

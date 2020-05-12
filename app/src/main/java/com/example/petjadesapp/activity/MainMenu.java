@@ -107,7 +107,7 @@ public class MainMenu extends AppCompatActivity {
             return true;
         }
         if (id == R.id.maps) {
-            Intent intent = new Intent(this, MapsActivity.class);
+            Intent intent = new Intent(this, MapsLayoutActivity.class);
             startActivity(intent);
             return true;
         }

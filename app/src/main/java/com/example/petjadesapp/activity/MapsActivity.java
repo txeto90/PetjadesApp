@@ -1,16 +1,18 @@
 package com.example.petjadesapp.activity;
 
 import android.os.Bundle;
-
+import android.util.Log;
 import androidx.fragment.app.FragmentActivity;
-
 import com.example.petjadesapp.R;
+import com.example.petjadesapp.dao.CoordinatesDAO;
+import com.example.petjadesapp.model.Coordinate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import java.util.ArrayList;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -20,17 +22,22 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     Visible per a altres(true, false);
      */
 
-
+    private ArrayList<Coordinate> coordinatesList;
     private GoogleMap mMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+
+        CoordinatesDAO c = new CoordinatesDAO();
+        coordinatesList = c.getCoordinatesList();
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
     }
 
 
@@ -47,8 +54,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+        Log.d("kk2", ""+coordinatesList.size());
+        //LatLng sydney = new LatLng(-34, 151);
+        LatLng sydney = new LatLng(coordinatesList.get(0).getX(), coordinatesList.get(0).getX());
+        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker Sydney"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
 }
