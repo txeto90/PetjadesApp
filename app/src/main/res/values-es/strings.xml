@@ -87,6 +87,10 @@
         <a href="https://creativecommons.org/licenses/by-nc/4.0/">Algunos derechos reservados.</a>
     </string>
     <string name="title_activity_load">loadActivity</string>
+    <string name="title_dialog">Guardar coordenada</string>
+    <string name="ok_dialog">Ok</string>
+    <string name="cancel_dialog">Cancel</string>
+    <string name="spinerselection_dialog">Selecciona un animal...</string>
 
 
 </resources>

@@ -3,10 +3,12 @@ package com.example.petjadesapp.dao;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.example.petjadesapp.activity.MainMenu;
 import com.example.petjadesapp.model.Animal;
 import java.util.ArrayList;
+import java.util.List;
 
 public class AnimalsDAO extends MainMenu {
 
@@ -41,6 +43,19 @@ public class AnimalsDAO extends MainMenu {
             }while(c.moveToNext());
         }
         return animalList;
+    }
+
+    public List<String> getAnimalsNames(){
+        String sql = "SELECT nomVulgar FROM animals";
+        Cursor c = db.rawQuery(sql, null);
+        List<String> list = new ArrayList<>();
+        if(c.moveToFirst()){
+            do{
+                String s = c.getString(0);
+                list.add(s);
+            }while(c.moveToNext());
+        }
+        return list;
     }
 
     public static Animal getAnimalInformation(int id) {
