@@ -1,14 +1,17 @@
 package com.example.petjadesapp.activity;
 
+import android.Manifest;
 import android.app.AlertDialog;
-import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 
 import com.example.petjadesapp.dao.AnimalsDAO;
 import com.example.petjadesapp.dao.CoordinatesDAO;
 import com.example.petjadesapp.model.Coordinate;
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -16,12 +19,11 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
 
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.Spinner;
 
 import com.example.petjadesapp.R;
@@ -29,7 +31,7 @@ import com.example.petjadesapp.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback{
+public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
 
     private MapView mapView;
     private ArrayList<Coordinate> coordinatesList;
@@ -41,35 +43,37 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback{
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        CoordinatesDAO c = new CoordinatesDAO();
+        coordinatesList = c.getCoordinatesList();
+
         mapView = findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
-
-        CoordinatesDAO c = new CoordinatesDAO();
-        coordinatesList = c.getCoordinatesList();
-        Log.d("kk2", coordinatesList.size()+"");
-
-        Button btnSave = findViewById(R.id.button);
-        btnSave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showDialog(v);
-            }
-        });
 
     }
 
     @Override
     public void onMapReady(GoogleMap map) {
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        map.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        map.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        //LatLng sydney = new LatLng(-34, 151);
+        //coordinatesList = c.getCoordinatesList();
+        Log.d("kk3", "mapready: " + coordinatesList.size());
+        for (int i = 0; i < coordinatesList.size(); i++) {
+            map.addMarker(new MarkerOptions().position(new LatLng(coordinatesList.get(i).getLon(), coordinatesList.get(i).getLat()))
+                    .title("User: Menganito \n Date: " + coordinatesList.get(i).getDate()));
+
+            //LatLng mark = new LatLng(coordinatesList.get(i).getX(), coordinatesList.get(i).getY());
+            Log.d("kk3", "latlong: " + coordinatesList.get(i).getLon() + ", " + coordinatesList.get(i).getLat());
+            //map.addMarker(new MarkerOptions().position(mark).title("User: " + coordinatesList.get(i).getDate()));
+            //map.moveCamera(CameraUpdateFactory.newLatLng(mark));
+
+
+        }
         mapView.onResume();
     }
 
 
-    public void showDialog(View view){
+    public void showDialog(View view) {
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(MapsLayoutActivity.this);
         View mView = getLayoutInflater().inflate(R.layout.content_alert_dialog, null);
         mBuilder.setTitle(R.string.title_dialog);
@@ -86,9 +90,9 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback{
         mBuilder.setPositiveButton(R.string.ok_dialog, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                if(!mSp.getSelectedItem().toString().equalsIgnoreCase("")){
-                    Log.d("kk2", "AGAFAR DADES");
+                if (!mSp.getSelectedItem().toString().equalsIgnoreCase("")) {
                     //AGAFAR DADES I GUARDARLES
+                    locationPosition();
                 }
             }
         });
@@ -102,6 +106,26 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback{
         mBuilder.setView(mView);
         AlertDialog dialog = mBuilder.create();
         dialog.show();
+    }
+
+    public void locationPosition() {
+        LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            Log.d("kk2", "return");
+            return;
+        }
+        Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        double lon = location.getLongitude();
+        double lat = location.getLatitude();
+        Log.d("kk2", lon + ", " + lat);
+
     }
 
 }

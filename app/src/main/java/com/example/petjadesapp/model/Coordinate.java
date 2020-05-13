@@ -6,26 +6,26 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Coordinate {
-    private double x;
-    private double y;
+    private double lon;
+    private double lat;
     private String date;
 
     public Coordinate(){};
 
-    public double getX() {
-        return x;
+    public double getLon() {
+        return lon;
     }
 
-    public void setX(double x) {
-        this.x = x;
+    public void setLon(double lon) {
+        this.lon = lon;
     }
 
-    public double getY() {
-        return y;
+    public double getLat() {
+        return lat;
     }
 
-    public void setY(double y) {
-        this.y = y;
+    public void setLat(double lat) {
+        this.lat = lat;
     }
 
     public String getDate() {
@@ -39,8 +39,8 @@ public class Coordinate {
     @Exclude
     public Map<String, Object> toMap() {
         HashMap<String, Object> result = new HashMap<>();
-        result.put("x", x);
-        result.put("y", y);
+        result.put("x", lon);
+        result.put("y", lat);
         result.put("date", date);
 
         return result;

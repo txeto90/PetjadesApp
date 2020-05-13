@@ -10,8 +10,8 @@
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:text="Save"
-        android:onClick="saveCoordinate"/>
+        android:text="@string/btn_save_coordinate"
+        android:onClick="showDialog"/>
 
     <com.google.android.gms.maps.MapView
         android:id="@+id/mapView"

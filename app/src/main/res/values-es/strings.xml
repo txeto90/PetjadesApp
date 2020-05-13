@@ -91,6 +91,7 @@
     <string name="ok_dialog">Ok</string>
     <string name="cancel_dialog">Cancel</string>
     <string name="spinerselection_dialog">Selecciona un animal...</string>
+    <string name="btn_save_coordinate">Save coordinate</string>
 
 
 </resources>

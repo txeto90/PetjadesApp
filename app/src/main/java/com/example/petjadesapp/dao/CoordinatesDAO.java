@@ -16,23 +16,21 @@ public class CoordinatesDAO {
     private DatabaseReference myRef = database.getReference("coordinates");
 
     public CoordinatesDAO(){
-        Log.d("kk2", "constructor" );
+        //Log.d("kk3", "constructor" );
         getCoordinates();
     }
 
-    //myRef.setValue("Hello, World!");
-
     // Read from the database
-    public void getCoordinates() {
+    private void getCoordinates() {
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for(DataSnapshot coordianteSnapshot: dataSnapshot.getChildren()){
                     Coordinate coor = coordianteSnapshot.getValue(Coordinate.class);
                     coordinatesList.add(coor);
-                    Log.d("kk2", "Value is: " + coor.getX());
+                    Log.d("kk3", "Value is: " + coor.getLon());
                 }
-                Log.d("kk2", "dao2: "+coordinatesList.size());
+                Log.d("kk3", "dao1: "+coordinatesList.size());
             }
 
             @Override
@@ -42,7 +40,16 @@ public class CoordinatesDAO {
         });
     }
 
+    public void pushValue(String date, double lon, double lat){
+        Coordinate c = new Coordinate();
+        c.setDate(date);
+        c.setLon(lon);
+        c.setLat(lat);
+        myRef.push().setValue(c);
+    }
+
     public ArrayList<Coordinate> getCoordinatesList() {
+        Log.d("kk3", "dao2: "+coordinatesList.size());
         return coordinatesList;
     }
 }
