@@ -94,5 +94,6 @@
     <string name="spinerselection_dialog">Selecciona un animal...</string>
     <string name="btn_save_coordinate">Save coordinate</string>
     <string name="salir_sesion">salir sesión</string>
+    <string name="check_boxmis_huellas">Mis huellas</string>
 
 </resources>
