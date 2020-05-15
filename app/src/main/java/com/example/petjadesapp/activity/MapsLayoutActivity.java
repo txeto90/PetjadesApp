@@ -47,8 +47,7 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
     private MapView mapView;
     private ArrayList<Coordinate> coordinatesList;
     private GoogleMap myMap;
-    private Spinner spAnimal;
-    private RadioButton rbYes;
+    private Spinner mSp;
     private double lat;
     private double lon;
     private CoordinatesDAO cdao;
@@ -68,9 +67,6 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
         mapView = findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
-
-        spAnimal = findViewById(R.id.spAnimal);
-        rbYes = findViewById(R.id.rbYes);
     }
 
     @Override
@@ -98,6 +94,7 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
         View mView = getLayoutInflater().inflate(R.layout.content_alert_dialog, null);
         mBuilder.setTitle(R.string.title_dialog);
         Spinner mSp = mView.findViewById(R.id.spAnimal);
+        RadioButton rbYes = mView.findViewById(R.id.rbYes);
         AnimalsDAO adao = new AnimalsDAO(this);
         List<String> spinnerArray = adao.getAnimalsNames();
         spinnerArray.add(0, getString(R.string.spinerselection_dialog));
@@ -112,11 +109,12 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
             public void onClick(DialogInterface dialog, int which) {
                 if (!mSp.getSelectedItem().toString().equalsIgnoreCase("")) {
                     //AGAFAR DADES I GUARDARLES
-                    String animal = "kk";//spAnimal.getSelectedItem();
-                    Log.d("kk1", animal);
+                    String animal = mSp.getSelectedItem().toString();
                     String date = getDate();
-                    boolean visible = true;//rbYes.isChecked();
+                    boolean visible = rbYes.isChecked();
                     String userId = getmAuth().getCurrentUser().getUid();
+
+                    Log.d("kk1", "animal: "+animal+", rb: " + visible);
 
                     Coordinate c = new Coordinate();
                     c.setAnimal(animal);
@@ -133,7 +131,6 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
-                Log.d("kk2", "CANCELAR");
             }
         });
         mBuilder.setView(mView);
