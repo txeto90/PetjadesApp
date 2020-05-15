@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.location.Criteria;
-import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -27,8 +26,9 @@ import androidx.core.app.ActivityCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Spinner;
 
 import com.example.petjadesapp.R;
@@ -49,6 +49,7 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
     private double lat;
     private double lon;
     private CoordinatesDAO cdao;
+    private CheckBox cbMyFoots;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,9 +57,9 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
         setContentView(R.layout.activity_maps_layout);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         requestPermision();
 
+        cbMyFoots = findViewById(R.id.cbMyFoots);
         cdao = new CoordinatesDAO(this);
 
         mapView = findViewById(R.id.mapView);
@@ -68,26 +69,33 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
 
     public void populateMap(){
         ArrayList<Coordinate> coordinatesList = cdao.getCoordinatesList();
-        Log.d("kk3", "mapready: " + coordinatesList.size());
-        for (int i = 0; i < coordinatesList.size(); i++) {
-            if(coordinatesList.get(i).isVisible() || getmAuth().getCurrentUser().getUid() == coordinatesList.get(i).getUser()) {
-                myMap.addMarker(new MarkerOptions().position(new LatLng(coordinatesList.get(i).getLat(), coordinatesList.get(i).getLon()))
-                        .title("User: Menganito \n Date: " + coordinatesList.get(i).getDate()));
-            }
 
-        /*
-            listenerCheckbox
-            if(checkboxVisible.activat){
-                for (int i = 0; i < coordinatesList.size(); i++) {
-                    if(getmAuth().getCurrentUser().getUid() == coordinatesList.get(i).getUser()) {
-                        myMap.clear();
-                        myMap.addMarker(new MarkerOptions().position(new LatLng(coordinatesList.get(i).getLat(), coordinatesList.get(i).getLon())));
+        cbMyFoots.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                Log.d("kk4", ""+isChecked);
+                myMap.clear();
+                if(!isChecked) {
+                    for (int i = 0; i < coordinatesList.size(); i++) {
+                        if(coordinatesList.get(i).isVisible() || getmAuth().getCurrentUser().getUid() == coordinatesList.get(i).getUser()) {
+                            myMap.addMarker(new MarkerOptions().position(new LatLng(coordinatesList.get(i).getLat(), coordinatesList.get(i).getLon()))
+                                    .title("User: Menganito \n Date: " + coordinatesList.get(i).getDate()));
+                        }
+                        //map.addMarker(new MarkerOptions().position(mark).title("User: " + coordinatesList.get(i).getDate()));
+                        //map.moveCamera(CameraUpdateFactory.newLatLng(mark));
                     }
+
+                }else{
+                    for (int i = 0; i < coordinatesList.size(); i++) {
+                        Log.d("kk4", getmAuth().getCurrentUser().getUid() + ", " + coordinatesList.get(i).getUser() + ", "+ (getmAuth().getCurrentUser().getUid() == coordinatesList.get(i).getUser()));
+                        if (getmAuth().getCurrentUser().getUid().equals(coordinatesList.get(i).getUser())) {
+                            myMap.addMarker(new MarkerOptions().position(new LatLng(coordinatesList.get(i).getLat(), coordinatesList.get(i).getLon())));
+                        }
+                    }
+                }
             }
-        */
-            //map.addMarker(new MarkerOptions().position(mark).title("User: " + coordinatesList.get(i).getDate()));
-            //map.moveCamera(CameraUpdateFactory.newLatLng(mark));
-        }
+        });
+        cbMyFoots.setChecked(false);
     }
 
     @Override
