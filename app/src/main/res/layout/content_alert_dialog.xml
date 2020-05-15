@@ -27,14 +27,14 @@
         android:layout_height="wrap_content">
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/rbYes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:checked="true"
             android:text="Yes" />
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/rbNo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="No" />

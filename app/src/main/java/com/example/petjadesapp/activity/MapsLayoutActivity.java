@@ -27,11 +27,16 @@ import androidx.core.app.ActivityCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 
 import com.example.petjadesapp.R;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
@@ -42,6 +47,11 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
     private MapView mapView;
     private ArrayList<Coordinate> coordinatesList;
     private GoogleMap myMap;
+    private Spinner spAnimal;
+    private RadioButton rbYes;
+    private double lat;
+    private double lon;
+    private CoordinatesDAO cdao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,20 +62,20 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
 
         requestPermision();
 
-        CoordinatesDAO c = new CoordinatesDAO();
-        coordinatesList = c.getCoordinatesList();
+        cdao = new CoordinatesDAO();
+        coordinatesList = cdao.getCoordinatesList();
 
         mapView = findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
 
+        spAnimal = findViewById(R.id.spAnimal);
+        rbYes = findViewById(R.id.rbYes);
     }
 
     @Override
     public void onMapReady(GoogleMap map) {
-        // Add a marker in Sydney and move the camera
-        //LatLng sydney = new LatLng(-34, 151);
-        //coordinatesList = c.getCoordinatesList();
+
         myMap = map;
         Log.d("kk3", "mapready: " + coordinatesList.size());
         for (int i = 0; i < coordinatesList.size(); i++) {
@@ -82,6 +92,8 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
 
 
     public void showDialog(View view) {
+        //ACI PRIMER AGAFA LES COORDENADES PER THREAD
+        placeOnPosition();
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(MapsLayoutActivity.this);
         View mView = getLayoutInflater().inflate(R.layout.content_alert_dialog, null);
         mBuilder.setTitle(R.string.title_dialog);
@@ -100,7 +112,20 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
             public void onClick(DialogInterface dialog, int which) {
                 if (!mSp.getSelectedItem().toString().equalsIgnoreCase("")) {
                     //AGAFAR DADES I GUARDARLES
-                    placeOnPosition();
+                    String animal = "kk";//spAnimal.getSelectedItem();
+                    Log.d("kk1", animal);
+                    String date = getDate();
+                    boolean visible = true;//rbYes.isChecked();
+                    String userId = getmAuth().getCurrentUser().getUid();
+
+                    Coordinate c = new Coordinate();
+                    c.setAnimal(animal);
+                    c.setDate(date);
+                    c.setVisible(visible);
+                    c.setLon(lon);
+                    c.setLat(lat);
+                    c.setUser(userId);
+                    cdao.pushValue(c);
                 }
             }
         });
@@ -116,6 +141,13 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
         dialog.show();
     }
 
+    public String getDate(){
+        Date c = Calendar.getInstance().getTime();
+        SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+        String formattedDate = df.format(c);
+        return formattedDate;
+    }
+
     public void placeOnPosition() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             return;
@@ -128,16 +160,16 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
         if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
             Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
             if(location != null) {
-                double lon = location.getLongitude();
-                double lat = location.getLatitude();
+                lon = location.getLongitude();
+                lat = location.getLatitude();
                 addMap(lon, lat);
             }else{
                 locationManager.requestLocationUpdates(bestProvider, 1000, 0, new LocationListener() {
                     @Override
                     public void onLocationChanged(Location loc) {
                         locationManager.removeUpdates(this);
-                        double lon = loc.getLongitude();
-                        double lat = loc.getLatitude();
+                        lon = loc.getLongitude();
+                        lat = loc.getLatitude();
                         addMap(lon, lat);
                     }
 
@@ -162,16 +194,16 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
         if (locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
             Location location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
             if(location != null) {
-                double lon = location.getLongitude();
-                double lat = location.getLatitude();
+                lon = location.getLongitude();
+                lat = location.getLatitude();
                 addMap(lon, lat);
             }else{
                 locationManager.requestLocationUpdates(bestProvider, 1000, 0, new LocationListener() {
                     @Override
                     public void onLocationChanged(Location loc) {
                         locationManager.removeUpdates(this);
-                        double lon = loc.getLongitude();
-                        double lat = loc.getLatitude();
+                        lon = loc.getLongitude();
+                        lat = loc.getLatitude();
                         addMap(lon, lat);
                     }
 

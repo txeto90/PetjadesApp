@@ -40,11 +40,7 @@ public class CoordinatesDAO {
         });
     }
 
-    public void pushValue(String date, double lon, double lat){
-        Coordinate c = new Coordinate();
-        c.setDate(date);
-        c.setLon(lon);
-        c.setLat(lat);
+    public void pushValue(Coordinate c){
         myRef.push().setValue(c);
     }
 
