@@ -45,9 +45,7 @@ import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
 
     private MapView mapView;
-    private ArrayList<Coordinate> coordinatesList;
     private GoogleMap myMap;
-    private Spinner mSp;
     private double lat;
     private double lon;
     private CoordinatesDAO cdao;
@@ -61,21 +59,18 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
 
         requestPermision();
 
-        cdao = new CoordinatesDAO();
-        coordinatesList = cdao.getCoordinatesList();
+        cdao = new CoordinatesDAO(this);
 
         mapView = findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
     }
 
-    @Override
-    public void onMapReady(GoogleMap map) {
-
-        myMap = map;
+    public void populateMap(){
+        ArrayList<Coordinate> coordinatesList = cdao.getCoordinatesList();
         Log.d("kk3", "mapready: " + coordinatesList.size());
         for (int i = 0; i < coordinatesList.size(); i++) {
-            map.addMarker(new MarkerOptions().position(new LatLng(coordinatesList.get(i).getLon(), coordinatesList.get(i).getLat()))
+            myMap.addMarker(new MarkerOptions().position(new LatLng(coordinatesList.get(i).getLat(), coordinatesList.get(i).getLon()))
                     .title("User: Menganito \n Date: " + coordinatesList.get(i).getDate()));
 
             //LatLng mark = new LatLng(coordinatesList.get(i).getX(), coordinatesList.get(i).getY());
@@ -83,7 +78,13 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
             //map.addMarker(new MarkerOptions().position(mark).title("User: " + coordinatesList.get(i).getDate()));
             //map.moveCamera(CameraUpdateFactory.newLatLng(mark));
         }
+    }
+
+    @Override
+    public void onMapReady(GoogleMap map) {
+        myMap = map;
         mapView.onResume();
+        cdao.getCoordinates();
     }
 
 

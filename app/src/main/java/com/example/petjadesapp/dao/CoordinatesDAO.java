@@ -1,6 +1,8 @@
 package com.example.petjadesapp.dao;
 
 import android.util.Log;
+
+import com.example.petjadesapp.activity.MapsLayoutActivity;
 import com.example.petjadesapp.model.Coordinate;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -14,14 +16,14 @@ public class CoordinatesDAO {
     private ArrayList <Coordinate> coordinatesList = new ArrayList<>();;
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
     private DatabaseReference myRef = database.getReference("coordinates");
+    private MapsLayoutActivity mapsLayoutActivity;
 
-    public CoordinatesDAO(){
-        //Log.d("kk3", "constructor" );
-        getCoordinates();
+    public CoordinatesDAO(MapsLayoutActivity mapsLayoutActivity){
+        this.mapsLayoutActivity = mapsLayoutActivity;
     }
 
     // Read from the database
-    private void getCoordinates() {
+    public void getCoordinates() {
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -30,7 +32,7 @@ public class CoordinatesDAO {
                     coordinatesList.add(coor);
                     Log.d("kk3", "Value is: " + coor.getLon());
                 }
-                Log.d("kk3", "dao1: "+coordinatesList.size());
+                mapsLayoutActivity.populateMap();
             }
 
             @Override

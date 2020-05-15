@@ -39,8 +39,7 @@ public class Coordinate {
         this.date = date;
     }
 
-    public String getUser() {        return user;
-    }
+    public String getUser() { return user; }
 
     public void setUser(String user) {        this.user = user;
     }
@@ -60,13 +59,4 @@ public class Coordinate {
         this.animal = animal;
     }
 
-    @Exclude
-    public Map<String, Object> toMap() {
-        HashMap<String, Object> result = new HashMap<>();
-        result.put("x", lon);
-        result.put("y", lat);
-        result.put("date", date);
-
-        return result;
-    }
 }
