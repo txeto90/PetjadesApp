@@ -47,6 +47,10 @@ public class LoadActivity extends Activity {
             if(logOutInfo){
                 signOut();
             }
+        }else{
+            if(mAuth.getCurrentUser() != null){
+                startActivity(new Intent(this, MainActivity.class));
+            }
         }
     }
 
