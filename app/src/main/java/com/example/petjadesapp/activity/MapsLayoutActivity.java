@@ -70,11 +70,21 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
         ArrayList<Coordinate> coordinatesList = cdao.getCoordinatesList();
         Log.d("kk3", "mapready: " + coordinatesList.size());
         for (int i = 0; i < coordinatesList.size(); i++) {
-            myMap.addMarker(new MarkerOptions().position(new LatLng(coordinatesList.get(i).getLat(), coordinatesList.get(i).getLon()))
-                    .title("User: Menganito \n Date: " + coordinatesList.get(i).getDate()));
+            if(coordinatesList.get(i).isVisible() || getmAuth().getCurrentUser().getUid() == coordinatesList.get(i).getUser()) {
+                myMap.addMarker(new MarkerOptions().position(new LatLng(coordinatesList.get(i).getLat(), coordinatesList.get(i).getLon()))
+                        .title("User: Menganito \n Date: " + coordinatesList.get(i).getDate()));
+            }
 
-            //LatLng mark = new LatLng(coordinatesList.get(i).getX(), coordinatesList.get(i).getY());
-            Log.d("kk3", "latlong: " + coordinatesList.get(i).getLon() + ", " + coordinatesList.get(i).getLat());
+        /*
+            listenerCheckbox
+            if(checkboxVisible.activat){
+                for (int i = 0; i < coordinatesList.size(); i++) {
+                    if(getmAuth().getCurrentUser().getUid() == coordinatesList.get(i).getUser()) {
+                        myMap.clear();
+                        myMap.addMarker(new MarkerOptions().position(new LatLng(coordinatesList.get(i).getLat(), coordinatesList.get(i).getLon())));
+                    }
+            }
+        */
             //map.addMarker(new MarkerOptions().position(mark).title("User: " + coordinatesList.get(i).getDate()));
             //map.moveCamera(CameraUpdateFactory.newLatLng(mark));
         }
