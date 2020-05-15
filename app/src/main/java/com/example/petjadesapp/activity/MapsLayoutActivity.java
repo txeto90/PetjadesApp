@@ -192,7 +192,6 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
                 });
             }
         }
-
     }
 
 

@@ -9,9 +9,9 @@ public class Coordinate {
     private double lon;
     private double lat;
     private String date;
-    //privat eString user
-    //private boolean visible;
-    //private String animal;
+    private String user;
+    private boolean visible;
+    private String animal;
 
     public Coordinate(){};
 
@@ -37,6 +37,27 @@ public class Coordinate {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public String getUser() {        return user;
+    }
+
+    public void setUser(String user) {        this.user = user;
+    }
+
+    public boolean isVisible() {        return visible;
+    }
+
+    public void setVisible(boolean visible) {
+        this.visible = visible;
+    }
+
+    public String getAnimal() {
+        return animal;
+    }
+
+    public void setAnimal(String animal) {
+        this.animal = animal;
     }
 
     @Exclude

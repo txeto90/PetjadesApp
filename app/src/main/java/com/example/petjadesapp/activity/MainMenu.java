@@ -11,6 +11,7 @@ import androidx.appcompat.widget.Toolbar;
 
 
 import com.example.petjadesapp.R;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 
@@ -18,16 +19,22 @@ import java.util.ArrayList;
 
 public class MainMenu extends AppCompatActivity {
 
+    private FirebaseAuth mAuth;
     private ArrayList<String> nameImages;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        mAuth = FirebaseAuth.getInstance();
+        if(mAuth.getCurrentUser() == null){
+            startActivity(new Intent(this, LoadActivity.class));
+        }
     }
 
-
+    public FirebaseAuth getmAuth() { return mAuth; }
 
     private void setSampleImages(){
         nameImages = new ArrayList<>();
@@ -67,7 +74,6 @@ public class MainMenu extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
@@ -113,6 +119,13 @@ public class MainMenu extends AppCompatActivity {
         }
         if (id == R.id.about) {
             Intent intent = new Intent(this, AboutActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        if (id == R.id.logOut) {
+            //desconectar el conter de la app
+            Intent intent = new Intent(this, LoadActivity.class);
+            intent.putExtra("logOutInfo", true);
             startActivity(intent);
             return true;
         }
