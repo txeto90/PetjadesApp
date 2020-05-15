@@ -5,7 +5,10 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
+import android.location.Criteria;
+import android.location.Geocoder;
 import android.location.Location;
+import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 
@@ -31,10 +34,14 @@ import com.example.petjadesapp.R;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.Manifest.permission.ACCESS_FINE_LOCATION;
+
+
 public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
 
     private MapView mapView;
     private ArrayList<Coordinate> coordinatesList;
+    private GoogleMap myMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +49,8 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
         setContentView(R.layout.activity_maps_layout);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        requestPermision();
 
         CoordinatesDAO c = new CoordinatesDAO();
         coordinatesList = c.getCoordinatesList();
@@ -57,6 +66,7 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
         // Add a marker in Sydney and move the camera
         //LatLng sydney = new LatLng(-34, 151);
         //coordinatesList = c.getCoordinatesList();
+        myMap = map;
         Log.d("kk3", "mapready: " + coordinatesList.size());
         for (int i = 0; i < coordinatesList.size(); i++) {
             map.addMarker(new MarkerOptions().position(new LatLng(coordinatesList.get(i).getLon(), coordinatesList.get(i).getLat()))
@@ -66,8 +76,6 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
             Log.d("kk3", "latlong: " + coordinatesList.get(i).getLon() + ", " + coordinatesList.get(i).getLat());
             //map.addMarker(new MarkerOptions().position(mark).title("User: " + coordinatesList.get(i).getDate()));
             //map.moveCamera(CameraUpdateFactory.newLatLng(mark));
-
-
         }
         mapView.onResume();
     }
@@ -92,7 +100,7 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
             public void onClick(DialogInterface dialog, int which) {
                 if (!mSp.getSelectedItem().toString().equalsIgnoreCase("")) {
                     //AGAFAR DADES I GUARDARLES
-                    locationPosition();
+                    placeOnPosition();
                 }
             }
         });
@@ -108,24 +116,92 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
         dialog.show();
     }
 
-    public void locationPosition() {
-        LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+    public void placeOnPosition() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            Log.d("kk2", "return");
             return;
         }
-        Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-        double lon = location.getLongitude();
-        double lat = location.getLatitude();
-        Log.d("kk2", lon + ", " + lat);
+        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        Log.d("kk2", "kk");
+        Criteria criteria = new Criteria();
+        String bestProvider = String.valueOf(locationManager.getBestProvider(criteria, true)).toString();
 
+        if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+            Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+            if(location != null) {
+                double lon = location.getLongitude();
+                double lat = location.getLatitude();
+                addMap(lon, lat);
+            }else{
+                locationManager.requestLocationUpdates(bestProvider, 1000, 0, new LocationListener() {
+                    @Override
+                    public void onLocationChanged(Location loc) {
+                        locationManager.removeUpdates(this);
+                        double lon = loc.getLongitude();
+                        double lat = loc.getLatitude();
+                        addMap(lon, lat);
+                    }
+
+                    @Override
+                    public void onStatusChanged(String provider, int status, Bundle extras) {
+
+                    }
+
+                    @Override
+                    public void onProviderEnabled(String provider) {
+
+                    }
+
+                    @Override
+                    public void onProviderDisabled(String provider) {
+
+                    }
+                });
+            }
+
+        }
+        if (locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
+            Location location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+            if(location != null) {
+                double lon = location.getLongitude();
+                double lat = location.getLatitude();
+                addMap(lon, lat);
+            }else{
+                locationManager.requestLocationUpdates(bestProvider, 1000, 0, new LocationListener() {
+                    @Override
+                    public void onLocationChanged(Location loc) {
+                        locationManager.removeUpdates(this);
+                        double lon = loc.getLongitude();
+                        double lat = loc.getLatitude();
+                        addMap(lon, lat);
+                    }
+
+                    @Override
+                    public void onStatusChanged(String provider, int status, Bundle extras) {
+
+                    }
+
+                    @Override
+                    public void onProviderEnabled(String provider) {
+
+                    }
+
+                    @Override
+                    public void onProviderDisabled(String provider) {
+
+                    }
+                });
+            }
+        }
+
+    }
+
+
+    private void requestPermision(){
+        ActivityCompat.requestPermissions(this, new String[]{ACCESS_FINE_LOCATION}, 1);
+    }
+
+    private void addMap(double lon, double lat){
+        myMap.addMarker(new MarkerOptions().position(new LatLng(lat, lon)));
     }
 
 }

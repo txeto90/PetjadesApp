@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import com.example.petjadesapp.R;
-import com.example.petjadesapp.dao.CoordinatesDAO;
 
 public class MainActivity extends MainMenu {
 

@@ -9,6 +9,9 @@ public class Coordinate {
     private double lon;
     private double lat;
     private String date;
+    //privat eString user
+    //private boolean visible;
+    //private String animal;
 
     public Coordinate(){};
 
