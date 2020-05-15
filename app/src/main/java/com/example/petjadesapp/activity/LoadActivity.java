@@ -45,7 +45,6 @@ public class LoadActivity extends Activity {
         if(extras != null){
             boolean logOutInfo = extras.getBoolean("logOutInfo");
             if(logOutInfo){
-                Log.d("kk1", "trenca");
                 signOut();
             }
         }
