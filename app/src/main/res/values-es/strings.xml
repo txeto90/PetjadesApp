@@ -63,10 +63,10 @@
     <string name="plantigrade">Huella plantigrada</string>
 
     <!-- ABOUT ACTIVITY -->
-    <string name="title_activity_about">Créditos</string>
-    <string name="direction_title">Desarrollo, edición de contenidos y edición gráfica</string>
-    <string name="photos_title">Fotografías</string>
-    <string name="maps_title">Mapas de distribución</string>
+    <string name="title_activity_about">Créditos.</string>
+    <string name="direction_title">Desarrollo, edición de contenidos y edición gráfica.</string>
+    <string name="photos_title">Fotografías.</string>
+    <string name="maps_title">Mapas de distribución.</string>
     <string name="maps_text">
         <a href="https://www.miteco.gob.es/es/biodiversidad/temas/inventarios-nacionales/">Ministerio para la Trancisión Ecológica y el Reto Demográfico.</a>
     </string>

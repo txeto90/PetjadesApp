@@ -64,18 +64,18 @@
 
     <!-- ABOUT ACTIVITY -->
     <string name="title_activity_about">Crèdits</string>
-    <string name="direction_title">Desenvolupaments, edició de contingut i gràfics</string>
-    <string name="photos_title">Fotografies</string>
-    <string name="maps_title">Mapes de distribució</string>
+    <string name="direction_title">Desenvolupament, edició de contingut i gràfics.</string>
+    <string name="photos_title">Fotografies.</string>
+    <string name="maps_title">Mapes de distribució.</string>
     <string name="maps_text">
         <a href="https://www.miteco.gob.es/es/biodiversidad/temas/inventarios-nacionales/">Ministerio para la Trancisión Ecológica y el Reto Demográfico.</a>
     </string>
     <string name="copyrigth_text">
-        <a href="https://creativecommons.org/licenses/by-nc/4.0/">Algunos derechos reservados.</a>
+        <a href="https://creativecommons.org/licenses/by-nc/4.0/">Algunos drets reservats.</a>
     </string>
 
     <!-- MAPS ACTIVITY -->
-    <string name="title_dialog">Desar petjada</string>
+    <string name="title_dialog">Desar una petjada</string>
     <string name="ok_dialog">Acceptar</string>
     <string name="cancel_dialog">Cancelar</string>
     <string name="spinerselection_dialog">Selecciona un animal…</string>

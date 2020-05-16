@@ -30,6 +30,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.petjadesapp.R;
 
@@ -132,7 +133,7 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
         mBuilder.setPositiveButton(R.string.ok_dialog, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                if (!mSp.getSelectedItem().toString().equalsIgnoreCase("")) {
+                if (!mSp.getSelectedItem().toString().equalsIgnoreCase(getResources().getString(R.string.spinerselection_dialog))) {
                     //AGAFAR DADES I GUARDARLES
                     String animal = mSp.getSelectedItem().toString();
                     String date = getDate();
@@ -149,6 +150,9 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
                     c.setLat(lat);
                     c.setUser(userId);
                     cdao.pushValue(c);
+                }else{
+                    Toast toast = Toast.makeText(getApplicationContext(),R.string.spinerselection_dialog, Toast.LENGTH_LONG);
+                    toast.show();
                 }
             }
         });
