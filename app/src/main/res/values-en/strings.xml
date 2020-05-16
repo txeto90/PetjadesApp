@@ -4,33 +4,20 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_animals_list"></string>
 
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="title_activity_dichotomous_key">DichotomousKeyActivity</string>
+    <string name="title_activity_dichotomous_key">Dichotomous key</string>
 
     <!-- MENU -->
     <string name="txtMenuHome">Home</string>
-    <!-- <string name="txtMenuList">Guía de mamíferos</string> -->
     <string name="txtMenuCamera">Camera</string>
     <string name="txtMenuAbout">About</string>
-    <string name="txtMenuMaps">Mapas</string>
-    <!-- <string name="txtMenuDicotomica">Clave dicotomica</string> -->
-
-    <!-- MAIN ACTIVITY -->
-    <string name="txtListMenu">Mamal guide</string>
-    <string name="txtDichotomousMenu">Dichotomous key</string>
+    <string name="txtMenuMaps">Maps</string>
+    <string name="txtListMenu">Mammal guide</string>
+    <string name="txtDichotomousMenu">Footprint identification</string>
+    <string name="txtMenuBackground">Guide for the identification of tracks and traces of mammals in Spain.</string>
 
     <!-- ANIMAL LIST -->
-    <string name="title_list">Mamal guide</string>
-    <string name="title_activity_animal_data">AnimalDataActivity</string>
-    <string name="title_activity_camera2">Camera</string>
-    <string name="search">Search...</string>
+    <!--<string name="title_activity_camera2">Cámara</string>-->
+    <string name="search">Search…</string>
 
     <!-- ANIMAL DATA ACTIVITY falta implementar-ho-->
     <string name="txtIndexDescription">Description</string>
@@ -38,49 +25,48 @@
     <string name="txtIndexDistribution">Distribution</string>
     <string name="txtIndexTrace">Traces</string>
 
-
     <!-- DICHOTOMOUS KEY ACTIVITY-->
     <!-- RIGTH BUTTON-->
-    <string name="hoof">Pezuña/Casco</string>
-    <string name="pair_fingers">Dedos par</string>
-    <string name="no_secundary_hoof">Sin pezuña secundaria</string>
-    <string name="with_nails">Con uñas</string>
-    <string name="double_pad">Almohadilla bilobulada</string>
-    <string name="no_main_pad">Sin almohadilla principal</string>
-    <string name="heavily_modified">Muy modificada</string>
-    <string name="divided_pad">Almohadilla principal dividida</string>
-    <string name="one_to_five_size">entre 1 y 5 cm</string>
-    <string name="more_than_threecm">Más de 3 cm</string>
-    <string name="long_nails">Uñas largas</string>
-    <string name="less_than_threecm">Menos de 3 cm</string>
-    <string name="more_than_onefivecm">Más de 1,5 cm</string>
-    <string name="mole">Huella con hilera</string>
-    <string name="side_fingers">Dedos laterales</string>
-    <string name="digitigrade">Huella digitígrada</string>
+    <string name="hoof">Hoof/Hoove</string>
+    <string name="pair_fingers">Pair finguers</string>
+    <string name="no_secundary_hoof">Without secondary hoof</string>
+    <string name="with_nails">With nails</string>
+    <string name="double_pad">Bilobed pad</string>
+    <string name="no_main_pad">Without main pad</string>
+    <string name="heavily_modified">Heavily modified</string>
+    <string name="divided_pad">Has divided main pad</string>
+    <string name="one_to_five_size">Between 1 and 5 cm</string>
+    <string name="more_than_threecm">More than 3 cm</string>
+    <string name="long_nails">Long nails</string>
+    <string name="less_than_threecm">Less than 3 cm</string>
+    <string name="more_than_onefivecm">More than 1,5 cm</string>
+    <string name="mole">Footprint like a row</string>
+    <string name="side_fingers">Lateral fingers</string>
+    <string name="digitigrade">Digitigrade footprint</string>
 
     <!-- LEFT BUTTON-->
-    <string name="fingers">Dedos</string>
-    <string name="no_nails">Sin uñas</string>
-    <string name="tripe_pad">Almohadilla trilobulada</string>
-    <string name="odd_fingers">Dedos impares</string>
-    <string name="with_secundary_hoof">Con pezuña secundaria</string>
-    <string name="with_main_pad">Con almohadilla principal</string>
-    <string name="unique_main_pad">Almohadilla principal unica</string>
-    <string name="five_to_eigth_cm">Entre 5 y 8 cm</string>
-    <string name="small_nails">Uñas pequeñas</string>
-    <string name="one_to_three_cm">Entre 1 y 3 cm</string>
-    <string name="four_to_five_cm">Entre 4 y 5 cm</string>
-    <string name="less_than_onefive_cm">Menos de 1,5cm</string>
-    <string name="five_fingers">5 dedos</string>
-    <string name="front_fingers">Dedos hacia delante</string>
-    <string name="oval_pad">Almohadilla ovalada</string>
-    <string name="plantigrade">Huella plantigrada</string>
+    <string name="fingers">Fingers</string>
+    <string name="no_nails">Without nails</string>
+    <string name="tripe_pad">Trilobed pad</string>
+    <string name="odd_fingers">Odd fingers</string>
+    <string name="with_secundary_hoof">With secundary hoof</string>
+    <string name="with_main_pad">With a main pad</string>
+    <string name="unique_main_pad">Single main pad</string>
+    <string name="five_to_eigth_cm">Between 5 and 8 cm</string>
+    <string name="small_nails">With small nails</string>
+    <string name="one_to_three_cm">Between 1 and 3 cm</string>
+    <string name="four_to_five_cm">Between 4 and 5 cm</string>
+    <string name="less_than_onefive_cm">Less than 1,5cm</string>
+    <string name="five_fingers">Five fingers</string>
+    <string name="front_fingers">Have fingers forward</string>
+    <string name="oval_pad">Oval pad</string>
+    <string name="plantigrade">Plantigrade footprint</string>
 
-    <!-- ABOUT -->
+    <!-- ABOUT ACTIVITY -->
     <string name="title_activity_about">About</string>
-    <string name="direction_title">Desarrollo, edición de contenidos y edición gráfica</string>
-    <string name="photos_title">Fotografías</string>
-    <string name="maps_title">Mapas de distribución</string>
+    <string name="direction_title">Development, content and graphic editing.</string>
+    <string name="photos_title">Photographs.</string>
+    <string name="maps_title">Distribution maps.</string>
     <string name="maps_text">
         <a href="https://www.miteco.gob.es/es/biodiversidad/temas/inventarios-nacionales/">Ministerio para la Trancisión Ecológica y el Reto Demográfico.</a>
     </string>
@@ -88,14 +74,16 @@
         <a href="https://creativecommons.org/licenses/by-nc/4.0/">Algunos derechos reservados.</a>
     </string>
 
-    <string name="title_activity_load">loadActivity</string>
-    <string name="title_dialog">Guardar coordenada</string>
+    <!-- MAPS ACTIVITY -->
+    <string name="title_dialog">Save a footprint</string>
     <string name="ok_dialog">Ok</string>
     <string name="cancel_dialog">Cancel</string>
-    <string name="spinerselection_dialog">Selecciona un animal...</string>
-    <string name="btn_save_coordinate">Save coordinate</string>
-    <string name="salir_sesion">salir sesión</string>
-    <string name="check_boxmis_huellas">Mis huellas</string>
-
+    <string name="spinerselection_dialog">Choose an animal…</string>
+    <string name="btn_save_coordinate">Save a footprint</string>
+    <string name="salir_sesion">Logout</string>
+    <string name="check_boxmis_huellas">My tracks</string>
+    <string name="title_activity_maps_layout" />
+    <string name="title_activity_camera2" />
+    <string name="title_activity_animal_data" />
 
 </resources>

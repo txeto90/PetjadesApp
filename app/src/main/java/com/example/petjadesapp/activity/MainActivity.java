@@ -1,6 +1,7 @@
 package com.example.petjadesapp.activity;
 
 import android.content.Intent;
+import android.graphics.Camera;
 import android.os.Bundle;
 import android.view.View;
 import com.example.petjadesapp.R;
@@ -28,5 +29,13 @@ public class MainActivity extends MainMenu {
     @SuppressWarnings("unused")
     public void goToAboutActivity(View view){
         startActivity(new Intent(this, AboutActivity.class));
+    }
+
+    public void goToCameraActivity(View view){
+        startActivity(new Intent(this, CameraActivity.class));
+    }
+
+    public void goToMapsActivity(View view){
+        startActivity(new Intent(this, MapsLayoutActivity.class));
     }
 }

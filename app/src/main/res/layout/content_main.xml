@@ -9,68 +9,157 @@
     tools:context="com.example.petjadesapp.activity.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <ImageButton
-        android:id="@+id/ibListMenu"
+    <ImageView
+        android:id="@+id/imgBackgroung"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:onClick="goToAnimalsListActivity"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/listmenu" />
-
-    <ImageButton
-        android:id="@+id/ibDicotomicaMenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:onClick="goToDicotomicActivity"
-        app:layout_constraintStart_toStartOf="@+id/ibListMenu"
-        app:layout_constraintTop_toBottomOf="@+id/ibListMenu"
-        app:srcCompat="@drawable/dicotomicamenu" />
+        app:srcCompat="@drawable/intro2" />
 
     <TextView
-        android:id="@+id/txtListMenu"
-        android:layout_width="185dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="152dp"
-        android:text="@string/txtListMenu"
+        android:id="@+id/txtBackground"
+        android:layout_width="334dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="30dp"
+        android:text="@string/txtMenuBackground"
         android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textColor="#0B0A0A"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/txtDicotomicaMenu"
-        android:layout_width="185dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="388dp"
-        android:text="@string/txtDichotomousMenu"
-        android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textColor="#0B0A0A"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:textColor="#FF000000"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="64dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="329dp"
-        android:backgroundTint="#FAF9F9"
+        android:id="@+id/btnAbout"
+        android:layout_width="57dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="347dp"
+        android:backgroundTint="#00FAF9F9"
         android:onClick="goToAboutActivity"
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/infop" />
+
+    <ImageButton
+        android:id="@+id/ibIntroList"
+        android:layout_width="135dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="217dp"
+        android:layout_marginEnd="30dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toStartOf="@+id/ibIntroDicho"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/lobo_sombra"
+        android:onClick="goToAnimalsListActivity"/>
+
+    <ImageButton
+        android:id="@+id/ibIntroDicho"
+        android:layout_width="135dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="217dp"
+        android:layout_marginEnd="46dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ibIntroList"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/gatomontes_petjada"
+        android:onClick="goToDicotomicActivity"/>
+
+    <ImageButton
+        android:id="@+id/ibIntroMaps"
+        android:layout_width="135dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="33dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toStartOf="@+id/ibIntroCamera"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtIntroAnimalList"
+        app:srcCompat="@drawable/distri"
+        android:onClick="goToMapsActivity"/>
+
+    <ImageButton
+        android:id="@+id/ibIntroCamera"
+        android:layout_width="135dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="46dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ibIntroMaps"
+        app:layout_constraintTop_toBottomOf="@+id/txtIntroDicho"
+        app:srcCompat="@drawable/cameraicon"
+        android:onClick="goToCameraActivity"/>
+
+    <TextView
+        android:id="@+id/txtIntroAnimalList"
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="33dp"
+        android:text="@string/txtListMenu"
+        android:textAlignment="center"
+        android:textColor="#FF000000"
+        app:layout_constraintEnd_toStartOf="@+id/txtIntroDicho"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ibIntroList" />
+
+    <TextView
+        android:id="@+id/txtIntroDicho"
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="46dp"
+        android:text="@string/txtDichotomousMenu"
+        android:textAlignment="center"
+        android:textColor="#FF000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtIntroAnimalList"
+        app:layout_constraintTop_toBottomOf="@+id/ibIntroDicho" />
+
+    <TextView
+        android:id="@+id/txtIntroMaps"
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="33dp"
+        android:text="@string/txtMenuMaps"
+        android:textAlignment="center"
+        android:textColor="#FF000000"
+        app:layout_constraintEnd_toStartOf="@+id/txtIntroCamera"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ibIntroMaps" />
+
+    <TextView
+        android:id="@+id/txtIntroCamera"
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="46dp"
+        android:text="@string/txtMenuCamera"
+        android:textAlignment="center"
+        android:textColor="#FF000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtIntroMaps"
+        app:layout_constraintTop_toBottomOf="@+id/ibIntroCamera" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

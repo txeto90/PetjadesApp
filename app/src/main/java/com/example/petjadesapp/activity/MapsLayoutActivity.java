@@ -57,6 +57,12 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
         setContentView(R.layout.activity_maps_layout);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        if (getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
+
         requestPermision();
 
         cbMyFoots = findViewById(R.id.cbMyFoots);
