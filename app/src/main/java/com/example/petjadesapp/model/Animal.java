@@ -10,9 +10,7 @@ public class Animal {
     private String habitat;
     private String distribution;
     private String trace;
-    private String imgExcrement;
     private String imgFootprint;
-    private String imgTraces;
     private String imgAnimal;
 
     public Animal(){}
@@ -81,28 +79,12 @@ public class Animal {
         this.trace = trace;
     }
 
-    public String getImgExcrement() {
-        return imgExcrement;
-    }
-
-    public void setImgExcrement(String imgExcrement) {
-        this.imgExcrement = imgExcrement;
-    }
-
     public String getImgFootprint() {
         return imgFootprint;
     }
 
     public void setImgFootprint(String imgFootprint) {
         this.imgFootprint = imgFootprint;
-    }
-
-    public String getImgTraces() {
-        return imgTraces;
-    }
-
-    public void setImgTraces(String imgTraces) {
-        this.imgTraces = imgTraces;
     }
 
     public String getImgAnimal() {

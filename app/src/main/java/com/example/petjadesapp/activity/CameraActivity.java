@@ -119,6 +119,7 @@ public class CameraActivity extends MainMenu{
         Bundle extras = getIntent().getExtras();
         ArrayList<String> nameImages = extras.getStringArrayList("imgFootPrint");
         for (int i = 0; i < nameImages.size(); i++){
+            Log.d("kk5", nameImages.get(i));
             sampleImages.add(getDrawable(nameImages.get(i)));
         }
     }

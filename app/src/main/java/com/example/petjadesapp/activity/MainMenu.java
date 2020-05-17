@@ -5,14 +5,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
-
 import com.example.petjadesapp.R;
 import com.google.firebase.auth.FirebaseAuth;
-
 import java.util.ArrayList;
 
 
@@ -32,42 +28,30 @@ public class MainMenu extends AppCompatActivity {
         if(mAuth.getCurrentUser() == null){
             startActivity(new Intent(this, LoadActivity.class));
         }
+        setSampleImages();
     }
 
     public FirebaseAuth getmAuth() { return mAuth; }
 
+    public ArrayList<String> getImagesName(){ return nameImages; }
+
     private void setSampleImages(){
         nameImages = new ArrayList<>();
-        nameImages.add("musaranya_petjada");
-        nameImages.add("topillo_petjada");
-        nameImages.add("erizo_petjada");
-        nameImages.add("rataagua_petjada");
-        nameImages.add("rataalmizclera_petjada");
-        nameImages.add("raton_petjada");
-        nameImages.add("rata_petjada");
-        nameImages.add("liron_petjada");
-        nameImages.add("ardilla_petjada");
-        nameImages.add("liebre_petjada");
-        nameImages.add("conejo_petjada");
-        nameImages.add("oso_petjada");
-        nameImages.add("lobo_petjada");
-        nameImages.add("zorro_petjada");
-        nameImages.add("perro_petjada");
-        nameImages.add("comadreja_petjada");
-        nameImages.add("turon_petjada");
-        nameImages.add("marta_petjada");
-        nameImages.add("gardunya_petjada");
-        nameImages.add("nutria_petjada");
-        nameImages.add("tejon_petjada");
-        nameImages.add("meloncillo_petjada");
-        nameImages.add("gineta_petjada");
-        nameImages.add("lince_petjada");
-        nameImages.add("gatomontes_petjada");
-        nameImages.add("jabali_petjada");
-        nameImages.add("muflon_petjada");
-        nameImages.add("cabra_petjada");
-        nameImages.add("ciervo_petjada");
-        nameImages.add("corzo_petjada");
+        nameImages.add("musaranya_petjada");        nameImages.add("topillo_petjada");
+        nameImages.add("erizo_petjada");            nameImages.add("rataagua_petjada");
+        nameImages.add("rataalmizclera_petjada");   nameImages.add("raton_petjada");
+        nameImages.add("rata_petjada");             nameImages.add("liron_petjada");
+        nameImages.add("ardilla_petjada");          nameImages.add("liebre_petjada");
+        nameImages.add("conejo_petjada");           nameImages.add("oso_petjada");
+        nameImages.add("lobo_petjada");             nameImages.add("zorro_petjada");
+        nameImages.add("perro_petjada");            nameImages.add("comadreja_petjada");
+        nameImages.add("turon_petjada");            nameImages.add("marta_petjada");
+    nameImages.add("gardunya_petjada");             nameImages.add("nutria_petjada");
+        nameImages.add("tejon_petjada");            nameImages.add("meloncillo_petjada");
+        nameImages.add("gineta_petjada");           nameImages.add("lince_petjada");
+        nameImages.add("gatomontes_petjada");       nameImages.add("jabali_petjada");
+        nameImages.add("muflon_petjada");           nameImages.add("cabra_petjada");
+        nameImages.add("ciervo_petjada");           nameImages.add("corzo_petjada");
         nameImages.add("caballo_petjada");
     }
 
@@ -107,7 +91,6 @@ public class MainMenu extends AppCompatActivity {
         }
         if (id == R.id.camera) {
             Intent intent = new Intent(this, CameraActivity.class);
-            setSampleImages();
             intent.putExtra("imgFootPrint", nameImages);
             startActivity(intent);
             return true;

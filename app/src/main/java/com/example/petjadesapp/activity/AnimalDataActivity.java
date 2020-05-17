@@ -3,28 +3,14 @@ package com.example.petjadesapp.activity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.res.ColorStateList;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 import com.example.petjadesapp.R;
 import com.example.petjadesapp.dao.ImagesDAO;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.storage.FileDownloadTask;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-import androidx.annotation.NonNull;
-import androidx.appcompat.widget.Toolbar;
-
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class AnimalDataActivity extends MainMenu {
@@ -38,7 +24,6 @@ public class AnimalDataActivity extends MainMenu {
     private ImageButton ibTrace;
     private ImageButton ibDistribution;
     private ImageView imgAditional;
-    private File localFile = null;
 
     @SuppressLint("RestrictedApi")
     @Override
@@ -110,7 +95,6 @@ public class AnimalDataActivity extends MainMenu {
         txtInformation.setText("");
         ImageView iv = findViewById(R.id.imgViewAditional);
         ImagesDAO.getImageFromFirebase(dist, iv);
-        //getImagesFromFirebase(dist, R.id.imgViewAditional);
         imgAditional.setVisibility(View.VISIBLE);
     }
 
@@ -153,33 +137,4 @@ public class AnimalDataActivity extends MainMenu {
         third.setBackgroundTintList(ColorStateList.valueOf(Color.TRANSPARENT));
     }
 
-/*    public void getImagesFromFirebase(String imgName, int objectId){
-        Log.d("kk", "img: " + imgName+", Rid: " + String.valueOf(objectId));
-        // PASARLI EN EL EXTRA EN NOM DE LA FOTO QUE ES VOL AGAFAR
-        StorageReference mStorageRef = FirebaseStorage.getInstance().getReference();
-        StorageReference riversRef;
-        //escolleix depenent del no m de imatge
-        if(imgName.contains("Distri")){
-            riversRef = mStorageRef.child("distribucio/" + imgName);
-        }else{
-            riversRef = mStorageRef.child("fotoAnimals/" + imgName);
-        }
-        //download
-        try {
-            localFile = File.createTempFile("images", "png");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        riversRef.getFile(localFile)
-                .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
-                    @Override
-                    public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
-                        ImageView animalImage = findViewById(objectId);
-                        animalImage.setImageURI(Uri.fromFile(localFile));
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception exception) { }
-        });
-    }*/
 }

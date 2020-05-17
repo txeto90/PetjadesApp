@@ -190,11 +190,8 @@ public class DichotomousKeyActivity extends MainMenu {
         intent.putExtra("habitat", a.getHabitat());
         intent.putExtra("distribution", a.getDistribution());
         intent.putExtra("trace", a.getTrace());
-        intent.putExtra("imgExcrement", a.getImgExcrement());
         intent.putExtra("imgFootPrint", a.getImgFootprint());
-        intent.putExtra("imgTraces", a.getImgTraces());
         intent.putExtra("imgAnimal", a.getImgAnimal());
-
         startActivity(intent);
     }
 

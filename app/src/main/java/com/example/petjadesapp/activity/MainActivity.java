@@ -3,8 +3,11 @@ package com.example.petjadesapp.activity;
 import android.content.Intent;
 import android.graphics.Camera;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import com.example.petjadesapp.R;
+
+import java.util.ArrayList;
 
 public class MainActivity extends MainMenu {
 
@@ -32,7 +35,11 @@ public class MainActivity extends MainMenu {
     }
 
     public void goToCameraActivity(View view){
-        startActivity(new Intent(this, CameraActivity.class));
+        Intent intent = new Intent(this, CameraActivity.class);
+        ArrayList<String> nameImages = getImagesName();
+        Log.d("kk5", nameImages.size()+"");
+        intent.putExtra("imgFootPrint", nameImages);
+        startActivity(intent);
     }
 
     public void goToMapsActivity(View view){

@@ -54,11 +54,8 @@ public class AnimalsListActivity extends MainMenu {
                 intent.putExtra("habitat", theAnimals.get(position).getHabitat());
                 intent.putExtra("distribution", theAnimals.get(position).getDistribution());
                 intent.putExtra("trace", theAnimals.get(position).getTrace());
-                intent.putExtra("imgExcrement", theAnimals.get(position).getImgExcrement());
                 intent.putExtra("imgFootPrint", theAnimals.get(position).getImgFootprint());
-                intent.putExtra("imgTraces", theAnimals.get(position).getImgTraces());
                 intent.putExtra("imgAnimal", theAnimals.get(position).getImgAnimal());
-
                 startActivity(intent);
             }
         });

@@ -35,10 +35,8 @@ public class AnimalsDAO extends MainMenu {
                 a.setHabitat(c.getString(4));
                 a.setDistribution(c.getString(5));
                 a.setTrace(c.getString(6));
-                a.setImgExcrement(c.getString(7));
-                a.setImgFootprint(c.getString(8));
-                a.setImgTraces(c.getString(9));
-                a.setImgAnimal(c.getString(10));
+                a.setImgFootprint(c.getString(7));
+                a.setImgAnimal(c.getString(8));
                 animalList.add(a);
             }while(c.moveToNext());
         }
@@ -59,7 +57,7 @@ public class AnimalsDAO extends MainMenu {
     }
 
     public static Animal getAnimalInformation(int id) {
-        String sql = "SELECT * FROM animals WHERE id = " + id + ";";
+        String sql = "SELECT * FROM animals WHERE codi = " + id + ";";
         Cursor c = db.rawQuery(sql, null);
         Animal a = new Animal();
         if(c.moveToFirst()) {
@@ -70,10 +68,8 @@ public class AnimalsDAO extends MainMenu {
                 a.setHabitat(c.getString(4));
                 a.setDistribution(c.getString(5));
                 a.setTrace(c.getString(6));
-                a.setImgExcrement(c.getString(7));
-                a.setImgFootprint(c.getString(8));
-                a.setImgTraces(c.getString(9));
-                a.setImgAnimal(c.getString(10));
+                a.setImgFootprint(c.getString(7));
+                a.setImgAnimal(c.getString(8));
             } while (c.moveToNext());
         }
         return a;
