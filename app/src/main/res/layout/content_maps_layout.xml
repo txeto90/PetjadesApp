@@ -13,22 +13,28 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:onClick="showDialog"
-            android:text="@string/btn_save_coordinate" />
+        android:layout_height="match_parent">
 
         <CheckBox
             android:id="@+id/cbMyFoots"
-            android:layout_width="match_parent"
+            android:layout_width="271dp"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="@string/check_boxmis_huellas" />
+            android:text="@string/check_boxmis_huellas"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="70dp"
+            android:layout_height="64dp"
+            android:background="#A19292"
+            android:backgroundTint="#00FFFFFF"
+            android:onClick="showDialog"
+            android:scaleType="fitCenter"
+            android:tint="#B71C1C"
+            app:srcCompat="@drawable/addlocation" />
+
     </LinearLayout>
 
 </RelativeLayout>
