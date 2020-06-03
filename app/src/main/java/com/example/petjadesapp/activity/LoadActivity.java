@@ -103,15 +103,11 @@ public class LoadActivity extends Activity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
-                            Log.d("kk1", "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             startActivity(new Intent(instance, MainActivity.class));
-
                         } else {
                             // If sign in fails, display a message to the user.
-                            Log.w("kk1", "signInWithCredential:failure", task.getException());
                             Snackbar.make(findViewById(R.id.lyloadActivity), "Authentication Failed.", Snackbar.LENGTH_SHORT).show();
-
                         }
 
                         // ...

@@ -1,9 +1,7 @@
 package com.example.petjadesapp.activity;
 
 import android.content.Intent;
-import android.graphics.Camera;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import com.example.petjadesapp.R;
 
@@ -37,7 +35,6 @@ public class MainActivity extends MainMenu {
     public void goToCameraActivity(View view){
         Intent intent = new Intent(this, CameraActivity.class);
         ArrayList<String> nameImages = getImagesName();
-        Log.d("kk5", nameImages.size()+"");
         intent.putExtra("imgFootPrint", nameImages);
         startActivity(intent);
     }

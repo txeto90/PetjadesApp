@@ -1,10 +1,5 @@
 package com.example.petjadesapp.model;
 
-import com.google.firebase.database.Exclude;
-
-import java.util.HashMap;
-import java.util.Map;
-
 public class Coordinate {
     private double lon;
     private double lat;
@@ -41,11 +36,9 @@ public class Coordinate {
 
     public String getUser() { return user; }
 
-    public void setUser(String user) {        this.user = user;
-    }
+    public void setUser(String user) { this.user = user; }
 
-    public boolean isVisible() {        return visible;
-    }
+    public boolean isVisible() { return visible; }
 
     public void setVisible(boolean visible) {
         this.visible = visible;

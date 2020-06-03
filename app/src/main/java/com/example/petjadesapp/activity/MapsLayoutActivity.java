@@ -10,7 +10,6 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
-
 import com.example.petjadesapp.dao.AnimalsDAO;
 import com.example.petjadesapp.dao.CoordinatesDAO;
 import com.example.petjadesapp.model.Coordinate;
@@ -19,10 +18,8 @@ import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
-
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -31,17 +28,13 @@ import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Toast;
-
 import com.example.petjadesapp.R;
-
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
-
 
 public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
 
@@ -63,9 +56,7 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
-
         requestPermision();
-
         cbMyFoots = findViewById(R.id.cbMyFoots);
         cdao = new CoordinatesDAO(this);
 
@@ -76,17 +67,15 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
 
     public void populateMap(){
         ArrayList<Coordinate> coordinatesList = cdao.getCoordinatesList();
-
         cbMyFoots.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                Log.d("kk4", ""+isChecked);
                 myMap.clear();
                 if(!isChecked) {
                     for (int i = 0; i < coordinatesList.size(); i++) {
                         if(coordinatesList.get(i).isVisible() || getmAuth().getCurrentUser().getUid() == coordinatesList.get(i).getUser()) {
                             myMap.addMarker(new MarkerOptions().position(new LatLng(coordinatesList.get(i).getLat(), coordinatesList.get(i).getLon()))
-                                    .title("User: Menganito \n Date: " + coordinatesList.get(i).getDate()));
+                                    .title("Animal: "+ coordinatesList.get(i).getAnimal() + "\n Date: " + coordinatesList.get(i).getDate()));
                         }
                         //map.addMarker(new MarkerOptions().position(mark).title("User: " + coordinatesList.get(i).getDate()));
                         //map.moveCamera(CameraUpdateFactory.newLatLng(mark));
@@ -94,9 +83,10 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
 
                 }else{
                     for (int i = 0; i < coordinatesList.size(); i++) {
-                        Log.d("kk4", getmAuth().getCurrentUser().getUid() + ", " + coordinatesList.get(i).getUser() + ", "+ (getmAuth().getCurrentUser().getUid() == coordinatesList.get(i).getUser()));
                         if (getmAuth().getCurrentUser().getUid().equals(coordinatesList.get(i).getUser())) {
-                            myMap.addMarker(new MarkerOptions().position(new LatLng(coordinatesList.get(i).getLat(), coordinatesList.get(i).getLon())));
+                            myMap.addMarker(new MarkerOptions().position(new LatLng(coordinatesList.get(i).getLat(), coordinatesList.get(i).getLon()))
+                                    .title("Animal: "+ coordinatesList.get(i).getAnimal() + "\n Date: " + coordinatesList.get(i).getDate()));
+                            //myMap.addMarker(new MarkerOptions().position(new LatLng(coordinatesList.get(i).getLat(), coordinatesList.get(i).getLon())));
                         }
                     }
                 }
@@ -140,8 +130,6 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
                     boolean visible = rbYes.isChecked();
                     String userId = getmAuth().getCurrentUser().getUid();
 
-                    Log.d("kk1", "animal: "+animal+", rb: " + visible);
-
                     Coordinate c = new Coordinate();
                     c.setAnimal(animal);
                     c.setDate(date);
@@ -179,10 +167,8 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
             return;
         }
         LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        Log.d("kk2", "kk");
         Criteria criteria = new Criteria();
         String bestProvider = String.valueOf(locationManager.getBestProvider(criteria, true)).toString();
-
         if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
             Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
             if(location != null) {

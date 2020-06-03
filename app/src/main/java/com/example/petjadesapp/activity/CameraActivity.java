@@ -88,7 +88,6 @@ public class CameraActivity extends MainMenu{
         public void onSurfaceTextureUpdated(SurfaceTexture surface) {
         }
     };
-
     private final CameraDevice.StateCallback stateCallback = new CameraDevice.StateCallback() {
         @Override
         public void onOpened(CameraDevice camera) {
@@ -119,7 +118,6 @@ public class CameraActivity extends MainMenu{
         Bundle extras = getIntent().getExtras();
         ArrayList<String> nameImages = extras.getStringArrayList("imgFootPrint");
         for (int i = 0; i < nameImages.size(); i++){
-            Log.d("kk5", nameImages.get(i));
             sampleImages.add(getDrawable(nameImages.get(i)));
         }
     }
@@ -152,7 +150,6 @@ public class CameraActivity extends MainMenu{
             public void setImageForPosition(int position, ImageView imageView) {
                 TextView txtCameraView = findViewById(R.id.txtCameraView);
                 txtCameraView.setText(imgNames.get(position));
-                Log.d("kk10", position+"");
                 imageView.setImageResource(sampleImages.get(position));
                 imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
             }

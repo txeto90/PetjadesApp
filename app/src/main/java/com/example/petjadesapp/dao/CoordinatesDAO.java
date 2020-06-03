@@ -1,7 +1,6 @@
 package com.example.petjadesapp.dao;
 
 import android.util.Log;
-
 import com.example.petjadesapp.activity.MapsLayoutActivity;
 import com.example.petjadesapp.model.Coordinate;
 import com.google.firebase.database.DataSnapshot;

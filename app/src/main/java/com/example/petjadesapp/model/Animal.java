@@ -24,15 +24,6 @@ public class Animal {
         }
     };
 
-    public static Comparator<Animal> ScientificName = new Comparator<Animal>() {
-        @Override
-        public int compare(Animal a1, Animal a2) {
-            String scientificName1 = a1.getScientificName();
-            String scientificName2 = a2.getScientificName();
-            return scientificName1.compareTo(scientificName2);
-        }
-    };
-
     public String getScientificName() { return scientificName; }
 
     public void setScientificName(String scientificName) {

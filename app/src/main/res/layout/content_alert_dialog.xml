@@ -20,7 +20,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Desea que su marca sea visible para otros usuarios?" />
+        android:text="@string/set_visible" />
 
     <RadioGroup
         android:layout_width="match_parent"
@@ -31,7 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="Yes" />
+            android:text="@string/yes" />
 
         <RadioButton
             android:id="@+id/rbNo"
@@ -44,6 +44,6 @@
         android:id="@+id/textView3"
         android:layout_width="266dp"
         android:layout_height="wrap_content"
-        android:text="¿Esta seguro?" />
+        android:text="@string/esta_seguro" />
 
 </LinearLayout>

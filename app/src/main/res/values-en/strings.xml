@@ -82,8 +82,11 @@
     <string name="btn_save_coordinate">Save a footprint</string>
     <string name="salir_sesion">Logout</string>
     <string name="check_boxmis_huellas">My tracks</string>
+    <string name="set_visible">Do you want your mark will be visible to other users?</string>
+    <string name="esta_seguro">Are you sure?</string>
+    <string name="yes">Yes</string>
+
     <string name="title_activity_maps_layout" />
     <string name="title_activity_camera2" />
     <string name="title_activity_animal_data" />
-
 </resources>

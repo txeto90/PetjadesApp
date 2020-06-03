@@ -82,8 +82,11 @@
     <string name="btn_save_coordinate">Desar petjada</string>
     <string name="salir_sesion">Sortir de la sessió</string>
     <string name="check_boxmis_huellas">Les meves petjades</string>
+    <string name="set_visible">Desitja que la seva marca sigui visible per a altres usuaris?</string>
+    <string name="esta_seguro">Esta segur?</string>
+    <string name="yes">Si</string>
+
     <string name="title_activity_maps_layout" />
     <string name="title_activity_camera2" />
     <string name="title_activity_animal_data" />
-
 </resources>

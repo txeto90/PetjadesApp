@@ -81,8 +81,11 @@
     <string name="btn_save_coordinate">Guardar huella</string>
     <string name="salir_sesion">Salir sesión</string>
     <string name="check_boxmis_huellas">Mis huellas</string>
+    <string name="set_visible">Desea que su marca sea visible para otros usuarios?</string>
+    <string name="esta_seguro">¿Esta seguro?</string>
+    <string name="yes">Sí</string>
+
     <string name="title_activity_maps_layout" />
     <string name="title_activity_camera2" />
     <string name="title_activity_animal_data" />
-
 </resources>

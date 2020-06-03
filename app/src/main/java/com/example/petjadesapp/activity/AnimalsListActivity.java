@@ -30,7 +30,6 @@ public class AnimalsListActivity extends MainMenu {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
-
         AnimalsDAO animalsDAO = new AnimalsDAO(this);
 
         //construct data source
@@ -76,10 +75,6 @@ public class AnimalsListActivity extends MainMenu {
 
             }
         });
-    }
-
-    public void comeBack(View view){
-        startActivity(new Intent(this, MainActivity.class));
     }
 
 }
