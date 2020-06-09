@@ -89,4 +89,10 @@
     <string name="title_activity_maps_layout" />
     <string name="title_activity_camera2" />
     <string name="title_activity_animal_data" />
+
+    <!-- ERRORS -->
+    <string name="error_bd">ERROR. Failed to load database.</string>
+    <string name="camera_perm">Sorry!!!, you cannot use this app without granting permission.</string>
+    <string name="confi_change">Configuration change.</string>
+    <string name="save_picture">Saved:</string>
 </resources>

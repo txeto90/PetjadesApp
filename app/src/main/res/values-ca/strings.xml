@@ -89,4 +89,10 @@
     <string name="title_activity_maps_layout" />
     <string name="title_activity_camera2" />
     <string name="title_activity_animal_data" />
+
+    <!-- ERRORS -->
+    <string name="error_bd">ERROR. No ha pogut carregar la base de dades.</string>
+    <string name="camera_perm">Atenció!!! Per a utilitzar la càmara es necessari acceptar els permisos.</string>
+    <string name="confi_change">Canvi de configuració.</string>
+    <string name="save_picture">Desat:</string>
 </resources>

@@ -20,7 +20,6 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
@@ -77,8 +76,6 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
                             myMap.addMarker(new MarkerOptions().position(new LatLng(coordinatesList.get(i).getLat(), coordinatesList.get(i).getLon()))
                                     .title("Animal: "+ coordinatesList.get(i).getAnimal() + "\n Date: " + coordinatesList.get(i).getDate()));
                         }
-                        //map.addMarker(new MarkerOptions().position(mark).title("User: " + coordinatesList.get(i).getDate()));
-                        //map.moveCamera(CameraUpdateFactory.newLatLng(mark));
                     }
 
                 }else{
@@ -86,7 +83,6 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
                         if (getmAuth().getCurrentUser().getUid().equals(coordinatesList.get(i).getUser())) {
                             myMap.addMarker(new MarkerOptions().position(new LatLng(coordinatesList.get(i).getLat(), coordinatesList.get(i).getLon()))
                                     .title("Animal: "+ coordinatesList.get(i).getAnimal() + "\n Date: " + coordinatesList.get(i).getDate()));
-                            //myMap.addMarker(new MarkerOptions().position(new LatLng(coordinatesList.get(i).getLat(), coordinatesList.get(i).getLon())));
                         }
                     }
                 }

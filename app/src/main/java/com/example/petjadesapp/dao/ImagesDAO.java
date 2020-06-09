@@ -1,22 +1,14 @@
 package com.example.petjadesapp.dao;
 
 import android.net.Uri;
-import android.util.Log;
 import android.widget.ImageView;
+import android.widget.Toast;
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.petjadesapp.activity.MainMenu;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
-
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class ImagesDAO {
@@ -54,6 +46,8 @@ public class ImagesDAO {
             @Override
             public void onFailure(@NonNull Exception exception) {
                 // Any errors
+                Toast toast = Toast.makeText(getApplicationContext(), "Error en la conexión. No se han podido cargar las imágenes.", Toast.LENGTH_LONG);
+                toast.show();
             }
         });
     }

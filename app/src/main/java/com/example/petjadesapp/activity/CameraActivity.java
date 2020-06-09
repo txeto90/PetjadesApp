@@ -26,7 +26,6 @@ import androidx.core.app.ActivityCompat;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.util.Log;
 import android.util.Size;
 import android.util.SparseIntArray;
 import android.view.Surface;
@@ -237,7 +236,7 @@ public class CameraActivity extends MainMenu{
                 @Override
                 public void onCaptureCompleted(CameraCaptureSession session, CaptureRequest request, TotalCaptureResult result) {
                     super.onCaptureCompleted(session, request, result);
-                    Toast.makeText(CameraActivity.this, "Saved:" + file, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CameraActivity.this, getString(R.string.save_picture) + file, Toast.LENGTH_SHORT).show();
                     createCameraPreview();
                 }
             };
@@ -282,7 +281,7 @@ public class CameraActivity extends MainMenu{
 
                 @Override
                 public void onConfigureFailed(@NonNull CameraCaptureSession cameraCaptureSession) {
-                    Toast.makeText(CameraActivity.this, "Configuration change", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CameraActivity.this, R.string.confi_change, Toast.LENGTH_SHORT).show();
                 }
             }, null);
         } catch (CameraAccessException e) {
@@ -334,7 +333,7 @@ public class CameraActivity extends MainMenu{
         if (requestCode == REQUEST_CAMERA_PERMISSION) {
             if (grantResults[0] == PackageManager.PERMISSION_DENIED) {
                 // close the app
-                Toast.makeText(this, "Sorry!!!, you can't use this app without granting permission", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, R.string.camera_perm, Toast.LENGTH_LONG).show();
                 finish();
             }
         }

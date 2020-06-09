@@ -3,6 +3,8 @@ package com.example.petjadesapp.dao;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
+
 import com.example.petjadesapp.R;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -43,7 +45,7 @@ class SQLiteHelper extends SQLiteOpenHelper {
         int id = 0;
         switch(lang){
             case "es":{ id = R.raw.bd_es;    }break;
-            //case "cat":{id = R.raw.bd_cat;   }break;
+            case "cat":{id = R.raw.bd_cat;   }break;
             default:{   id = R.raw.bd_en;   }break;
         }
         InputStream in = sqlcontext.getResources().openRawResource(id);
@@ -55,6 +57,8 @@ class SQLiteHelper extends SQLiteOpenHelper {
             }
         } catch (IOException e) {
             e.printStackTrace();
+            Toast toast = Toast.makeText(sqlcontext, R.string.error_bd, Toast.LENGTH_LONG);
+            toast.show();
         }
     }
 

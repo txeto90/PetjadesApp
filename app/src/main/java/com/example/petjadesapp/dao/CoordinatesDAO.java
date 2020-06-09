@@ -1,6 +1,9 @@
 package com.example.petjadesapp.dao;
 
 import android.util.Log;
+import android.widget.Toast;
+
+import com.example.petjadesapp.R;
 import com.example.petjadesapp.activity.MapsLayoutActivity;
 import com.example.petjadesapp.model.Coordinate;
 import com.google.firebase.database.DataSnapshot;
@@ -29,7 +32,6 @@ public class CoordinatesDAO {
                 for(DataSnapshot coordianteSnapshot: dataSnapshot.getChildren()){
                     Coordinate coor = coordianteSnapshot.getValue(Coordinate.class);
                     coordinatesList.add(coor);
-                    Log.d("kk3", "Value is: " + coor.getLon());
                 }
                 mapsLayoutActivity.populateMap();
             }
@@ -37,6 +39,8 @@ public class CoordinatesDAO {
             @Override
             public void onCancelled(DatabaseError error) {
                 //Failed to read value
+                Toast toast = Toast.makeText(getApplicationContext(), "Error en la conexión. No se han podido cargar las huellas.", Toast.LENGTH_LONG);
+                toast.show();
             }
         });
     }
