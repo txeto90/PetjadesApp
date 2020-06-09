@@ -23,9 +23,12 @@ import com.synnapps.carouselview.ImageListener;
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
+import androidx.viewpager.widget.ViewPager;
+
 import android.os.Environment;
 import android.os.Handler;
 import android.os.HandlerThread;
+import android.util.Log;
 import android.util.Size;
 import android.util.SparseIntArray;
 import android.view.Surface;
@@ -143,12 +146,29 @@ public class CameraActivity extends MainMenu{
         getSampleImages();
         CarouselView carouselView = (CarouselView) findViewById(R.id.carouselView);
         carouselView.setPageCount(sampleImages.size());
+        carouselView.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                TextView txtCameraView = findViewById(R.id.txtCameraView);
+                txtCameraView.setText(imgNames.get(position));
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+
+            }
+        });
 
         carouselView.setImageListener(new ImageListener() {
             @Override
             public void setImageForPosition(int position, ImageView imageView) {
-                TextView txtCameraView = findViewById(R.id.txtCameraView);
-                txtCameraView.setText(imgNames.get(position));
+                //TextView txtCameraView = findViewById(R.id.txtCameraView);
+                //txtCameraView.setText(imgNames.get(position));
                 imageView.setImageResource(sampleImages.get(position));
                 imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
             }

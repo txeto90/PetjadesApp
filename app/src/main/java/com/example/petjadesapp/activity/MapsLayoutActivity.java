@@ -95,7 +95,7 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
     public void onMapReady(GoogleMap map) {
         myMap = map;
         mapView.onResume();
-        cdao.getCoordinates();
+        cdao.getCoordinates(this.getApplicationContext());
     }
 
 

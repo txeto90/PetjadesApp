@@ -36,7 +36,7 @@ class AnimalsAdapter extends ArrayAdapter implements Filterable {
         //popuate the data uti te templatre view using the data object
         scientificName.setText(animal.getScientificName());
         vulgarName.setText(animal.getVulgarName());
-        ImagesDAO.getImageFromFirebase(animal.getImgAnimal(), imgAnimal);
+        ImagesDAO.getImageFromFirebase(animal.getImgAnimal(), imgAnimal, this.getContext());
 
         //return the complete view to render on screen
         return convertView;

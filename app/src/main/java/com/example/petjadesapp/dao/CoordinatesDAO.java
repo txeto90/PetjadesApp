@@ -1,9 +1,10 @@
 package com.example.petjadesapp.dao;
 
-import android.util.Log;
+import android.content.Context;
 import android.widget.Toast;
 
-import com.example.petjadesapp.R;
+import androidx.annotation.NonNull;
+
 import com.example.petjadesapp.activity.MapsLayoutActivity;
 import com.example.petjadesapp.model.Coordinate;
 import com.google.firebase.database.DataSnapshot;
@@ -25,7 +26,7 @@ public class CoordinatesDAO {
     }
 
     // Read from the database
-    public void getCoordinates() {
+    public void getCoordinates(@NonNull Context context) {
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -39,7 +40,7 @@ public class CoordinatesDAO {
             @Override
             public void onCancelled(DatabaseError error) {
                 //Failed to read value
-                Toast toast = Toast.makeText(getApplicationContext(), "Error en la conexión. No se han podido cargar las huellas.", Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(context, "Error en la conexión. No se han podido cargar las huellas.", Toast.LENGTH_LONG);
                 toast.show();
             }
         });
@@ -50,7 +51,6 @@ public class CoordinatesDAO {
     }
 
     public ArrayList<Coordinate> getCoordinatesList() {
-        Log.d("kk3", "dao2: "+coordinatesList.size());
         return coordinatesList;
     }
 }
