@@ -7,7 +7,7 @@
 ## Table of Contents
 
 - [Installation](#installation)
-- [Dependencies](#dependenies)
+- [Dependencies](#dependencies)
 - [Screenshots](#screenshots)
 
 ---
