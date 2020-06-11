@@ -6,13 +6,13 @@
 
 ## Table of Contents
 
-- [Install](#install)
+- [Installation](#install)
 - [Dependencies](#dependenies)
 - [Screenshots](#screenshots)
 
 ---
 
-### Install
+### Installation
 
 - Clone this repository to your local machine using `https://github.com/txeto90/PetjadesApp.git`
 - Upgrade your SDK version to 29.
