@@ -6,7 +6,7 @@
 
 ## Table of Contents
 
-- [Installation](#install)
+- [Installation](#installation)
 - [Dependencies](#dependenies)
 - [Screenshots](#screenshots)
 
@@ -15,7 +15,7 @@
 ### Installation
 
 - Clone this repository to your local machine using `https://github.com/txeto90/PetjadesApp.git`
-- Upgrade your SDK version to 29.
+- Import and sync gradle project.
 
 ### Dependencies
 - <a href="https://github.com/sayyam/carouselview">CarouselView v0.1.5</a>
