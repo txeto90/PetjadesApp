@@ -52,7 +52,6 @@ class SQLiteHelper extends SQLiteOpenHelper {
         }
         InputStream in = sqlcontext.getResources().openRawResource(id);
         reader = new BufferedReader(new InputStreamReader(in));
-
         try {
             while (((line = reader.readLine()) != null)){
                 db.execSQL(line);
