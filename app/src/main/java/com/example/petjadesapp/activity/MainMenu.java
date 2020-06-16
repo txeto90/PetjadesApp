@@ -45,7 +45,7 @@ public class MainMenu extends AppCompatActivity {
         nameImages.add("lobo_petjada");             nameImages.add("zorro_petjada");
         nameImages.add("perro_petjada");            nameImages.add("comadreja_petjada");
         nameImages.add("turon_petjada");            nameImages.add("marta_petjada");
-    nameImages.add("gardunya_petjada");             nameImages.add("nutria_petjada");
+        nameImages.add("gardunya_petjada");         nameImages.add("nutria_petjada");
         nameImages.add("tejon_petjada");            nameImages.add("meloncillo_petjada");
         nameImages.add("gineta_petjada");           nameImages.add("lince_petjada");
         nameImages.add("gatomontes_petjada");       nameImages.add("jabali_petjada");

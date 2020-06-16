@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import com.example.petjadesapp.R;
 import com.example.petjadesapp.dao.ImagesDAO;
+import android.text.Html;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -62,7 +63,7 @@ public class AnimalDataActivity extends MainMenu {
         txtVulgar.setText(vulgarName);
         txtScientific.setText(scientificName);
         txtIndexTitle.setText(getString(R.string.txtIndexDescription));
-        txtInformation.setText(description);
+        txtInformation.setText(Html.fromHtml(description));
     }
 
     //MOSTRA LES DADES EN LES CORRESPONENTS PESTANYES
@@ -72,7 +73,7 @@ public class AnimalDataActivity extends MainMenu {
         String description = extras.getString("description");
         checkImageButtons(ibInfo, ibHabitat, ibTrace, ibDistribution);
         txtIndexTitle.setText(getString(R.string.txtIndexDescription));
-        txtInformation.setText(description);
+        txtInformation.setText(Html.fromHtml(description));
         imgAditional.setVisibility(View.INVISIBLE);
     }
 
@@ -82,7 +83,7 @@ public class AnimalDataActivity extends MainMenu {
         String habitat = extras.getString("habitat");
         checkImageButtons(ibHabitat, ibInfo, ibTrace, ibDistribution);
         txtIndexTitle.setText(getString(R.string.txtIndexHabitat));
-        txtInformation.setText(habitat);
+        txtInformation.setText(Html.fromHtml(habitat));
         imgAditional.setVisibility(View.INVISIBLE);
     }
 
@@ -102,10 +103,10 @@ public class AnimalDataActivity extends MainMenu {
     @SuppressWarnings("unused")
     public void showTrace(View view){
         Bundle extras = getIntent().getExtras();
-        String habitat = extras.getString("trace");
+        String trace = extras.getString("trace");
         checkImageButtons(ibTrace, ibInfo, ibHabitat, ibDistribution);
         txtIndexTitle.setText(getString(R.string.txtIndexTrace));
-        txtInformation.setText(habitat);
+        txtInformation.setText(Html.fromHtml(trace));
         imgAditional.setVisibility(View.INVISIBLE);
     }
 

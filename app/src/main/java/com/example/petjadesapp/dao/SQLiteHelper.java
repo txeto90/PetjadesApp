@@ -3,6 +3,7 @@ package com.example.petjadesapp.dao;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.example.petjadesapp.R;
@@ -40,12 +41,13 @@ class SQLiteHelper extends SQLiteOpenHelper {
     }
 
     private void insertDB(SQLiteDatabase db, String lang){
+        Log.d("kk", lang);
         BufferedReader reader;
         String line = "";
         int id = 0;
         switch(lang){
             case "es":{ id = R.raw.bd_es;    }break;
-            case "cat":{id = R.raw.bd_cat;   }break;
+            case "ca":{id = R.raw.bd_cat;   }break;
             default:{   id = R.raw.bd_en;   }break;
         }
         InputStream in = sqlcontext.getResources().openRawResource(id);
