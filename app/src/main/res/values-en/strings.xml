@@ -95,4 +95,5 @@
     <string name="camera_perm">Sorry!!!, you cannot use this app without granting permission.</string>
     <string name="confi_change">Configuration change.</string>
     <string name="save_picture">Saved:</string>
+    <string name="error_connection">Connection error.</string>
 </resources>

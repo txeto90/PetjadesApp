@@ -16,7 +16,7 @@
         android:layout_height="match_parent">
 
         <CheckBox
-            android:id="@+id/cbMyFoots"
+            android:id="@+id/cbMyPrints"
             android:layout_width="271dp"
             android:layout_height="wrap_content"
             android:checked="true"

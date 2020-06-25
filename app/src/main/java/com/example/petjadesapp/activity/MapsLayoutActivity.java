@@ -42,7 +42,7 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
     private double lat;
     private double lon;
     private CoordinatesDAO cdao;
-    private CheckBox cbMyFoots;
+    private CheckBox cbMyPrints;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +56,7 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
         requestPermision();
-        cbMyFoots = findViewById(R.id.cbMyFoots);
+        cbMyPrints = findViewById(R.id.cbMyPrints);
         cdao = new CoordinatesDAO(this);
 
         mapView = findViewById(R.id.mapView);
@@ -66,7 +66,7 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
 
     public void populateMap(){
         ArrayList<Coordinate> coordinatesList = cdao.getCoordinatesList();
-        cbMyFoots.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        cbMyPrints.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 myMap.clear();
@@ -88,7 +88,7 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
                 }
             }
         });
-        cbMyFoots.setChecked(false);
+        cbMyPrints.setChecked(false);
     }
 
     @Override
@@ -160,6 +160,7 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
 
     public void placeOnPosition() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            Toast.makeText(this, R.string.camera_perm, Toast.LENGTH_LONG).show();
             return;
         }
         LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
@@ -216,19 +217,13 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
                     }
 
                     @Override
-                    public void onStatusChanged(String provider, int status, Bundle extras) {
-
-                    }
+                    public void onStatusChanged(String provider, int status, Bundle extras) {                    }
 
                     @Override
-                    public void onProviderEnabled(String provider) {
-
-                    }
+                    public void onProviderEnabled(String provider) {                    }
 
                     @Override
-                    public void onProviderDisabled(String provider) {
-
-                    }
+                    public void onProviderDisabled(String provider) {                    }
                 });
             }
         }

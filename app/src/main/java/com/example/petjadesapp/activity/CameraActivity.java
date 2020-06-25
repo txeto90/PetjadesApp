@@ -154,21 +154,15 @@ public class CameraActivity extends MainMenu{
             }
 
             @Override
-            public void onPageSelected(int position) {
-            }
+            public void onPageSelected(int position) {            }
 
             @Override
-            public void onPageScrollStateChanged(int state) {
-
-
-            }
+            public void onPageScrollStateChanged(int state) {            }
         });
 
         carouselView.setImageListener(new ImageListener() {
             @Override
             public void setImageForPosition(int position, ImageView imageView) {
-                //TextView txtCameraView = findViewById(R.id.txtCameraView);
-                //txtCameraView.setText(imgNames.get(position));
                 imageView.setImageResource(sampleImages.get(position));
                 imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
             }
@@ -290,11 +284,11 @@ public class CameraActivity extends MainMenu{
             cameraDevice.createCaptureSession(Arrays.asList(surface), new CameraCaptureSession.StateCallback() {
                 @Override
                 public void onConfigured(@NonNull CameraCaptureSession cameraCaptureSession) {
-                    //The camera is already closed
+                    //camera esta tancada
                     if (null == cameraDevice) {
                         return;
                     }
-                    // When the session is ready, we start displaying the preview.
+                    // quan la sessio esta rpeparada
                     cameraCaptureSessions = cameraCaptureSession;
                     updatePreview();
                 }
@@ -317,7 +311,7 @@ public class CameraActivity extends MainMenu{
             StreamConfigurationMap map = characteristics.get(CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP);
             assert map != null;
             imageDimension = map.getOutputSizes(SurfaceTexture.class)[0];
-            // Add permission for camera and let user grant the permission
+            // Afegir permissos per a la camera i que l'usuari els accepte
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_CAMERA_PERMISSION);
                 return;
@@ -352,7 +346,6 @@ public class CameraActivity extends MainMenu{
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         if (requestCode == REQUEST_CAMERA_PERMISSION) {
             if (grantResults[0] == PackageManager.PERMISSION_DENIED) {
-                // close the app
                 Toast.makeText(this, R.string.camera_perm, Toast.LENGTH_LONG).show();
                 finish();
             }

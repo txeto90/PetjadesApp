@@ -3,8 +3,8 @@ package com.example.petjadesapp.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 import androidx.annotation.NonNull;
 import com.example.petjadesapp.R;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -67,7 +67,6 @@ public class LoadActivity extends Activity {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
         // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
@@ -76,8 +75,8 @@ public class LoadActivity extends Activity {
                 GoogleSignInAccount account = task.getResult(ApiException.class);
                 firebaseAuthWithGoogle(account);
             } catch (ApiException e) {
-                // Google Sign In failed, update UI appropriately
-                // ...
+                Toast toast = Toast.makeText(this.getApplicationContext(), R.string.error_connection, Toast.LENGTH_LONG);
+                toast.show();
             }
         }
     }
@@ -91,7 +90,6 @@ public class LoadActivity extends Activity {
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-
     }
 
     private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
@@ -107,13 +105,11 @@ public class LoadActivity extends Activity {
                             startActivity(new Intent(instance, MainActivity.class));
                         } else {
                             // If sign in fails, display a message to the user.
+                            Toast toast = Toast.makeText(getApplicationContext(), R.string.error_connection, Toast.LENGTH_LONG);
+                            toast.show();
                             Snackbar.make(findViewById(R.id.lyloadActivity), "Authentication Failed.", Snackbar.LENGTH_SHORT).show();
                         }
-
-                        // ...
                     }
                 });
     }
-
-
 }

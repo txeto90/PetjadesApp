@@ -3,9 +3,7 @@ package com.example.petjadesapp.dao;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 import android.widget.Toast;
-
 import com.example.petjadesapp.R;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -41,7 +39,6 @@ class SQLiteHelper extends SQLiteOpenHelper {
     }
 
     private void insertDB(SQLiteDatabase db, String lang){
-        Log.d("kk", lang);
         BufferedReader reader;
         String line = "";
         int id = 0;

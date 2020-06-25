@@ -95,4 +95,5 @@
     <string name="camera_perm">Atenció!!! Per a utilitzar la càmara es necessari acceptar els permisos.</string>
     <string name="confi_change">Canvi de configuració.</string>
     <string name="save_picture">Desat:</string>
+    <string name="error_connection">Error en la connexió.</string>
 </resources>

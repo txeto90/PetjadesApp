@@ -94,4 +94,5 @@
     <string name="camera_perm">Atención!!! Para utilizar la camara se necesita aceptar los permisos.</string>
     <string name="confi_change">Cambio de configuración.</string>
     <string name="save_picture">Guardado:</string>
+    <string name="error_connection">Error en la connexión.</string>
 </resources>
