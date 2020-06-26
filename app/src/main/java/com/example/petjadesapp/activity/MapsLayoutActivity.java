@@ -71,6 +71,7 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 myMap.clear();
                 if(!isChecked) {
+
                     for (int i = 0; i < coordinatesList.size(); i++) {
                         if(coordinatesList.get(i).isVisible() || getmAuth().getCurrentUser().getUid() == coordinatesList.get(i).getUser()) {
                             myMap.addMarker(new MarkerOptions().position(new LatLng(coordinatesList.get(i).getLat(), coordinatesList.get(i).getLon()))
@@ -79,6 +80,7 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
                     }
 
                 }else{
+
                     for (int i = 0; i < coordinatesList.size(); i++) {
                         if (getmAuth().getCurrentUser().getUid().equals(coordinatesList.get(i).getUser())) {
                             myMap.addMarker(new MarkerOptions().position(new LatLng(coordinatesList.get(i).getLat(), coordinatesList.get(i).getLon()))

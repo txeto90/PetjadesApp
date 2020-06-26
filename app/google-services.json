@@ -1,0 +1,122 @@
+{
+  "project_info": {
+    "project_number": "1073608645175",
+    "firebase_url": "https://petjadesapp.firebaseio.com",
+    "project_id": "petjadesapp",
+    "storage_bucket": "petjadesapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1073608645175:android:3b5740adce10746e6d3db2",
+        "android_client_info": {
+          "package_name": "com.example.appfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1073608645175-l6mt4v0dosdpvkfvi8lpu5m5mfiecnmo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.appfirebase",
+            "certificate_hash": "5bc2bf1abba99f4c64e1e17619c185abaf66e7a4"
+          }
+        },
+        {
+          "client_id": "1073608645175-p7pl7eao100kkkpnisaa72t6d4tctjvb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCma2XqjL-CPtL1iuM_6Rp2gR4TCElkqLQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1073608645175-p7pl7eao100kkkpnisaa72t6d4tctjvb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1073608645175:android:ed05f23f464f43536d3db2",
+        "android_client_info": {
+          "package_name": "com.example.bdfirebaseapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1073608645175-lrkkhm92prpi3harkafj5fm08le21g7u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bdfirebaseapp",
+            "certificate_hash": "5bc2bf1abba99f4c64e1e17619c185abaf66e7a4"
+          }
+        },
+        {
+          "client_id": "1073608645175-p7pl7eao100kkkpnisaa72t6d4tctjvb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCma2XqjL-CPtL1iuM_6Rp2gR4TCElkqLQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1073608645175-p7pl7eao100kkkpnisaa72t6d4tctjvb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1073608645175:android:1056fa571c9a71e06d3db2",
+        "android_client_info": {
+          "package_name": "com.example.petjadesapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1073608645175-rg7aalak6kco0kag3js0pu5psv8jmkk7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.petjadesapp",
+            "certificate_hash": "45c5dc94c9983bdf8812ff920948e84db1cc1f0f"
+          }
+        },
+        {
+          "client_id": "1073608645175-p7pl7eao100kkkpnisaa72t6d4tctjvb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCma2XqjL-CPtL1iuM_6Rp2gR4TCElkqLQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1073608645175-p7pl7eao100kkkpnisaa72t6d4tctjvb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
