@@ -20,6 +20,8 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
+
+import android.provider.Settings;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
@@ -66,14 +68,16 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
 
     public void populateMap(){
         ArrayList<Coordinate> coordinatesList = cdao.getCoordinatesList();
+
         cbMyPrints.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                String androidId = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
                 myMap.clear();
                 if(!isChecked) {
 
                     for (int i = 0; i < coordinatesList.size(); i++) {
-                        if(coordinatesList.get(i).isVisible() || getmAuth().getCurrentUser().getUid() == coordinatesList.get(i).getUser()) {
+                        if(coordinatesList.get(i).isVisible() || androidId == coordinatesList.get(i).getUser()) {
                             myMap.addMarker(new MarkerOptions().position(new LatLng(coordinatesList.get(i).getLat(), coordinatesList.get(i).getLon()))
                                     .title("Animal: "+ coordinatesList.get(i).getAnimal() + "\n Date: " + coordinatesList.get(i).getDate()));
                         }
@@ -82,7 +86,7 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
                 }else{
 
                     for (int i = 0; i < coordinatesList.size(); i++) {
-                        if (getmAuth().getCurrentUser().getUid().equals(coordinatesList.get(i).getUser())) {
+                        if (androidId.equals(coordinatesList.get(i).getUser())) {
                             myMap.addMarker(new MarkerOptions().position(new LatLng(coordinatesList.get(i).getLat(), coordinatesList.get(i).getLon()))
                                     .title("Animal: "+ coordinatesList.get(i).getAnimal() + "\n Date: " + coordinatesList.get(i).getDate()));
                         }
@@ -121,12 +125,14 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
         mBuilder.setPositiveButton(R.string.ok_dialog, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                String androidId = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
+
                 if (!mSp.getSelectedItem().toString().equalsIgnoreCase(getResources().getString(R.string.spinerselection_dialog))) {
                     //AGAFAR DADES I GUARDARLES
                     String animal = mSp.getSelectedItem().toString();
                     String date = getDate();
                     boolean visible = rbYes.isChecked();
-                    String userId = getmAuth().getCurrentUser().getUid();
+                    String userId = androidId;
 
                     Coordinate c = new Coordinate();
                     c.setAnimal(animal);

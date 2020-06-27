@@ -3,14 +3,15 @@ package com.example.petjadesapp.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
+import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import com.example.petjadesapp.R;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -24,7 +25,6 @@ import com.google.firebase.auth.GoogleAuthProvider;
 public class LoadActivity extends Activity {
 
     private FirebaseAuth mAuth;
-    private GoogleSignInClient mGoogleSignInClient;
     private static final int RC_SIGN_IN = 1;
 
     @Override
@@ -32,14 +32,7 @@ public class LoadActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_load);
 
-        // Configure Google Sign In
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))
-                .requestEmail()
-                .build();
-        // Build a GoogleSignInClient with the options specified by gso.
-        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-        mAuth = FirebaseAuth.getInstance();
+       mAuth = FirebaseAuth.getInstance();
 
         Bundle extras = getIntent().getExtras();
         if(extras != null){
@@ -54,13 +47,33 @@ public class LoadActivity extends Activity {
         }
     }
 
-    public void signIn(View v) {
-        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
-        startActivityForResult(signInIntent, RC_SIGN_IN);
+    public void signIn(View v){
+
+        mAuth = FirebaseAuth.getInstance();
+        LoadActivity instance = this;
+        mAuth.signInAnonymously()
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            startActivity(new Intent(instance, MainActivity.class));
+                            //updateUI(user);
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Toast.makeText(LoadActivity.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+                            //updateUI(null);
+                        }
+
+                        // ...
+                    }
+                });
+
     }
 
+
     public void signOut(){
-        mGoogleSignInClient.revokeAccess();
         mAuth.signOut();
     }
 
@@ -77,6 +90,7 @@ public class LoadActivity extends Activity {
             } catch (ApiException e) {
                 Toast toast = Toast.makeText(this.getApplicationContext(), R.string.error_connection, Toast.LENGTH_LONG);
                 toast.show();
+
             }
         }
     }
