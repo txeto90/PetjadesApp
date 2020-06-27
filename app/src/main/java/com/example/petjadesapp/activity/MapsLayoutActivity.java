@@ -20,6 +20,8 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
+
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
@@ -71,18 +73,17 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 myMap.clear();
                 if(!isChecked) {
-
+                    Log.d("kk", "if");
                     for (int i = 0; i < coordinatesList.size(); i++) {
-                        if(coordinatesList.get(i).isVisible() || getmAuth().getCurrentUser().getUid() == coordinatesList.get(i).getUser()) {
+                        if(coordinatesList.get(i).isVisible() ) {
                             myMap.addMarker(new MarkerOptions().position(new LatLng(coordinatesList.get(i).getLat(), coordinatesList.get(i).getLon()))
                                     .title("Animal: "+ coordinatesList.get(i).getAnimal() + "\n Date: " + coordinatesList.get(i).getDate()));
                         }
                     }
-
                 }else{
-
+                    Log.d("kk", "else");
                     for (int i = 0; i < coordinatesList.size(); i++) {
-                        if (getmAuth().getCurrentUser().getUid().equals(coordinatesList.get(i).getUser())) {
+                        if (coordinatesList.get(i).getUser().equals("aZSmyyiKdhhuOwxX3xFziWXs7Mr3")) {
                             myMap.addMarker(new MarkerOptions().position(new LatLng(coordinatesList.get(i).getLat(), coordinatesList.get(i).getLon()))
                                     .title("Animal: "+ coordinatesList.get(i).getAnimal() + "\n Date: " + coordinatesList.get(i).getDate()));
                         }
@@ -126,7 +127,7 @@ public class MapsLayoutActivity extends MainMenu implements OnMapReadyCallback {
                     String animal = mSp.getSelectedItem().toString();
                     String date = getDate();
                     boolean visible = rbYes.isChecked();
-                    String userId = getmAuth().getCurrentUser().getUid();
+                    String userId = "aZSmyyiKdhhuOwxX3xFziWXs7Mr3";
 
                     Coordinate c = new Coordinate();
                     c.setAnimal(animal);

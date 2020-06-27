@@ -24,9 +24,9 @@ public class MainMenu extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         mAuth = FirebaseAuth.getInstance();
-        if(mAuth.getCurrentUser() == null){
-            startActivity(new Intent(this, LoadActivity.class));
-        }
+//        if(mAuth.getCurrentUser() == null){
+//            startActivity(new Intent(this, LoadActivity.class));
+//        }
         setSampleImages();
     }
 

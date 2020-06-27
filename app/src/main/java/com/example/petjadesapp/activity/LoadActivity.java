@@ -3,6 +3,7 @@ package com.example.petjadesapp.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
@@ -77,6 +78,8 @@ public class LoadActivity extends Activity {
             } catch (ApiException e) {
                 Toast toast = Toast.makeText(this.getApplicationContext(), R.string.error_connection, Toast.LENGTH_LONG);
                 toast.show();
+                Log.d("kk", e.toString());
+                startActivity(new Intent(this, MainActivity.class));
             }
         }
     }
