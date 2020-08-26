@@ -43,9 +43,8 @@ class SQLiteHelper extends SQLiteOpenHelper {
         String line = "";
         int id = 0;
         switch(lang){
-            case "es":{ id = R.raw.bd_es;    }break;
-            case "ca":{id = R.raw.bd_cat;   }break;
-            default:{   id = R.raw.bd_en;   }break;
+            case "en":{ id = R.raw.bd_en;    }break;
+            default:{   id = R.raw.bd_es;   }break;
         }
         InputStream in = sqlcontext.getResources().openRawResource(id);
         reader = new BufferedReader(new InputStreamReader(in));

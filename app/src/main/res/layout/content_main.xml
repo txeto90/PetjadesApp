@@ -76,40 +76,23 @@
         app:srcCompat="@drawable/gatomontes_petjada" />
 
     <ImageButton
-        android:id="@+id/ibIntroMaps"
-        android:layout_width="135dp"
-        android:layout_height="120dp"
-        android:layout_marginStart="46dp"
-        android:layout_marginTop="27dp"
-        android:layout_marginEnd="33dp"
-        android:backgroundTint="#00FFFFFF"
-        android:onClick="goToMapsActivity"
-        android:scaleType="fitCenter"
-        app:layout_constraintEnd_toStartOf="@+id/ibIntroCamera"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtIntroAnimalList"
-        app:srcCompat="@drawable/distri" />
-
-    <ImageButton
         android:id="@+id/ibIntroCamera"
         android:layout_width="135dp"
         android:layout_height="120dp"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="27dp"
-        android:layout_marginEnd="46dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="40dp"
         android:backgroundTint="#00FFFFFF"
         android:onClick="goToCameraActivity"
         android:scaleType="fitCenter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ibIntroMaps"
-        app:layout_constraintTop_toBottomOf="@+id/txtIntroDicho"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtIntroAnimalList"
         app:srcCompat="@drawable/cameraicon" />
 
     <TextView
         android:id="@+id/txtIntroAnimalList"
         android:layout_width="135dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="46dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="33dp"
         android:text="@string/txtListMenu"
@@ -123,7 +106,7 @@
         android:id="@+id/txtIntroDicho"
         android:layout_width="135dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="33dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="46dp"
         android:text="@string/txtDichotomousMenu"
@@ -134,31 +117,15 @@
         app:layout_constraintTop_toBottomOf="@+id/ibIntroDicho" />
 
     <TextView
-        android:id="@+id/txtIntroMaps"
-        android:layout_width="135dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="46dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="33dp"
-        android:text="@string/txtMenuMaps"
-        android:textAlignment="center"
-        android:textColor="#FF000000"
-        app:layout_constraintEnd_toStartOf="@+id/txtIntroCamera"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ibIntroMaps" />
-
-    <TextView
         android:id="@+id/txtIntroCamera"
         android:layout_width="135dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="33dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="46dp"
         android:text="@string/txtMenuCamera"
         android:textAlignment="center"
         android:textColor="#FF000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txtIntroMaps"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ibIntroCamera" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
