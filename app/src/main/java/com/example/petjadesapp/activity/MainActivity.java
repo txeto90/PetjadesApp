@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import com.example.petjadesapp.R;
-
 import java.util.ArrayList;
 
 public class MainActivity extends MainMenu {
@@ -39,7 +38,4 @@ public class MainActivity extends MainMenu {
         startActivity(intent);
     }
 
-    public void goToMapsActivity(View view){
-        startActivity(new Intent(this, MapsLayoutActivity.class));
-    }
 }

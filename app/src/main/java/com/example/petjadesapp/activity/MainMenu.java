@@ -7,14 +7,12 @@ import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import com.example.petjadesapp.R;
-import com.google.firebase.auth.FirebaseAuth;
 import java.util.ArrayList;
 
 
 
 public class MainMenu extends AppCompatActivity {
 
-    private FirebaseAuth mAuth;
     private ArrayList<String> nameImages;
 
     @Override
@@ -23,14 +21,9 @@ public class MainMenu extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        mAuth = FirebaseAuth.getInstance();
-        if(mAuth.getCurrentUser() == null){
-            startActivity(new Intent(this, LoadActivity.class));
-        }
+
         setSampleImages();
     }
-
-    public FirebaseAuth getmAuth() { return mAuth; }
 
     public ArrayList<String> getImagesName(){ return nameImages; }
 
@@ -94,20 +87,8 @@ public class MainMenu extends AppCompatActivity {
             startActivity(intent);
             return true;
         }
-        if (id == R.id.maps) {
-            Intent intent = new Intent(this, MapsLayoutActivity.class);
-            startActivity(intent);
-            return true;
-        }
         if (id == R.id.about) {
             Intent intent = new Intent(this, AboutActivity.class);
-            startActivity(intent);
-            return true;
-        }
-        if (id == R.id.logOut) {
-            //desconectar el conter de la app
-            Intent intent = new Intent(this, LoadActivity.class);
-            intent.putExtra("logOutInfo", true);
             startActivity(intent);
             return true;
         }
