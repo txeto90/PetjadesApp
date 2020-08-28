@@ -95,7 +95,7 @@ public class AnimalDataActivity extends MainMenu {
         txtIndexTitle.setText(getString(R.string.txtIndexDistribution));
         txtInformation.setText("");
         ImageView iv = findViewById(R.id.imgViewAditional);
-        ImagesDAO.getImageFromFirebase(dist, iv, this.getApplicationContext());
+        ImagesDAO.getImageFromAssets(dist, iv, this.getApplicationContext());
         imgAditional.setVisibility(View.VISIBLE);
     }
 
@@ -115,7 +115,7 @@ public class AnimalDataActivity extends MainMenu {
         Bundle extras = getIntent().getExtras();
         String img = extras.getString("imgAnimal");
         ImageView iv = findViewById(R.id.imgViewAnimal);
-        ImagesDAO.getImageFromFirebase(img, iv, this.getApplicationContext());
+        ImagesDAO.getImageFromAssets(img, iv, this.getApplicationContext());
     }
 
     //DIRECCIONA A LA CAMERAACTIVITY AMB LA PETJADA DE L'ANIMAL CORRESPONENT

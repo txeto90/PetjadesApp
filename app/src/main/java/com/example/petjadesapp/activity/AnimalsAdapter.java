@@ -1,6 +1,7 @@
 package com.example.petjadesapp.activity;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,8 @@ import android.widget.TextView;
 import com.example.petjadesapp.R;
 import com.example.petjadesapp.dao.ImagesDAO;
 import com.example.petjadesapp.model.Animal;
+
+import java.io.InputStream;
 import java.util.List;
 
 class AnimalsAdapter extends ArrayAdapter implements Filterable {
@@ -36,7 +39,7 @@ class AnimalsAdapter extends ArrayAdapter implements Filterable {
         //popuate the data uti te templatre view using the data object
         scientificName.setText(animal.getScientificName());
         vulgarName.setText(animal.getVulgarName());
-        ImagesDAO.getImageFromFirebase(animal.getImgAnimal(), imgAnimal, this.getContext());
+        ImagesDAO.getImageFromAssets(animal.getImgAnimal(), imgAnimal, this.getContext());
 
         //return the complete view to render on screen
         return convertView;

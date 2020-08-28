@@ -45,7 +45,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ivLeft"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/corzo_petjada" />
+    />
 
     <ImageView
         android:id="@+id/ivLeft"
@@ -57,5 +57,6 @@
         app:layout_constraintEnd_toStartOf="@+id/ivRigth"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/lince_petjada" />
+     />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

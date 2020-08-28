@@ -73,7 +73,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ibIntroList"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/gatomontes_petjada" />
+        app:srcCompat="@drawable/rastre" />
 
     <ImageButton
         android:id="@+id/ibIntroCamera"
