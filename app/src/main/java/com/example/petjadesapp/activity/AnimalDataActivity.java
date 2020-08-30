@@ -8,6 +8,7 @@ import android.os.Bundle;
 import com.example.petjadesapp.R;
 import com.example.petjadesapp.dao.ImagesDAO;
 import android.text.Html;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -104,10 +105,13 @@ public class AnimalDataActivity extends MainMenu {
     public void showTrace(View view){
         Bundle extras = getIntent().getExtras();
         String trace = extras.getString("trace");
+        String traceImg = extras.getString("imgFootPrint");
         checkImageButtons(ibTrace, ibInfo, ibHabitat, ibDistribution);
         txtIndexTitle.setText(getString(R.string.txtIndexTrace));
         txtInformation.setText(Html.fromHtml(trace));
-        imgAditional.setVisibility(View.INVISIBLE);
+        Log.d("kk",traceImg);
+        ImagesDAO.getImageFromAssets(traceImg, imgAditional , this.getApplicationContext());
+        imgAditional.setVisibility(View.VISIBLE);
     }
 
     //POSAR IMATGE DEL ANIMAL

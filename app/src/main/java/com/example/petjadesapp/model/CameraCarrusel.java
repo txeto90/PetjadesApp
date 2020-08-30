@@ -1,8 +1,6 @@
 package com.example.petjadesapp.model;
 
 import android.os.Bundle;
-import android.widget.TextView;
-
 import com.example.petjadesapp.R;
 import com.example.petjadesapp.activity.MainMenu;
 import com.synnapps.carouselview.CarouselView;

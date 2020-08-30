@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.ImageFormat;
 import android.graphics.SurfaceTexture;
+import android.graphics.drawable.Drawable;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCaptureSession;
 import android.hardware.camera2.CameraCharacteristics;
@@ -18,6 +19,7 @@ import android.media.Image;
 import android.media.ImageReader;
 import android.os.Bundle;
 import com.example.petjadesapp.R;
+import com.example.petjadesapp.dao.ImagesDAO;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
 import androidx.annotation.NonNull;
@@ -42,6 +44,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
@@ -60,7 +63,8 @@ public class CameraActivity extends MainMenu{
         ORIENTATIONS.append(Surface.ROTATION_270, 180);
     }
 
-    private ArrayList<String> imgNames = new ArrayList<>();;
+    private ArrayList<String> sampleImages;
+    //private ArrayList<String> imgNames = new ArrayList<>();
     private CameraDevice cameraDevice;
     private CameraCaptureSession cameraCaptureSessions;
     private CaptureRequest.Builder captureRequestBuilder;
@@ -69,7 +73,6 @@ public class CameraActivity extends MainMenu{
     private static final int REQUEST_CAMERA_PERMISSION = 200;
     private Handler mBackgroundHandler;
     private HandlerThread mBackgroundThread;
-    private ArrayList<Integer> sampleImages;
     private final TextureView.SurfaceTextureListener textureListener = new TextureView.SurfaceTextureListener() {
         @Override
         public void onSurfaceTextureAvailable(SurfaceTexture surface, int width, int height) {
@@ -109,20 +112,30 @@ public class CameraActivity extends MainMenu{
             cameraDevice = null;
         }
     };
-
-    private int getDrawable(String imgName){
+/*
+    private Drawable getDrawable(String imgName){
         imgNames.add(imgName.split("_")[0]);
-        return getResources().getIdentifier(imgName,"drawable", this.getPackageName());
+        InputStream ims = null;
+        try {
+            ims = getAssets().open("footprint/"+imgName);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Drawable d = Drawable.createFromStream(ims, null);
+        return d;
+    }
+ */
+    private void getSampleImages(){
+        //sampleImages = new ArrayList<>();
+        Bundle extras = getIntent().getExtras();
+        //ArrayList<String> nameImages = extras.getStringArrayList("imgFootPrint");
+        sampleImages = extras.getStringArrayList("imgFootPrint");
+//        for (int i = 0; i < nameImages.size(); i++){
+//            sampleImages.add(Integer.getInteger(getDrawable(nameImages.get(i)).toString()));
+//        }
     }
 
-    private void getSampleImages(){
-        sampleImages = new ArrayList<>();
-        Bundle extras = getIntent().getExtras();
-        ArrayList<String> nameImages = extras.getStringArrayList("imgFootPrint");
-        for (int i = 0; i < nameImages.size(); i++){
-            sampleImages.add(getDrawable(nameImages.get(i)));
-        }
-    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -149,8 +162,8 @@ public class CameraActivity extends MainMenu{
         carouselView.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                TextView txtCameraView = findViewById(R.id.txtCameraView);
-                txtCameraView.setText(imgNames.get(position));
+                //TextView txtCameraView = findViewById(R.id.txtCameraView);
+                //txtCameraView.setText(imgNames.get(position));
             }
 
             @Override
@@ -163,7 +176,9 @@ public class CameraActivity extends MainMenu{
         carouselView.setImageListener(new ImageListener() {
             @Override
             public void setImageForPosition(int position, ImageView imageView) {
-                imageView.setImageResource(sampleImages.get(position));
+                ImagesDAO.getImageFromAssets(sampleImages.get(position), imageView , getApplicationContext());
+                Log.d("kk1", sampleImages.get(position).toString());
+                //imageView.setImageResource(sampleImages.get(position));
                 imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
             }
         });

@@ -29,22 +29,22 @@ public class MainMenu extends AppCompatActivity {
 
     private void setSampleImages(){
         nameImages = new ArrayList<>();
-        nameImages.add("musaranya_petjada");        nameImages.add("topillo_petjada");
-        nameImages.add("erizo_petjada");            nameImages.add("rataagua_petjada");
-        nameImages.add("rataalmizclera_petjada");   nameImages.add("raton_petjada");
-        nameImages.add("rata_petjada");             nameImages.add("liron_petjada");
-        nameImages.add("ardilla_petjada");          nameImages.add("liebre_petjada");
-        nameImages.add("conejo_petjada");           nameImages.add("oso_petjada");
-        nameImages.add("lobo_petjada");             nameImages.add("zorro_petjada");
-        nameImages.add("perro_petjada");            nameImages.add("comadreja_petjada");
-        nameImages.add("turon_petjada");            nameImages.add("marta_petjada");
-        nameImages.add("gardunya_petjada");         nameImages.add("nutria_petjada");
-        nameImages.add("tejon_petjada");            nameImages.add("meloncillo_petjada");
-        nameImages.add("gineta_petjada");           nameImages.add("lince_petjada");
-        nameImages.add("gatomontes_petjada");       nameImages.add("jabali_petjada");
-        nameImages.add("muflon_petjada");           nameImages.add("cabra_petjada");
-        nameImages.add("ciervo_petjada");           nameImages.add("corzo_petjada");
-        nameImages.add("caballo_petjada");
+        nameImages.add("musaranya_petjada.png");        nameImages.add("topillo_petjada.png");
+        nameImages.add("erizo_petjada.png");            nameImages.add("rataagua_petjada.png");
+        nameImages.add("rataalmizclera_petjada.png");   nameImages.add("raton_petjada.png");
+        nameImages.add("rata_petjada.png");             nameImages.add("liron_petjada.png");
+        nameImages.add("ardilla_petjada.png");          nameImages.add("liebre_petjada.png");
+        nameImages.add("conejo_petjada.png");           nameImages.add("oso_petjada.png");
+        nameImages.add("lobo_petjada.png");             nameImages.add("zorro_petjada.png");
+        nameImages.add("perro_petjada.png");            nameImages.add("comadreja_petjada.png");
+        nameImages.add("turon_petjada.png");            nameImages.add("marta_petjada.png");
+        nameImages.add("gardunya_petjada.png");         nameImages.add("nutria_petjada.png");
+        nameImages.add("tejon_petjada.png");            nameImages.add("meloncillo_petjada.png");
+        nameImages.add("gineta_petjada.png");           nameImages.add("lince_petjada.png");
+        nameImages.add("gatomontes_petjada.png");       nameImages.add("jabali_petjada.png");
+        nameImages.add("muflon_petjada.png");           nameImages.add("cabra_petjada.png");
+        nameImages.add("ciervo_petjada.png");           nameImages.add("corzo_petjada.png");
+        nameImages.add("caballo_petjada.png");
     }
 
     @Override
