@@ -27,7 +27,6 @@ public class ImagesDAO {
             InputStream ims = context.getAssets().open(url+"/"+imgName);
             Drawable d = Drawable.createFromStream(ims, null);
             imageView.setImageDrawable(d);
-            Log.d("kk",imgName);
         }catch(Exception e){
 
         }

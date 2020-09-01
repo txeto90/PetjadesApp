@@ -2,10 +2,10 @@ package com.example.petjadesapp.activity;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.ImageFormat;
 import android.graphics.SurfaceTexture;
-import android.graphics.drawable.Drawable;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCaptureSession;
 import android.hardware.camera2.CameraCharacteristics;
@@ -19,14 +19,15 @@ import android.media.Image;
 import android.media.ImageReader;
 import android.os.Bundle;
 import com.example.petjadesapp.R;
+import com.example.petjadesapp.dao.AnimalsDAO;
 import com.example.petjadesapp.dao.ImagesDAO;
+import com.example.petjadesapp.model.Animal;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.viewpager.widget.ViewPager;
-
 import android.os.Environment;
 import android.os.Handler;
 import android.os.HandlerThread;
@@ -36,6 +37,7 @@ import android.util.SparseIntArray;
 import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -44,7 +46,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
@@ -63,6 +64,7 @@ public class CameraActivity extends MainMenu{
         ORIENTATIONS.append(Surface.ROTATION_270, 180);
     }
 
+    private String imgName;
     private ArrayList<String> sampleImages;
     //private ArrayList<String> imgNames = new ArrayList<>();
     private CameraDevice cameraDevice;
@@ -144,6 +146,7 @@ public class CameraActivity extends MainMenu{
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        AnimalsDAO animalsDAO = new AnimalsDAO(this);
         textureView = (TextureView) findViewById(R.id.texture);
         assert textureView != null;
         textureView.setSurfaceTextureListener(textureListener);
@@ -155,6 +158,14 @@ public class CameraActivity extends MainMenu{
                 takePicture();
             }
         });
+        Button showAnimalButton = findViewById(R.id.btn_showAnimal);
+        showAnimalButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("kk1", "onClick"+imgName);
+                startAnimalData(imgName);
+            }
+        });
 
         getSampleImages();
         CarouselView carouselView = (CarouselView) findViewById(R.id.carouselView);
@@ -162,8 +173,8 @@ public class CameraActivity extends MainMenu{
         carouselView.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                //TextView txtCameraView = findViewById(R.id.txtCameraView);
-                //txtCameraView.setText(imgNames.get(position));
+                imgName = sampleImages.get(position);
+                Log.d("kk1", "scroll: "+imgName);
             }
 
             @Override
@@ -177,7 +188,7 @@ public class CameraActivity extends MainMenu{
             @Override
             public void setImageForPosition(int position, ImageView imageView) {
                 ImagesDAO.getImageFromAssets(sampleImages.get(position), imageView , getApplicationContext());
-                Log.d("kk1", sampleImages.get(position).toString());
+    //Log.d("kk1", sampleImages.get(position).toString());
                 //imageView.setImageResource(sampleImages.get(position));
                 imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
             }
@@ -383,5 +394,20 @@ public class CameraActivity extends MainMenu{
         closeCamera();
         stopBackgroundThread();
         super.onPause();
+    }
+
+    private void startAnimalData(String imgName){
+        Animal a = AnimalsDAO.getAnimalInformation(imgName);
+        //ENVIEM LES DADES DE L'ANIMAL AMB INTENT PER A REBRELES EN LA SEGUENT ACTIVITY
+        Intent intent = new Intent(CameraActivity.this, AnimalDataActivity.class);
+        intent.putExtra("vulgarName", a.getVulgarName());
+        intent.putExtra("scientificName", a.getScientificName());
+        intent.putExtra("description", a.getDescription());
+        intent.putExtra("habitat", a.getHabitat());
+        intent.putExtra("distribution", a.getDistribution());
+        intent.putExtra("trace", a.getTrace());
+        intent.putExtra("imgFootPrint", a.getImgFootprint());
+        intent.putExtra("imgAnimal", a.getImgAnimal());
+        startActivity(intent);
     }
 }

@@ -109,7 +109,6 @@ public class AnimalDataActivity extends MainMenu {
         checkImageButtons(ibTrace, ibInfo, ibHabitat, ibDistribution);
         txtIndexTitle.setText(getString(R.string.txtIndexTrace));
         txtInformation.setText(Html.fromHtml(trace));
-        Log.d("kk",traceImg);
         ImagesDAO.getImageFromAssets(traceImg, imgAditional , this.getApplicationContext());
         imgAditional.setVisibility(View.VISIBLE);
     }
