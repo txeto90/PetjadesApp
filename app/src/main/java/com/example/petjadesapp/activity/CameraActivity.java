@@ -31,7 +31,6 @@ import androidx.viewpager.widget.ViewPager;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.util.Log;
 import android.util.Size;
 import android.util.SparseIntArray;
 import android.view.Surface;
@@ -40,7 +39,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -66,7 +64,6 @@ public class CameraActivity extends MainMenu{
 
     private String imgName;
     private ArrayList<String> sampleImages;
-    //private ArrayList<String> imgNames = new ArrayList<>();
     private CameraDevice cameraDevice;
     private CameraCaptureSession cameraCaptureSessions;
     private CaptureRequest.Builder captureRequestBuilder;
@@ -114,30 +111,11 @@ public class CameraActivity extends MainMenu{
             cameraDevice = null;
         }
     };
-/*
-    private Drawable getDrawable(String imgName){
-        imgNames.add(imgName.split("_")[0]);
-        InputStream ims = null;
-        try {
-            ims = getAssets().open("footprint/"+imgName);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        Drawable d = Drawable.createFromStream(ims, null);
-        return d;
-    }
- */
+
     private void getSampleImages(){
-        //sampleImages = new ArrayList<>();
         Bundle extras = getIntent().getExtras();
-        //ArrayList<String> nameImages = extras.getStringArrayList("imgFootPrint");
         sampleImages = extras.getStringArrayList("imgFootPrint");
-//        for (int i = 0; i < nameImages.size(); i++){
-//            sampleImages.add(Integer.getInteger(getDrawable(nameImages.get(i)).toString()));
-//        }
     }
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -162,7 +140,6 @@ public class CameraActivity extends MainMenu{
         showAnimalButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("kk1", "onClick"+imgName);
                 startAnimalData(imgName);
             }
         });
@@ -174,7 +151,6 @@ public class CameraActivity extends MainMenu{
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
                 imgName = sampleImages.get(position);
-                Log.d("kk1", "scroll: "+imgName);
             }
 
             @Override
@@ -188,8 +164,6 @@ public class CameraActivity extends MainMenu{
             @Override
             public void setImageForPosition(int position, ImageView imageView) {
                 ImagesDAO.getImageFromAssets(sampleImages.get(position), imageView , getApplicationContext());
-    //Log.d("kk1", sampleImages.get(position).toString());
-                //imageView.setImageResource(sampleImages.get(position));
                 imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
             }
         });

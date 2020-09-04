@@ -64,7 +64,6 @@ public class AnimalsDAO extends MainMenu {
 
     public static Animal getAnimalInformation(String petjada) {
         String sql = "SELECT * FROM animals WHERE fotoPetjada = \'" + petjada + "\';";
-        Log.d("kk1", "db: "+sql);
         Cursor c = db.rawQuery(sql, null);
         Animal a = new Animal();
         if(c.moveToFirst()) {
