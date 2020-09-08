@@ -61,7 +61,7 @@ public class AnimalsListActivity extends MainMenu {
         EditText txtSearch = findViewById(R.id.txtSearch);
         txtSearch.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -69,7 +69,7 @@ public class AnimalsListActivity extends MainMenu {
             }
 
             @Override
-            public void afterTextChanged(Editable s) {            }
+            public void afterTextChanged(Editable s) { }
         });
     }
 

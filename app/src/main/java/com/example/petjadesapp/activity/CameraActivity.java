@@ -136,7 +136,7 @@ public class CameraActivity extends MainMenu{
                 takePicture();
             }
         });
-        Button showAnimalButton = findViewById(R.id.btn_showAnimal);
+        ImageButton showAnimalButton = findViewById(R.id.btn_showAnimal);
         showAnimalButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

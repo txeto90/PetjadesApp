@@ -63,7 +63,7 @@ public class DichotomousKeyActivity extends MainMenu {
         //DEDOS HASTA ALM. PRINCIPAL UNICA
         if(txt.equalsIgnoreCase(getString(R.string.with_nails))){
             btnRight.setText(R.string.no_main_pad);
-            ImagesDAO.getImageFromAssets("conejo_petjada.png", ivRight , this.getApplicationContext());
+            ImagesDAO.getImageFromAssets("conill_petjada.png", ivRight , this.getApplicationContext());
             btnLeft.setText(R.string.with_main_pad);
             ImagesDAO.getImageFromAssets("gatomontes_petjada.png", ivLeft , this.getApplicationContext());
         }else if(txt.equalsIgnoreCase(getString(R.string.no_main_pad))){
