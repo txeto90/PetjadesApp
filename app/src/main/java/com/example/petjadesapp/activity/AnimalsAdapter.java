@@ -17,12 +17,16 @@ import androidx.annotation.NonNull;
 import com.example.petjadesapp.R;
 import com.example.petjadesapp.dao.ImagesDAO;
 import com.example.petjadesapp.model.Animal;
-
 import java.util.ArrayList;
 import java.util.List;
 
 class AnimalsAdapter extends ArrayAdapter implements Filterable {
 
+    private static class AnimalHolder{
+        TextView scientificName;
+        TextView vulgarName;
+        ImageView imgAnimal;
+    };
     private Filter filter;
     private List objects;
 
@@ -36,18 +40,29 @@ class AnimalsAdapter extends ArrayAdapter implements Filterable {
     public View getView(int position, View convertView, ViewGroup parent){
         //get data item for this position
         Animal animal = (Animal) getItem(position);
+        AnimalHolder animalHolder;
+
         //check if an existing view is being reused, otherwise inflate the view
+
         if(convertView == null){
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_list, parent, false);
+            animalHolder = new AnimalHolder();
+            //convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_list, parent, false);
+            LayoutInflater inflater = LayoutInflater.from(getContext());
+            convertView = inflater.inflate(R.layout.item_list, parent, false);
+            animalHolder.scientificName = convertView.findViewById(R.id.txtScientificName);
+            animalHolder.vulgarName = convertView.findViewById(R.id.txtVulgarName);
+            animalHolder.imgAnimal = convertView.findViewById(R.id.imgAnimallist);
+            convertView.setTag(animalHolder);
+        }else {
+            // View is being recycled, retrieve the viewHolder object from tag
+            animalHolder = (AnimalHolder) convertView.getTag();
         }
         //lookup view for data population
-        TextView scientificName = convertView.findViewById(R.id.txtScientificName);
-        TextView vulgarName = convertView.findViewById(R.id.txtVulgarName);
-        ImageView imgAnimal = convertView.findViewById(R.id.imgAnimallist);
+
         //popuate the data uti te templatre view using the data object
-        scientificName.setText(animal.getScientificName());
-        vulgarName.setText(animal.getVulgarName());
-        ImagesDAO.getImageFromAssets(animal.getImgAnimal(), imgAnimal, this.getContext());
+        animalHolder.scientificName.setText(animal.getScientificName());
+        animalHolder.vulgarName.setText(animal.getVulgarName());
+        ImagesDAO.getImageList(animal.getImgAnimal(), animalHolder.imgAnimal, this.getContext());
 
         //return the complete view to render on screen
         return convertView;

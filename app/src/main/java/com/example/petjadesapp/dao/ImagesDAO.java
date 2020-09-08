@@ -32,4 +32,15 @@ public class ImagesDAO {
         }
     }
 
+    public static void getImageList(String imgName, ImageView imageView, @NonNull Context context){
+        try {
+            String url = "photos";
+            InputStream ims = context.getAssets().open(url+"/"+imgName);
+            Drawable d = Drawable.createFromStream(ims, null);
+            imageView.setImageDrawable(d);
+        }catch(Exception e){
+
+        }
+    }
+
 }
