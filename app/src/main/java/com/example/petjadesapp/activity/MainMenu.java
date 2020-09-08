@@ -2,6 +2,7 @@ package com.example.petjadesapp.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,6 +30,7 @@ public class MainMenu extends AppCompatActivity {
 
     private void setSampleImages(){
         nameImages = new ArrayList<>();
+        nameImages.add("perro_petjada.png");            nameImages.add("comadreja_petjada.png");
         nameImages.add("musaranya_petjada.png");        nameImages.add("topillo_petjada.png");
         nameImages.add("erizo_petjada.png");            nameImages.add("rataagua_petjada.png");
         nameImages.add("rataalmizclera_petjada.png");   nameImages.add("raton_petjada.png");
@@ -36,7 +38,6 @@ public class MainMenu extends AppCompatActivity {
         nameImages.add("ardilla_petjada.png");          nameImages.add("liebre_petjada.png");
         nameImages.add("conill_petjada.png");           nameImages.add("oso_petjada.png");
         nameImages.add("lobo_petjada.png");             nameImages.add("zorro_petjada.png");
-        nameImages.add("perro_petjada.png");            nameImages.add("comadreja_petjada.png");
         nameImages.add("turon_petjada.png");            nameImages.add("marta_petjada.png");
         nameImages.add("gardunya_petjada.png");         nameImages.add("nutria_petjada.png");
         nameImages.add("tejon_petjada.png");            nameImages.add("meloncillo_petjada.png");
@@ -45,6 +46,7 @@ public class MainMenu extends AppCompatActivity {
         nameImages.add("muflon_petjada.png");           nameImages.add("cabra_petjada.png");
         nameImages.add("ciervo_petjada.png");           nameImages.add("corzo_petjada.png");
         nameImages.add("caballo_petjada.png");
+
     }
 
     @Override
