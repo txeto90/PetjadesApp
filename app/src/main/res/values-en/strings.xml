@@ -68,10 +68,10 @@
     <string name="photos_title">Photographs.</string>
     <string name="maps_title">Distribution maps.</string>
     <string name="maps_text">
-        <a href="https://www.miteco.gob.es/es/biodiversidad/temas/inventarios-nacionales/">Ministerio para la Trancisión Ecológica y el Reto Demográfico.</a>
+        <a href="https://www.miteco.gob.es/es/biodiversidad/temas/inventarios-nacionales/">Ministry for the Ecological Transition and the Demographic Challenge.</a>
     </string>
     <string name="copyrigth_text">
-        <a href="https://creativecommons.org/licenses/by-nc/4.0/">Some rigths reserved.</a>
+        <a href="https://creativecommons.org/licenses/by-nc/4.0/">Some reserved rigths.</a>
     </string>
 
     <!-- MAPS ACTIVITY -->
@@ -92,7 +92,7 @@
 
     <!-- ERRORS -->
     <string name="error_bd">ERROR. Failed to load database.</string>
-    <string name="camera_perm">Sorry!!!, you cannot use this app without granting permission.</string>
+    <string name="camera_perm">Sorry!!! You cannot use this app without granting permission.</string>
     <string name="confi_change">Configuration change.</string>
     <string name="save_picture">Saved:</string>
     <string name="error_connection">Connection error.</string>
