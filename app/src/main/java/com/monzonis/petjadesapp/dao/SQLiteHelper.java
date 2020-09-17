@@ -1,10 +1,10 @@
-package com.example.petjadesapp.dao;
+package com.monzonis.petjadesapp.dao;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
-import com.example.petjadesapp.R;
+import com.monzonis.petjadesapp.R;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;

@@ -1,4 +1,4 @@
-package com.example.petjadesapp;
+package com.monzonis.petjadesapp;
 
 import android.content.Context;
 

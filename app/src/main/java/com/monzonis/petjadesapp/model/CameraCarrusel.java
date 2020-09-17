@@ -1,8 +1,8 @@
-package com.example.petjadesapp.model;
+package com.monzonis.petjadesapp.model;
 
 import android.os.Bundle;
-import com.example.petjadesapp.R;
-import com.example.petjadesapp.activity.MainMenu;
+import com.monzonis.petjadesapp.R;
+import com.monzonis.petjadesapp.activity.MainMenu;
 import com.synnapps.carouselview.CarouselView;
 
 public class CameraCarrusel extends MainMenu {

@@ -1,8 +1,6 @@
-package com.example.petjadesapp.activity;
+package com.monzonis.petjadesapp.activity;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,9 +12,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import com.example.petjadesapp.R;
-import com.example.petjadesapp.dao.ImagesDAO;
-import com.example.petjadesapp.model.Animal;
+import com.monzonis.petjadesapp.R;
+import com.monzonis.petjadesapp.dao.ImagesDAO;
+import com.monzonis.petjadesapp.model.Animal;
 import java.util.ArrayList;
 import java.util.List;
 

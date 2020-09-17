@@ -1,4 +1,4 @@
-package com.example.petjadesapp.activity;
+package com.monzonis.petjadesapp.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,12 +6,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import androidx.appcompat.widget.Toolbar;
-import com.example.petjadesapp.R;
-import com.example.petjadesapp.dao.AnimalsDAO;
-import com.example.petjadesapp.dao.ImagesDAO;
-import com.example.petjadesapp.model.Animal;
+import com.monzonis.petjadesapp.R;
+import com.monzonis.petjadesapp.dao.AnimalsDAO;
+import com.monzonis.petjadesapp.dao.ImagesDAO;
+import com.monzonis.petjadesapp.model.Animal;
 
 public class DichotomousKeyActivity extends MainMenu {
+
+//    private AdView mAdView;
 
     private Button btnLeft;
     private Button btnRight;
@@ -24,6 +26,12 @@ public class DichotomousKeyActivity extends MainMenu {
         setContentView(R.layout.activity_dichotomous_key);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+/*        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
+ */
 
         // add back arrow to toolbar
         if (getSupportActionBar() != null){

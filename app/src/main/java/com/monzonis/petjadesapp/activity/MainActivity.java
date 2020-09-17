@@ -1,18 +1,26 @@
-package com.example.petjadesapp.activity;
+package com.monzonis.petjadesapp.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import com.example.petjadesapp.R;
+import com.monzonis.petjadesapp.R;
 import java.util.ArrayList;
 
 public class MainActivity extends MainMenu {
+
+    //private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+/*
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+ */
     }
+
 
     @SuppressWarnings("unused")
     public void goToAnimalsListActivity(View view){

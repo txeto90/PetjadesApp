@@ -1,4 +1,4 @@
-package com.example.petjadesapp.activity;
+package com.monzonis.petjadesapp.activity;
 
 import android.Manifest;
 import android.content.Context;
@@ -18,10 +18,10 @@ import android.hardware.camera2.params.StreamConfigurationMap;
 import android.media.Image;
 import android.media.ImageReader;
 import android.os.Bundle;
-import com.example.petjadesapp.R;
-import com.example.petjadesapp.dao.AnimalsDAO;
-import com.example.petjadesapp.dao.ImagesDAO;
-import com.example.petjadesapp.model.Animal;
+import com.monzonis.petjadesapp.R;
+import com.monzonis.petjadesapp.dao.AnimalsDAO;
+import com.monzonis.petjadesapp.dao.ImagesDAO;
+import com.monzonis.petjadesapp.model.Animal;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
 import androidx.annotation.NonNull;
@@ -36,7 +36,6 @@ import android.util.SparseIntArray;
 import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;

@@ -1,13 +1,12 @@
-package com.example.petjadesapp.activity;
+package com.monzonis.petjadesapp.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import com.example.petjadesapp.R;
+import com.monzonis.petjadesapp.R;
 import java.util.ArrayList;
 
 

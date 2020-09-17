@@ -1,4 +1,4 @@
-package com.example.petjadesapp;
+package com.monzonis.petjadesapp;
 
 import org.junit.Test;
 

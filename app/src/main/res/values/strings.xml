@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PetjadesApp</string>
+    <string name="app_name">Mamíferos de España</string>
     <string name="action_settings">Ajustes</string>
     <string name="title_activity_animals_list"></string>
     <string name="title_activity_dichotomous_key">Clave dicotómica</string>
@@ -70,7 +70,7 @@
         <a href="https://www.miteco.gob.es/es/biodiversidad/temas/inventarios-nacionales/">Ministerio para la Trancisión Ecológica y el Reto Demográfico.</a>
     </string>
     <string name="copyrigth_text">
-        <a href="https://creativecommons.org/licenses/by-nc/4.0/">Algunos derechos reservados.</a>
+        <a href="https://creativecommons.org/licenses/by/4.0/">Derechos reservados.</a>
     </string>
 
     <!-- MAPS ACTIVITY -->
@@ -95,4 +95,6 @@
     <string name="confi_change">Cambio de configuración.</string>
     <string name="save_picture">Guardado:</string>
     <string name="error_connection">Error en la connexión.</string>
+
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
 </resources>

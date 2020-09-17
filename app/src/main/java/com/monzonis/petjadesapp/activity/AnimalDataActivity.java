@@ -1,14 +1,13 @@
-package com.example.petjadesapp.activity;
+package com.monzonis.petjadesapp.activity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
-import com.example.petjadesapp.R;
-import com.example.petjadesapp.dao.ImagesDAO;
+import com.monzonis.petjadesapp.R;
+import com.monzonis.petjadesapp.dao.ImagesDAO;
 import android.text.Html;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;

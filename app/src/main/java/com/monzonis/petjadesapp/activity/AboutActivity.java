@@ -1,12 +1,11 @@
-package com.example.petjadesapp.activity;
+package com.monzonis.petjadesapp.activity;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
+
 import android.text.method.LinkMovementMethod;
-import android.util.Log;
 import android.widget.TextView;
-import com.example.petjadesapp.R;
+import com.monzonis.petjadesapp.R;
 
 public class AboutActivity extends AppCompatActivity {
 
@@ -24,10 +23,7 @@ public class AboutActivity extends AppCompatActivity {
         TextView txtMaps = findViewById(R.id.txtMaps);
         TextView txtCopyRight = findViewById(R.id.txtCopyRight);
         TextView txtPhoto = findViewById(R.id.txtPhotos);
-        final String author = "Jakob Fahr, \tCesar Pollo, \tAloma Alcina, Pau L. Rodriguez, \tFrank Sengpiel, \tTomeu Bosch, \tBenoit Nabholz, \tJeff Skrentny, \tJupreudhomme, \t" +
-                "Andy Bridges, \tBill Palmer, \tRoberto Ghiglia, \tPaul Cools, \tAlejandro Garrido, \tLauren Glevanik, \tAnnika Lindqvist, \t" +
-                "Setbusch, \tRonald Werson, \tPeter Trimming, \tSamuel Faure, \tMax Hofmann, \tDee Doubleu, \tSkyrk, \tMagriet B., \tGonzalo Mucientes, \t" +
-                "Carlos Bocos, \tJose Cazador, \tThierry, \tClaudia Komesu, \tJarvo, \tMarco Vicariotto.";
+        final String author = "Virginia Amate Padilla, \tPau L. Rodriguez, \tAloma Alcina, Pau Grau, \tChristian \"Asseus\" Flach, \tLinkie.";
         txtPhoto.setText(author);
         txtMaps.setMovementMethod(LinkMovementMethod.getInstance());
         txtCopyRight.setMovementMethod(LinkMovementMethod.getInstance());
