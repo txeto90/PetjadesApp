@@ -1,4 +1,4 @@
-package com.monzonis.petjadesapp.activity;
+package com.mamiferos.huellasyrastros.activity;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,9 +12,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import com.monzonis.petjadesapp.R;
-import com.monzonis.petjadesapp.dao.ImagesDAO;
-import com.monzonis.petjadesapp.model.Animal;
+import com.mamiferos.huellasyrastros.R;
+import com.mamiferos.huellasyrastros.dao.ImagesDAO;
+import com.mamiferos.huellasyrastros.model.Animal;
 import java.util.ArrayList;
 import java.util.List;
 

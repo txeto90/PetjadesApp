@@ -1,4 +1,4 @@
-package com.monzonis.petjadesapp.dao;
+package com.mamiferos.huellasyrastros.dao;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;

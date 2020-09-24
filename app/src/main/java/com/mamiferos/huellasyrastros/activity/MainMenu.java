@@ -1,4 +1,4 @@
-package com.monzonis.petjadesapp.activity;
+package com.mamiferos.huellasyrastros.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,7 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import com.monzonis.petjadesapp.R;
+import com.mamiferos.huellasyrastros.R;
 import java.util.ArrayList;
 
 

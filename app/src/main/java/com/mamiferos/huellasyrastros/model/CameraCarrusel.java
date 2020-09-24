@@ -1,8 +1,8 @@
-package com.monzonis.petjadesapp.model;
+package com.mamiferos.huellasyrastros.model;
 
 import android.os.Bundle;
-import com.monzonis.petjadesapp.R;
-import com.monzonis.petjadesapp.activity.MainMenu;
+import com.mamiferos.huellasyrastros.R;
+import com.mamiferos.huellasyrastros.activity.MainMenu;
 import com.synnapps.carouselview.CarouselView;
 
 public class CameraCarrusel extends MainMenu {

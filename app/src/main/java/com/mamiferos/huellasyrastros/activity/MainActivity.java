@@ -1,9 +1,9 @@
-package com.monzonis.petjadesapp.activity;
+package com.mamiferos.huellasyrastros.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import com.monzonis.petjadesapp.R;
+import com.mamiferos.huellasyrastros.R;
 import java.util.ArrayList;
 
 public class MainActivity extends MainMenu {

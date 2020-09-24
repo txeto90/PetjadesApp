@@ -1,11 +1,11 @@
-package com.monzonis.petjadesapp.dao;
+package com.mamiferos.huellasyrastros.dao;
 
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.monzonis.petjadesapp.activity.MainMenu;
-import com.monzonis.petjadesapp.model.Animal;
+import com.mamiferos.huellasyrastros.activity.MainMenu;
+import com.mamiferos.huellasyrastros.model.Animal;
 import java.util.ArrayList;
 
 public class AnimalsDAO extends MainMenu {

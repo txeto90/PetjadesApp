@@ -1,4 +1,4 @@
-package com.monzonis.petjadesapp.activity;
+package com.mamiferos.huellasyrastros.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,10 +6,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import androidx.appcompat.widget.Toolbar;
-import com.monzonis.petjadesapp.R;
-import com.monzonis.petjadesapp.dao.AnimalsDAO;
-import com.monzonis.petjadesapp.dao.ImagesDAO;
-import com.monzonis.petjadesapp.model.Animal;
+import com.mamiferos.huellasyrastros.R;
+import com.mamiferos.huellasyrastros.dao.AnimalsDAO;
+import com.mamiferos.huellasyrastros.dao.ImagesDAO;
+import com.mamiferos.huellasyrastros.model.Animal;
 
 public class DichotomousKeyActivity extends MainMenu {
 

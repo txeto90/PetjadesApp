@@ -1,12 +1,12 @@
-package com.monzonis.petjadesapp.activity;
+package com.mamiferos.huellasyrastros.activity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
-import com.monzonis.petjadesapp.R;
-import com.monzonis.petjadesapp.dao.ImagesDAO;
+import com.mamiferos.huellasyrastros.R;
+import com.mamiferos.huellasyrastros.dao.ImagesDAO;
 import android.text.Html;
 import android.view.View;
 import android.widget.ImageButton;

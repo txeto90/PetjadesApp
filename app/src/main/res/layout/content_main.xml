@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.monzonis.petjadesapp.activity.MainActivity"
+    tools:context="com.mamiferos.huellasyrastros.activity.MainActivity"
     tools:showIn="@layout/activity_main">
 <!--
     <com.google.android.gms.ads.AdView
@@ -52,9 +52,9 @@
 
     <ImageButton
         android:id="@+id/btnAbout"
-        android:layout_width="57dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="336dp"
+        android:layout_width="55dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="328dp"
         android:backgroundTint="#00FAF9F9"
         android:onClick="goToAboutActivity"
         android:scaleType="fitCenter"

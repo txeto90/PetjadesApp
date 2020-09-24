@@ -1,10 +1,10 @@
-package com.monzonis.petjadesapp.dao;
+package com.mamiferos.huellasyrastros.dao;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
-import com.monzonis.petjadesapp.R;
+import com.mamiferos.huellasyrastros.R;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;

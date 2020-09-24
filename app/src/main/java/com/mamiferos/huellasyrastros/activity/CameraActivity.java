@@ -1,4 +1,4 @@
-package com.monzonis.petjadesapp.activity;
+package com.mamiferos.huellasyrastros.activity;
 
 import android.Manifest;
 import android.content.Context;
@@ -18,10 +18,10 @@ import android.hardware.camera2.params.StreamConfigurationMap;
 import android.media.Image;
 import android.media.ImageReader;
 import android.os.Bundle;
-import com.monzonis.petjadesapp.R;
-import com.monzonis.petjadesapp.dao.AnimalsDAO;
-import com.monzonis.petjadesapp.dao.ImagesDAO;
-import com.monzonis.petjadesapp.model.Animal;
+import com.mamiferos.huellasyrastros.R;
+import com.mamiferos.huellasyrastros.dao.AnimalsDAO;
+import com.mamiferos.huellasyrastros.dao.ImagesDAO;
+import com.mamiferos.huellasyrastros.model.Animal;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
 import androidx.annotation.NonNull;

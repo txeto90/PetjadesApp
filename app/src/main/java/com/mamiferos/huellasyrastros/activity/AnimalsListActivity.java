@@ -1,4 +1,4 @@
-package com.monzonis.petjadesapp.activity;
+package com.mamiferos.huellasyrastros.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,9 +9,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
-import com.monzonis.petjadesapp.R;
-import com.monzonis.petjadesapp.dao.AnimalsDAO;
-import com.monzonis.petjadesapp.model.Animal;
+import com.mamiferos.huellasyrastros.R;
+import com.mamiferos.huellasyrastros.dao.AnimalsDAO;
+import com.mamiferos.huellasyrastros.model.Animal;
 import java.util.ArrayList;
 import java.util.Collections;
 

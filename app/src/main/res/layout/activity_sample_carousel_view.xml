@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.monzonis.petjadesapp.CameraActivity">
+    tools:context="com.mamiferos.huellasyrastros.CameraActivity">
 
     <com.synnapps.carouselview.CarouselView
         android:id="@+id/carouselView"

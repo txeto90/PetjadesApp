@@ -1,11 +1,11 @@
-package com.monzonis.petjadesapp.activity;
+package com.mamiferos.huellasyrastros.activity;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.text.method.LinkMovementMethod;
 import android.widget.TextView;
-import com.monzonis.petjadesapp.R;
+import com.mamiferos.huellasyrastros.R;
 
 public class AboutActivity extends AppCompatActivity {
 

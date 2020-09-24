@@ -1,4 +1,4 @@
-package com.monzonis.petjadesapp.model;
+package com.mamiferos.huellasyrastros.model;
 
 import java.util.Comparator;
 
