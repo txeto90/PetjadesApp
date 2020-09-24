@@ -73,18 +73,9 @@
     <string name="copyrigth_text">
         <a href="https://creativecommons.org/licenses/by-nc/4.0/">Some reserved rigths.</a>
     </string>
+    <string name="version">Version</string>
+    <string name="versionNumber">v1.0.0</string>
 
-    <!-- MAPS ACTIVITY -->
-    <string name="title_dialog">Save a footprint</string>
-    <string name="ok_dialog">Ok</string>
-    <string name="cancel_dialog">Cancel</string>
-    <string name="spinerselection_dialog">Choose an animal…</string>
-    <string name="btn_save_coordinate">Save a footprint</string>
-    <string name="salir_sesion">Logout</string>
-    <string name="check_boxmis_huellas">My tracks</string>
-    <string name="set_visible">Do you want your mark will be visible to other users?</string>
-    <string name="esta_seguro">Are you sure?</string>
-    <string name="yes">Yes</string>
 
     <string name="title_activity_maps_layout" />
     <string name="title_activity_camera2" />
@@ -98,4 +89,5 @@
     <string name="error_connection">Connection error.</string>
 
     <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+
 </resources>

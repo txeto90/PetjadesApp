@@ -75,4 +75,23 @@
         android:layout_marginEnd="21dp"
         android:text="@string/maps_text"
         android:textColor="#090000" />
+
+    <TextView
+        android:id="@+id/titleVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/version"
+        android:textColor="#090000"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/textVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/versionNumber"
+        android:textColor="#090000"/>
 </LinearLayout>
