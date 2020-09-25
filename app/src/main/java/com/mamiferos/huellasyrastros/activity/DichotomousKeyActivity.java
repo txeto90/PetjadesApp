@@ -6,6 +6,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import androidx.appcompat.widget.Toolbar;
+
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.mamiferos.huellasyrastros.R;
 import com.mamiferos.huellasyrastros.dao.AnimalsDAO;
 import com.mamiferos.huellasyrastros.dao.ImagesDAO;
@@ -13,7 +16,7 @@ import com.mamiferos.huellasyrastros.model.Animal;
 
 public class DichotomousKeyActivity extends MainMenu {
 
-//    private AdView mAdView;
+    private AdView mAdView;
 
     private Button btnLeft;
     private Button btnRight;
@@ -27,11 +30,9 @@ public class DichotomousKeyActivity extends MainMenu {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-/*        mAdView = findViewById(R.id.adView);
+        mAdView = findViewById(R.id.adViewDico);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
-
- */
 
         // add back arrow to toolbar
         if (getSupportActionBar() != null){

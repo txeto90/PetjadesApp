@@ -56,19 +56,16 @@
         app:layout_constraintEnd_toStartOf="@+id/ivRigth"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-<!--
+
     <com.google.android.gms.ads.AdView
-        android:id="@+id/adView"
-        android:layout_width="364dp"
-        android:layout_height="88dp"
+        android:id="@+id/adViewDico"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="450dp"
         ads:adSize="BANNER"
-        ads:adUnitId="@string/banner_ad_unit_id"
-        ads:layout_constraintStart_toStartOf="parent"
-        ads:layout_constraintTop_toBottomOf="@+id/ibIntroCamera"
-        app:layout_constraintTop_toTopOf="parent"></com.google.android.gms.ads.AdView>
--->
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        ads:layout_constraintBottom_toBottomOf="parent"
+        ads:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

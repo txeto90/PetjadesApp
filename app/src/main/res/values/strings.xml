@@ -87,6 +87,7 @@
     <string name="save_picture">Guardado:</string>
     <string name="error_connection">Error en la connexión.</string>
 
-    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="banner_ad_unit_id">ca-app-pub-2593792704839147/7738931246</string>
+    <string name="app_id">ca-app-pub-2593792704839147/7738931246</string>
 
 </resources>

@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
+
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.mamiferos.huellasyrastros.R;
 import com.mamiferos.huellasyrastros.dao.AnimalsDAO;
 import com.mamiferos.huellasyrastros.model.Animal;
@@ -17,7 +20,7 @@ import java.util.Collections;
 
 public class AnimalsListActivity extends MainMenu {
 
-    //private AdView mAdView;
+    private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,11 +30,10 @@ public class AnimalsListActivity extends MainMenu {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-/*
-        mAdView = findViewById(R.id.adView);
+        mAdView = findViewById(R.id.adViewList);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
- */
+
         // add back arrow to toolbar
         if (getSupportActionBar() != null){
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);

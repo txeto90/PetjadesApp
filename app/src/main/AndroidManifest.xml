@@ -18,11 +18,11 @@
         android:roundIcon="@drawable/iclauncher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<!--
+
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="@string/banner_ad_unit_id"/>
--->
+            android:value="ca-app-pub-2593792704839147~4175106667"/>
+
         <activity
             android:name="com.mamiferos.huellasyrastros.activity.AboutActivity"
             android:label="@string/title_activity_about"
