@@ -33,4 +33,6 @@
 <img src="https://i.ibb.co/sqJ5PP8/f3.png" width="250px" alt="f3" />      <img src="https://i.ibb.co/pQHvLSm/f4.png" width="250px" alt="f4" />
 <img src="https://i.ibb.co/Sm4VbTZ/f5.png" width="250px" alt="f5" />      <img src="https://i.ibb.co/chfTwLY/f6.png" width="250px" alt="f6" />
 
+### Download
+<a href="https://play.google.com/store/apps/details?id=com.monzonis.petjadesapp&hl=es&gl=US">Download the lite version here! </a>
 
